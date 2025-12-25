@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageSwitcher } from "./components/LanguageSwitcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,15 +36,13 @@ export default function RootLayout({
                 Samatat Sanskriti
               </a>
 
-              <div className="hidden md:flex items-center gap-8">
+              <div className="hidden md:flex items-center gap-6">
                 <a href="/about" className="text-gray-700 hover:text-amber-600 font-medium">About</a>
                 <a href="/shows" className="text-gray-700 hover:text-amber-600 font-medium">Productions</a>
                 <a href="/festivals" className="text-gray-700 hover:text-amber-600 font-medium">Festival</a>
                 <a href="/workshops" className="text-gray-700 hover:text-amber-600 font-medium">Workshops</a>
-                <a href="/archive" className="text-gray-700 hover:text-amber-600 font-medium">Archive</a>
-                <a href="/impact" className="text-gray-700 hover:text-amber-600 font-medium">Impact</a>
-                <a href="/statutory" className="text-gray-700 hover:text-amber-600 font-medium">Governance</a>
                 <a href="/contact" className="bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-amber-700">Contact</a>
+                <LanguageSwitcher />
               </div>
 
               <button className="md:hidden text-gray-700">
