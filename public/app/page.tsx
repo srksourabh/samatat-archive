@@ -2,12 +2,16 @@
 
 import { T } from './components/TranslatedContent';
 import { homeContent } from '../lib/content';
+import { DynamicSpotlight } from './components/DynamicSpotlight';
 
 export default function Home() {
   return (
     <div className="bg-black font-sans">
       {/* Hero Section - Main Stage with Proscenium */}
       <section className="relative stage-curtain proscenium-arch min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Dynamic Interactive Spotlight */}
+        <DynamicSpotlight />
+
         {/* Valance - Top Curtain Drape */}
         <div className="valance"></div>
 
