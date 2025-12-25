@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./theatre-theme.css";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
 
 const geistSans = Geist({
@@ -26,22 +27,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased theatre-dark`}
       >
         {/* Navigation */}
-        <nav className="bg-white border-b sticky top-0 z-50">
+        <nav className="bg-gradient-to-b from-gray-900 to-black border-b border-amber-600/30 sticky top-0 z-50 shadow-lg">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
-              <a href="/" className="text-2xl font-bold text-gray-900">
+              <a href="/" className="text-2xl font-bold theatre-text-gold flex items-center gap-3">
+                <span className="text-3xl">🎭</span>
                 Samatat Sanskriti
               </a>
 
               <div className="hidden md:flex items-center gap-6">
-                <a href="/about" className="text-gray-700 hover:text-amber-600 font-medium">About</a>
-                <a href="/shows" className="text-gray-700 hover:text-amber-600 font-medium">Productions</a>
-                <a href="/festivals" className="text-gray-700 hover:text-amber-600 font-medium">Festival</a>
-                <a href="/workshops" className="text-gray-700 hover:text-amber-600 font-medium">Workshops</a>
-                <a href="/contact" className="bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-amber-700">Contact</a>
+                <a href="/about" className="text-gray-300 hover:text-amber-400 font-medium transition">About</a>
+                <a href="/shows" className="text-gray-300 hover:text-amber-400 font-medium transition">Productions</a>
+                <a href="/festivals" className="text-gray-300 hover:text-amber-400 font-medium transition">Festival</a>
+                <a href="/workshops" className="text-gray-300 hover:text-amber-400 font-medium transition">Workshops</a>
+                <a href="/contact" className="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 py-2 rounded-lg font-semibold hover:from-amber-700 hover:to-amber-800 shadow-lg transition">Contact</a>
                 <LanguageSwitcher />
               </div>
 
