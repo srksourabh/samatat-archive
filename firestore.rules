@@ -1,0 +1,125 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && request.auth.token.role == 'admin';
+    }
+
+    function isEditor() {
+      return isAuthenticated() && (request.auth.token.role == 'editor' || request.auth.token.role == 'admin');
+    }
+
+    function isPublished() {
+      return resource.data.published == true;
+    }
+    
+    // Check if user has an active membership of a specific tier or higher
+    function hasMembership(tier) {
+       // Note: In real apps, custom claims 'tier' are more efficient than reading a document here.
+       // However, for rules relying on document fields:
+       // We assume the auth token has a claim or we check the member doc (which costs a read).
+       // Recommended: Use Custom Claims updated by Cloud Functions.
+       return request.auth.token.tier in [tier, 'patron'] || (tier == 'supporter' && request.auth.token.tier == 'patron');
+    }
+
+    // --- Content Collections ---
+
+    match /pages/{page} {
+      allow read: if isPublished() || isEditor();
+      allow write: if isEditor();
+    }
+
+    match /productions/{production} {
+      allow read: if isPublished() || isEditor();
+      allow write: if isEditor();
+    }
+
+    match /festivals/{festival} {
+      allow read: if isPublished() || isEditor();
+      allow write: if isEditor();
+    }
+
+    match /workshops/{workshop} {
+      allow read: if true; 
+      allow write: if isEditor();
+    }
+
+    match /media/{mediaItem} {
+      allow read: if true; 
+      allow write: if isEditor();
+    }
+    
+    match /news/{newsItem} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    
+    match /sponsors/{sponsor} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+
+    match /testimonials/{testimonial} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    
+    match /team/{member} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    
+    match /archive_entries/{entry} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    
+    match /statutory/{doc} {
+       allow read: if true;
+       allow write: if isEditor();
+    }
+    
+    // --- Members-Only Content Example ---
+    match /premium_content/{doc} {
+       allow read: if isAuthenticated() && request.auth.token.tier != null; // Requires any active tier
+       allow write: if isAdmin();
+    }
+
+    // --- Private/Billing Collections ---
+
+    match /donations/{donation} {
+      allow read, write: if isAdmin();
+    }
+
+    match /tickets/{ticket} {
+      allow read, write: if isAdmin();
+      allow read: if request.auth.uid == resource.data.userRef; 
+    }
+
+    // UPDATED: Members collection
+    match /members/{memberId} {
+      // User can read their own status
+      allow read: if request.auth.uid == memberId || isAdmin();
+      // Write is restricted to Admin or System (via Functions)
+      allow write: if isAdmin();
+    }
+    
+    match /committees/{committee} {
+      allow read, write: if isAdmin();
+    }
+
+    // --- User Data ---
+    
+    match /users/{userId} {
+      allow read: if request.auth.uid == userId || isAdmin();
+      allow write: if request.auth.uid == userId || isAdmin();
+    }
+  }
+}

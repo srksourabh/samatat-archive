@@ -1,0 +1,61 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && request.auth.token.role == 'admin';
+    }
+
+    function isEditor() {
+      return isAuthenticated() && (request.auth.token.role == 'editor' || request.auth.token.role == 'admin');
+    }
+
+    // --- Content Media (Public Read, Editor/Admin Write) ---
+    // Matches images, videos, posters for public content
+    match /images/{allPaths=**} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+
+    match /videos/{allPaths=**} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    
+    match /posters/{allPaths=**} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    
+    // Public PDFs (newsletters, public reports)
+    match /public_docs/{allPaths=**} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+
+    // --- Private/Sensitive Media (Admin Only) ---
+    // Matches receipts, contracts, minutes
+    match /receipts/{allPaths=**} {
+      allow read, write: if isAdmin();
+    }
+
+    match /contracts/{allPaths=**} {
+      allow read, write: if isAdmin();
+    }
+    
+    match /minutes/{allPaths=**} {
+      allow read, write: if isAdmin();
+    }
+
+    // Default deny for anything else
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
