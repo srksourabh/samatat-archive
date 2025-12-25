@@ -7,6 +7,7 @@
   packages = [
     pkgs.nodejs_20
     pkgs.jdk17 # Java is often required for Firebase Emulators
+    pkgs.gh # GitHub CLI
   ];
   # Sets environment variables in the workspace
   env = {};
