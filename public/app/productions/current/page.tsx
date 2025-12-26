@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function CurrentProductionsPage() { return (<main><PageHeader eyebrow="Productions" title="Current Season" description="Our current production lineup and upcoming performances." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Current season details coming soon.</p></div></section></main>); }

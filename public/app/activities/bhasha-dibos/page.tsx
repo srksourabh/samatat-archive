@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function BhashaDibosPage() { return (<main><PageHeader eyebrow="Cultural Activities" title={{ en: 'Bhasha Dibos', bn: 'ভাষা দিবস', hi: 'भाषा दिवस' }} description="Celebration of International Mother Language Day honoring Bengali language." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Bhasha Dibos details and photos coming soon.</p></div></section></main>); }

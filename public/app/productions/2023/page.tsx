@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function Productions2023Page() { return (<main><PageHeader eyebrow="Productions" title="2023 Productions" description="Last year's theatrical productions." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">2023 production details coming soon.</p></div></section></main>); }

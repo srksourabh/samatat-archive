@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function Festival2024Page() { return (<main><PageHeader eyebrow="Festival" title="2024 Theatre Festival" description="12 participating groups showcasing Bengali theatre." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">2024 festival details coming soon.</p></div></section></main>); }

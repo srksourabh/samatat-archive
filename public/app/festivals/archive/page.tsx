@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function FestivalArchivePage() { return (<main><PageHeader eyebrow="Festival" title="Past Festivals" description="Archive of all theatre festivals since 2000." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Festival archive coming soon.</p></div></section></main>); }

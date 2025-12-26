@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import Image from "next/image";
 import "./globals.css";
 import "./theatre-theme.css";
-import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import { Navigation } from "./components/Navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,64 +28,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Navigation */}
-        <nav className="nav-primary sticky top-0 z-50">
-          <div className="container">
-            <div className="flex items-center justify-between h-16">
-              {/* Logo */}
-              <Link href="/" className="flex items-center">
-                <Image
-                  src="/logo1.png"
-                  alt="Samatat Sanskriti"
-                  width={140}
-                  height={36}
-                  className="h-7 w-auto"
-                  priority
-                />
-              </Link>
-
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center gap-8">
-                <Link href="/about" className="nav-link">About</Link>
-                <Link href="/shows" className="nav-link">What&apos;s On</Link>
-                <Link href="/festivals" className="nav-link">Festival</Link>
-                <Link href="/workshops" className="nav-link">Workshops</Link>
-                <Link href="/archive" className="nav-link">Archive</Link>
-              </div>
-
-              {/* Right side */}
-              <div className="hidden md:flex items-center gap-4">
-                <LanguageSwitcher />
-                <Link href="/contact" className="btn btn-primary text-sm py-2 px-4">
-                  Contact
-                </Link>
-              </div>
-
-              {/* Mobile menu button */}
-              <button className="md:hidden text-white p-2" aria-label="Menu">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </nav>
+        <Navigation />
 
         {children}
 
         {/* Footer */}
         <footer className="footer section">
           <div className="container">
-            <div className="footer-grid">
+            <div className="footer-grid-5">
               {/* Brand column */}
               <div className="footer-brand">
                 <Link href="/" className="inline-block mb-4">
-                  <Image
+                  <img
                     src="/logo1.png"
                     alt="Samatat Sanskriti"
-                    width={200}
-                    height={54}
-                    className="h-12 w-auto"
+                    className="h-10 w-auto"
                   />
                 </Link>
                 <p className="text-gray text-sm leading-relaxed mb-6 max-w-sm">
@@ -100,36 +56,47 @@ export default function RootLayout({
                 </div>
               </div>
 
-              {/* Quick Links */}
+              {/* About */}
               <div>
-                <h4 className="footer-heading">Explore</h4>
+                <h4 className="footer-heading">About</h4>
                 <ul className="footer-links">
-                  <li><Link href="/about">About Us</Link></li>
-                  <li><Link href="/shows">Productions</Link></li>
-                  <li><Link href="/festivals">Theatre Festival</Link></li>
-                  <li><Link href="/workshops">Workshops</Link></li>
-                  <li><Link href="/archive">Digital Archive</Link></li>
+                  <li><Link href="/about/history">History</Link></li>
+                  <li><Link href="/about/team">The Team</Link></li>
+                  <li><Link href="/about/alumni">Alumni</Link></li>
+                  <li><Link href="/about/president">President&apos;s Message</Link></li>
                 </ul>
               </div>
 
-              {/* Get Involved */}
+              {/* Programs */}
+              <div>
+                <h4 className="footer-heading">Programs</h4>
+                <ul className="footer-links">
+                  <li><Link href="/workshops">Workshops</Link></li>
+                  <li><Link href="/productions">Productions</Link></li>
+                  <li><Link href="/festivals">Theatre Festival</Link></li>
+                  <li><Link href="/activities">Cultural Activities</Link></li>
+                </ul>
+              </div>
+
+              {/* Statutory */}
+              <div>
+                <h4 className="footer-heading">Statutory</h4>
+                <ul className="footer-links">
+                  <li><Link href="/statutory/committee">Committee</Link></li>
+                  <li><Link href="/statutory/reports">Annual Reports</Link></li>
+                  <li><Link href="/statutory/grants">Grants & Donations</Link></li>
+                  <li><Link href="/statutory/sponsors">Sponsors</Link></li>
+                </ul>
+              </div>
+
+              {/* Contact */}
               <div>
                 <h4 className="footer-heading">Get Involved</h4>
                 <ul className="footer-links">
-                  <li><Link href="/contact">Join Us</Link></li>
-                  <li><Link href="/workshops">Training Programs</Link></li>
-                  <li><Link href="/contact">Volunteer</Link></li>
-                  <li><Link href="/contact">Support Our Work</Link></li>
-                </ul>
-              </div>
-
-              {/* Information */}
-              <div>
-                <h4 className="footer-heading">Information</h4>
-                <ul className="footer-links">
-                  <li><Link href="/impact">Impact Reports</Link></li>
-                  <li><Link href="/statutory">Governance</Link></li>
-                  <li><Link href="/contact">Contact</Link></li>
+                  <li><Link href="/contact#join">Join Us</Link></li>
+                  <li><Link href="/contact#workshop">Workshops</Link></li>
+                  <li><Link href="/contact#performance">Request Performance</Link></li>
+                  <li><Link href="/contact#donate">Donate</Link></li>
                 </ul>
               </div>
             </div>

@@ -1,238 +1,66 @@
+import Link from 'next/link';
+import { PageHeader } from '../components/PageHeader';
+
+const statutorySections = [
+  { title: 'Current Committee', description: 'Current executive committee formation and members.', href: '/statutory/committee', icon: '👥' },
+  { title: 'AGM Records', description: 'Annual General Meeting minutes and resolutions.', href: '/statutory/agm', icon: '📋' },
+  { title: 'Previous Committees', description: 'Archive of past committee formations.', href: '/statutory/previous', icon: '📚' },
+  { title: 'NGO Information', description: 'Registration details and organizational documents.', href: '/statutory/ngo', icon: '🏛️' },
+  { title: 'Annual Reports', description: 'Yearly activity and financial reports.', href: '/statutory/reports', icon: '📊' },
+  { title: 'Grants & Donations', description: 'Information about grants received and donation records.', href: '/statutory/grants', icon: '💰' },
+  { title: 'Sponsors', description: 'Our sponsors and supporters.', href: '/statutory/sponsors', icon: '🤝' },
+];
+
 export default function StatutoryPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-amber-50 to-white py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Governance & Statutory</h1>
-          <p className="text-xl text-gray-600">Transparency and compliance in all our operations</p>
-        </div>
-      </section>
+    <main>
+      <PageHeader
+        eyebrow="Governance"
+        title={{ en: 'Statutory Compliances', bn: 'বিধিবদ্ধ সম্মতি', hi: 'वैधानिक अनुपालन' }}
+        description={{ en: 'Transparency and compliance in all our operations. Access governance documents, committee information, and official records.', bn: 'আমাদের সমস্ত কার্যক্রমে স্বচ্ছতা এবং সম্মতি। শাসন নথি, কমিটির তথ্য এবং সরকারী রেকর্ড অ্যাক্সেস করুন।', hi: 'हमारे सभी कार्यों में पारदर्शिता और अनुपालन। शासन दस्तावेज, समिति जानकारी और आधिकारिक रिकॉर्ड तक पहुंचें।' }}
+      />
 
-      {/* Introduction */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <p className="text-gray-700 leading-relaxed">
-              As a registered non-profit cultural organization, Samatat Sanskriti, Uttarpara operates in full compliance with all statutory requirements governing cultural and educational institutions. This page provides access to our governance documents, committee information, and official records.
-            </p>
+      <section className="section section-charcoal">
+        <div className="container">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {statutorySections.map((section) => (
+              <Link key={section.href} href={section.href} className="card p-6 border border-transparent hover:border-gold/30 transition-all">
+                <span className="text-4xl mb-4 block">{section.icon}</span>
+                <h2 className="card-title text-xl mb-2">{section.title}</h2>
+                <p className="card-description">{section.description}</p>
+                <span className="btn-text mt-4 inline-block">View details</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Committee Formation */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Executive Committee</h2>
-
-          <div className="bg-white rounded-lg p-8 mb-8">
-            <h3 className="text-2xl font-bold text-amber-600 mb-6">Current Committee (2024-2025)</h3>
-
+      {/* Organization Details */}
+      <section className="section section-dark">
+        <div className="container max-w-4xl">
+          <h2 className="section-title mb-8">Organization Details</h2>
+          <div className="card p-8">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="border-l-4 border-amber-600 pl-4">
-                <h4 className="font-bold text-gray-900 mb-1">President</h4>
-                <p className="text-gray-600">Name of President</p>
+              <div>
+                <span className="text-sm text-gray font-medium">Registered Name</span>
+                <p className="text-white">Samatat Sanskriti, Uttarpara</p>
               </div>
-
-              <div className="border-l-4 border-amber-600 pl-4">
-                <h4 className="font-bold text-gray-900 mb-1">Vice President</h4>
-                <p className="text-gray-600">Name of Vice President</p>
+              <div>
+                <span className="text-sm text-gray font-medium">Established</span>
+                <p className="text-white">1997</p>
               </div>
-
-              <div className="border-l-4 border-amber-600 pl-4">
-                <h4 className="font-bold text-gray-900 mb-1">Secretary</h4>
-                <p className="text-gray-600">Name of Secretary</p>
+              <div>
+                <span className="text-sm text-gray font-medium">Type</span>
+                <p className="text-white">Non-Profit Cultural Organization</p>
               </div>
-
-              <div className="border-l-4 border-amber-600 pl-4">
-                <h4 className="font-bold text-gray-900 mb-1">Treasurer</h4>
-                <p className="text-gray-600">Name of Treasurer</p>
-              </div>
-
-              <div className="border-l-4 border-amber-600 pl-4">
-                <h4 className="font-bold text-gray-900 mb-1">Committee Members</h4>
-                <p className="text-gray-600">5 additional members</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Past Committees</h3>
-            <div className="space-y-2">
-              <a href="#" className="block p-4 border rounded-lg hover:bg-gray-50 transition">
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-gray-900">Committee Formation 2023-2024</span>
-                  <span className="text-amber-600">View PDF →</span>
-                </div>
-              </a>
-              <a href="#" className="block p-4 border rounded-lg hover:bg-gray-50 transition">
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-gray-900">Committee Formation 2022-2023</span>
-                  <span className="text-amber-600">View PDF →</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AGM Records */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Annual General Meetings</h2>
-
-          <div className="bg-white border rounded-lg overflow-hidden">
-            <table className="w-full">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">Year</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">Date</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">Minutes</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">Resolutions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-semibold">2024</td>
-                  <td className="px-6 py-4 text-gray-600">March 15, 2024</td>
-                  <td className="px-6 py-4">
-                    <a href="#" className="text-amber-600 hover:text-amber-700">Download PDF</a>
-                  </td>
-                  <td className="px-6 py-4">
-                    <a href="#" className="text-amber-600 hover:text-amber-700">Download PDF</a>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-semibold">2023</td>
-                  <td className="px-6 py-4 text-gray-600">March 20, 2023</td>
-                  <td className="px-6 py-4">
-                    <a href="#" className="text-amber-600 hover:text-amber-700">Download PDF</a>
-                  </td>
-                  <td className="px-6 py-4">
-                    <a href="#" className="text-amber-600 hover:text-amber-700">Download PDF</a>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-semibold">2022</td>
-                  <td className="px-6 py-4 text-gray-600">March 18, 2022</td>
-                  <td className="px-6 py-4">
-                    <a href="#" className="text-amber-600 hover:text-amber-700">Download PDF</a>
-                  </td>
-                  <td className="px-6 py-4">
-                    <a href="#" className="text-amber-600 hover:text-amber-700">Download PDF</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Annual Reports */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Annual Reports</h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <a href="#" className="bg-white p-6 rounded-lg border-2 border-transparent hover:border-amber-600 transition">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Annual Report 2023-24</h3>
-              <p className="text-gray-600 mb-4">Complete activities, programs, and financial summary</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">📄 PDF • 2.5 MB</span>
-                <span className="text-amber-600 font-semibold">Download →</span>
-              </div>
-            </a>
-
-            <a href="#" className="bg-white p-6 rounded-lg border-2 border-transparent hover:border-amber-600 transition">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Annual Report 2022-23</h3>
-              <p className="text-gray-600 mb-4">Complete activities, programs, and financial summary</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">📄 PDF • 2.3 MB</span>
-                <span className="text-amber-600 font-semibold">Download →</span>
-              </div>
-            </a>
-
-            <a href="#" className="bg-white p-6 rounded-lg border-2 border-transparent hover:border-amber-600 transition">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Annual Report 2021-22</h3>
-              <p className="text-gray-600 mb-4">Complete activities, programs, and financial summary</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">📄 PDF • 2.1 MB</span>
-                <span className="text-amber-600 font-semibold">Download →</span>
-              </div>
-            </a>
-
-            <a href="#" className="bg-white p-6 rounded-lg border-2 border-transparent hover:border-amber-600 transition">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Annual Report 2020-21</h3>
-              <p className="text-gray-600 mb-4">Complete activities, programs, and financial summary</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">📄 PDF • 1.9 MB</span>
-                <span className="text-amber-600 font-semibold">Download →</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Registration & Compliance */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Registration & Compliance</h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Organization Details</h3>
-              <div className="space-y-3">
-                <div>
-                  <span className="text-sm font-semibold text-gray-600">Registered Name</span>
-                  <p className="text-gray-900">Samatat Sanskriti, Uttarpara</p>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold text-gray-600">Registration Year</span>
-                  <p className="text-gray-900">1999</p>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold text-gray-600">Type</span>
-                  <p className="text-gray-900">Non-Profit Cultural Organization</p>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold text-gray-600">Location</span>
-                  <p className="text-gray-900">Uttarpara, West Bengal, India</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Statutory Documents</h3>
-              <div className="space-y-3">
-                <a href="#" className="block p-3 bg-white rounded-lg hover:bg-amber-50 transition">
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-900">Constitution</span>
-                    <span className="text-amber-600">View →</span>
-                  </div>
-                </a>
-                <a href="#" className="block p-3 bg-white rounded-lg hover:bg-amber-50 transition">
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-900">Registration Certificate</span>
-                    <span className="text-amber-600">View →</span>
-                  </div>
-                </a>
-                <a href="#" className="block p-3 bg-white rounded-lg hover:bg-amber-50 transition">
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-900">By-Laws</span>
-                    <span className="text-amber-600">View →</span>
-                  </div>
-                </a>
-                <a href="#" className="block p-3 bg-white rounded-lg hover:bg-amber-50 transition">
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-900">Tax Exemption Certificate</span>
-                    <span className="text-amber-600">View →</span>
-                  </div>
-                </a>
+              <div>
+                <span className="text-sm text-gray font-medium">Location</span>
+                <p className="text-white">Uttarpara, Hooghly, West Bengal, India</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function PreviousCommitteesPage() { return (<main><PageHeader eyebrow="Statutory" title="Previous Committees" description="Archive of past committee formations." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Previous committees archive coming soon.</p></div></section></main>); }

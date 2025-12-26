@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function RabindraJayantiPage() { return (<main><PageHeader eyebrow="Cultural Activities" title={{ en: 'Rabindra Jayanti', bn: 'রবীন্দ্র জয়ন্তী', hi: 'रवींद्र जयंती' }} description="Annual commemoration of Rabindranath Tagore through performances and readings." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Rabindra Jayanti details and photos coming soon.</p></div></section></main>); }

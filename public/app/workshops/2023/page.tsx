@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function Workshop2023Page() { return (<main><PageHeader eyebrow="Workshops" title="2023 Workshops" description="Acting fundamentals and voice training workshops." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">2023 workshop details coming soon.</p></div></section></main>); }

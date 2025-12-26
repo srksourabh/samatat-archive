@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function BasantaUtsavPage() { return (<main><PageHeader eyebrow="Cultural Activities" title={{ en: 'Basanta Utsav', bn: 'বসন্ত উৎসব', hi: 'बसंत उत्सव' }} description="Spring festival celebrating art, music, and cultural expression." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Basanta Utsav details and photos coming soon.</p></div></section></main>); }

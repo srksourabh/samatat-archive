@@ -394,10 +394,29 @@
   gap: 3rem;
 }
 
+.footer-grid-5 {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid-5 > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 768px) {
-  .footer-grid {
+  .footer-grid,
+  .footer-grid-5 {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .footer-grid-5 > div:first-child {
+    grid-column: auto;
   }
 }
 

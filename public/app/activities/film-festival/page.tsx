@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function FilmFestivalPage() { return (<main><PageHeader eyebrow="Cultural Activities" title="Children Film Festival" description="Annual film festival showcasing cinema for young audiences." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Film festival details and photos coming soon.</p></div></section></main>); }

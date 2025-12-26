@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function CommitteePage() { return (<main><PageHeader eyebrow="Statutory" title="Current Committee" description="Executive committee formation for the current term." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Committee details coming soon.</p></div></section></main>); }

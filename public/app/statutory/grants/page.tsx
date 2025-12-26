@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function GrantsPage() { return (<main><PageHeader eyebrow="Statutory" title="Grants & Donations" description="Information about grants received and donation records." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Grants and donations information coming soon.</p></div></section></main>); }

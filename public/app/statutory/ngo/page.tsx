@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function NGOPage() { return (<main><PageHeader eyebrow="Statutory" title="NGO Information" description="Registration details and organizational documents." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">NGO information coming soon.</p></div></section></main>); }

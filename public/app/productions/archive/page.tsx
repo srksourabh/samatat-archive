@@ -1,0 +1,2 @@
+import { PageHeader } from '../../components/PageHeader';
+export default function ProductionsArchivePage() { return (<main><PageHeader eyebrow="Productions" title="Production Archive" description="Complete archive of our theatrical productions since Arshi Desh." /><section className="section section-charcoal"><div className="container"><p className="text-center text-light-gray">Historical production archive coming soon.</p></div></section></main>); }
