@@ -24,12 +24,21 @@ export const translations = {
   }
 };
 
+type TranslationValue = { [K in Language]: string } | { [key: string]: TranslationValue };
+
 export function t(lang: Language, key: string): string {
   const keys = key.split('.');
-  let value: any = translations;
+  let value: TranslationValue | string | undefined = translations;
   for (const k of keys) {
-    value = value[k];
-    if (!value) return key;
+    if (typeof value === 'object' && value !== null && k in value) {
+      value = (value as Record<string, TranslationValue | string>)[k];
+    } else {
+      return key;
+    }
   }
-  return value[lang] || value.en || key;
+  if (typeof value === 'object' && value !== null && lang in value) {
+    const result = (value as Record<Language, string>)[lang];
+    return typeof result === 'string' ? result : key;
+  }
+  return key;
 }

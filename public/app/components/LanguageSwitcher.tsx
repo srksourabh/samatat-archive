@@ -1,74 +1,114 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore, useCallback, useEffect } from 'react';
 
 export type Language = 'en' | 'bn' | 'hi';
 
-export function LanguageSwitcher() {
-  const [language, setLanguage] = useState<Language>('en');
+// External store for language state management
+const createLanguageStore = () => {
+  let currentLanguage: Language = 'en';
+  const listeners = new Set<() => void>();
 
+  return {
+    subscribe(listener: () => void) {
+      listeners.add(listener);
+      return () => listeners.delete(listener);
+    },
+
+    getSnapshot(): Language {
+      return currentLanguage;
+    },
+
+    getServerSnapshot(): Language {
+      return 'en';
+    },
+
+    setLanguage(lang: Language) {
+      if (currentLanguage !== lang) {
+        currentLanguage = lang;
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('language', lang);
+        }
+        listeners.forEach(listener => listener());
+      }
+    },
+
+    initialize() {
+      if (typeof window !== 'undefined') {
+        const saved = localStorage.getItem('language') as Language | null;
+        if (saved && ['en', 'bn', 'hi'].includes(saved)) {
+          currentLanguage = saved;
+          listeners.forEach(listener => listener());
+        }
+      }
+    }
+  };
+};
+
+const languageStore = createLanguageStore();
+
+export function LanguageSwitcher() {
+  const subscribe = useCallback((cb: () => void) => languageStore.subscribe(cb), []);
+  const getSnapshot = useCallback(() => languageStore.getSnapshot(), []);
+  const getServerSnapshot = useCallback(() => languageStore.getServerSnapshot(), []);
+
+  const language = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  // Initialize from localStorage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved) setLanguage(saved);
+    languageStore.initialize();
   }, []);
 
   const changeLanguage = (lang: Language) => {
-    setLanguage(lang);
-    localStorage.setItem('language', lang);
-    window.dispatchEvent(new CustomEvent('languageChange', { detail: lang }));
+    languageStore.setLanguage(lang);
   };
 
   return (
-    <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+    <div className="flex items-center gap-1 bg-white/10 rounded-md p-1">
       <button
         onClick={() => changeLanguage('en')}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition ${
+        className={`px-2.5 py-1 rounded text-xs font-medium transition ${
           language === 'en'
-            ? 'bg-white text-gray-900 shadow'
-            : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-white text-gray-900'
+            : 'text-gray-300 hover:text-white'
         }`}
       >
-        English
+        EN
       </button>
       <button
         onClick={() => changeLanguage('bn')}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition ${
+        className={`px-2.5 py-1 rounded text-xs font-medium transition ${
           language === 'bn'
-            ? 'bg-white text-gray-900 shadow'
-            : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-white text-gray-900'
+            : 'text-gray-300 hover:text-white'
         }`}
       >
-        বাংলা
+        বাং
       </button>
       <button
         onClick={() => changeLanguage('hi')}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition ${
+        className={`px-2.5 py-1 rounded text-xs font-medium transition ${
           language === 'hi'
-            ? 'bg-white text-gray-900 shadow'
-            : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-white text-gray-900'
+            : 'text-gray-300 hover:text-white'
         }`}
       >
-        हिंदी
+        हि
       </button>
     </div>
   );
 }
 
-export function useLanguage() {
-  const [language, setLanguage] = useState<Language>('en');
+export function useLanguage(): Language {
+  const subscribe = useCallback((cb: () => void) => languageStore.subscribe(cb), []);
+  const getSnapshot = useCallback(() => languageStore.getSnapshot(), []);
+  const getServerSnapshot = useCallback(() => languageStore.getServerSnapshot(), []);
 
+  const language = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  // Initialize from localStorage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved) setLanguage(saved);
-
-    const handleLanguageChange = (e: CustomEvent<Language>) => {
-      setLanguage(e.detail);
-    };
-
-    window.addEventListener('languageChange', handleLanguageChange as EventListener);
-    return () => {
-      window.removeEventListener('languageChange', handleLanguageChange as EventListener);
-    };
+    languageStore.initialize();
   }, []);
 
   return language;

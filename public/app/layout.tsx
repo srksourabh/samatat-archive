@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 import "./theatre-theme.css";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
@@ -15,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Samatat Sanskriti, Uttarpara - Theatre Archive",
-  description: "26 years of theatre, culture, and community. Official archive of Samatat Sanskriti, Uttarpara.",
+  title: "Samatat Sanskriti | Theatre Collective · Uttarpara",
+  description: "A theatre collective dedicated to meaningful storytelling, cultural preservation, and community development through the performing arts. Established 1997.",
 };
 
 export default function RootLayout({
@@ -26,30 +28,46 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased theatre-dark`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Navigation */}
-        <nav className="bg-gradient-to-b from-gray-900 to-black border-b border-amber-600/30 sticky top-0 z-50 shadow-lg">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              <a href="/" className="text-2xl font-bold theatre-text-gold flex items-center gap-3">
-                <span className="text-3xl">🎭</span>
-                Samatat Sanskriti
-              </a>
+        <nav className="nav-primary sticky top-0 z-50">
+          <div className="container">
+            <div className="flex items-center justify-between h-16">
+              {/* Logo */}
+              <Link href="/" className="flex items-center gap-3">
+                <Image
+                  src="/images/logo-icon.svg"
+                  alt="Samatat Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
+                />
+                <span className="text-white font-medium text-lg tracking-tight hidden sm:inline">
+                  Samatat Sanskriti
+                </span>
+              </Link>
 
-              <div className="hidden md:flex items-center gap-6">
-                <a href="/about" className="text-gray-300 hover:text-amber-400 font-medium transition">About</a>
-                <a href="/shows" className="text-gray-300 hover:text-amber-400 font-medium transition">Productions</a>
-                <a href="/festivals" className="text-gray-300 hover:text-amber-400 font-medium transition">Festival</a>
-                <a href="/workshops" className="text-gray-300 hover:text-amber-400 font-medium transition">Workshops</a>
-                <a href="/contact" className="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 py-2 rounded-lg font-semibold hover:from-amber-700 hover:to-amber-800 shadow-lg transition">Contact</a>
-                <LanguageSwitcher />
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center gap-8">
+                <Link href="/about" className="nav-link">About</Link>
+                <Link href="/shows" className="nav-link">What&apos;s On</Link>
+                <Link href="/festivals" className="nav-link">Festival</Link>
+                <Link href="/workshops" className="nav-link">Workshops</Link>
+                <Link href="/archive" className="nav-link">Archive</Link>
               </div>
 
-              <button className="md:hidden text-gray-700">
+              {/* Right side */}
+              <div className="hidden md:flex items-center gap-4">
+                <LanguageSwitcher />
+                <Link href="/contact" className="btn btn-primary text-sm py-2 px-4">
+                  Contact
+                </Link>
+              </div>
+
+              {/* Mobile menu button */}
+              <button className="md:hidden text-white p-2" aria-label="Menu">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
             </div>
@@ -59,49 +77,73 @@ export default function RootLayout({
         {children}
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-gray-300 py-12 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 className="text-white font-bold text-lg mb-4">Samatat Sanskriti</h3>
-                <p className="text-sm">
-                  26 years of theatre, culture, and community in Uttarpara, West Bengal.
+        <footer className="footer section">
+          <div className="container">
+            <div className="footer-grid">
+              {/* Brand column */}
+              <div className="footer-brand">
+                <Link href="/" className="flex items-center gap-3 mb-4">
+                  <Image
+                    src="/images/logo-icon.svg"
+                    alt="Samatat Logo"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12"
+                  />
+                  <div>
+                    <span className="text-xl font-medium text-white block">Samatat Sanskriti</span>
+                    <span className="text-sm text-gold">সমতট সংস্কৃতি</span>
+                  </div>
+                </Link>
+                <p className="text-gray text-sm leading-relaxed mb-6 max-w-sm">
+                  A community theatre organization in Uttarpara, West Bengal,
+                  dedicated to meaningful storytelling and cultural preservation
+                  since 1997.
                 </p>
+                <div className="text-sm text-gray">
+                  <p>Uttarpara, Hooghly</p>
+                  <p>West Bengal, India</p>
+                </div>
               </div>
 
+              {/* Quick Links */}
               <div>
-                <h3 className="text-white font-bold mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/about" className="hover:text-amber-400">About Us</a></li>
-                  <li><a href="/shows" className="hover:text-amber-400">Productions</a></li>
-                  <li><a href="/festivals" className="hover:text-amber-400">Festival</a></li>
-                  <li><a href="/workshops" className="hover:text-amber-400">Workshops</a></li>
+                <h4 className="footer-heading">Explore</h4>
+                <ul className="footer-links">
+                  <li><Link href="/about">About Us</Link></li>
+                  <li><Link href="/shows">Productions</Link></li>
+                  <li><Link href="/festivals">Theatre Festival</Link></li>
+                  <li><Link href="/workshops">Workshops</Link></li>
+                  <li><Link href="/archive">Digital Archive</Link></li>
                 </ul>
               </div>
 
+              {/* Get Involved */}
               <div>
-                <h3 className="text-white font-bold mb-4">Resources</h3>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/archive" className="hover:text-amber-400">Digital Archive</a></li>
-                  <li><a href="/impact" className="hover:text-amber-400">Impact Reports</a></li>
-                  <li><a href="/statutory" className="hover:text-amber-400">Governance</a></li>
-                  <li><a href="/contact" className="hover:text-amber-400">Contact</a></li>
+                <h4 className="footer-heading">Get Involved</h4>
+                <ul className="footer-links">
+                  <li><Link href="/contact">Join Us</Link></li>
+                  <li><Link href="/workshops">Training Programs</Link></li>
+                  <li><Link href="/contact">Volunteer</Link></li>
+                  <li><Link href="/contact">Support Our Work</Link></li>
                 </ul>
               </div>
 
+              {/* Information */}
               <div>
-                <h3 className="text-white font-bold mb-4">Connect</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>Uttarpara, West Bengal</li>
-                  <li>contact@samatatuttarpara.org</li>
-                  <li>+91 XXX XXX XXXX</li>
+                <h4 className="footer-heading">Information</h4>
+                <ul className="footer-links">
+                  <li><Link href="/impact">Impact Reports</Link></li>
+                  <li><Link href="/statutory">Governance</Link></li>
+                  <li><Link href="/contact">Contact</Link></li>
                 </ul>
               </div>
             </div>
 
-            <div className="border-t border-gray-700 pt-8 text-center text-sm">
+            {/* Footer bottom */}
+            <div className="footer-bottom">
               <p>&copy; {new Date().getFullYear()} Samatat Sanskriti, Uttarpara. All rights reserved.</p>
-              <p className="mt-2 text-gray-400">Established 1999 | West Bengal, India</p>
+              <p>Established 1997</p>
             </div>
           </div>
         </footer>
