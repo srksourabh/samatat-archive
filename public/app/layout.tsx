@@ -34,17 +34,15 @@ export default function RootLayout({
           <div className="container">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
-              <Link href="/" className="flex items-center gap-3">
+              <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/logo-icon.svg"
-                  alt="Samatat Logo"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10"
+                  src="/logo1.png"
+                  alt="Samatat Sanskriti"
+                  width={140}
+                  height={36}
+                  className="h-7 w-auto"
+                  priority
                 />
-                <span className="text-white font-medium text-lg tracking-tight hidden sm:inline">
-                  Samatat Sanskriti
-                </span>
               </Link>
 
               {/* Desktop Navigation */}
@@ -82,18 +80,14 @@ export default function RootLayout({
             <div className="footer-grid">
               {/* Brand column */}
               <div className="footer-brand">
-                <Link href="/" className="flex items-center gap-3 mb-4">
+                <Link href="/" className="inline-block mb-4">
                   <Image
-                    src="/images/logo-icon.svg"
-                    alt="Samatat Logo"
-                    width={48}
-                    height={48}
-                    className="w-12 h-12"
+                    src="/logo1.png"
+                    alt="Samatat Sanskriti"
+                    width={200}
+                    height={54}
+                    className="h-12 w-auto"
                   />
-                  <div>
-                    <span className="text-xl font-medium text-white block">Samatat Sanskriti</span>
-                    <span className="text-sm text-gold">সমতট সংস্কৃতি</span>
-                  </div>
                 </Link>
                 <p className="text-gray text-sm leading-relaxed mb-6 max-w-sm">
                   A community theatre organization in Uttarpara, West Bengal,
