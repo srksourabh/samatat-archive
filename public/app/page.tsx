@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { T } from './components/TranslatedContent';
+import { HeroCollage } from './components/HeroCollage';
 import { homeContent } from '../lib/content';
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <section className="hero">
+        <HeroCollage />
         <div className="hero-overlay" />
         <div className="container hero-content py-32 md:py-40">
           <p className="hero-eyebrow">

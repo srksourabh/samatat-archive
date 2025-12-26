@@ -168,6 +168,126 @@
 }
 
 /* ==========================================================================
+   Hero Photo Collage - Smooth floating from darkness effect
+   ========================================================================== */
+
+.hero-collage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 70% 50%, rgba(25, 20, 15, 1) 0%, rgba(8, 8, 8, 1) 100%);
+}
+
+.hero-collage-grid {
+  position: absolute;
+  inset: -20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 6px;
+  transform: rotate(-1.5deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hero-collage-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 4px;
+  }
+}
+
+.hero-collage-cell {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.hero-collage-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  /* Brighter, more vivid colors */
+  filter: saturate(1.15) brightness(1.05) contrast(1.08);
+  /* Smooth 800ms fade for 2-second display cycle */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Subtle glow effect */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-collage-cell:hover .hero-collage-image {
+  filter: saturate(1.3) brightness(1.1) contrast(1.1);
+}
+
+/* Gradient overlays for text readability */
+.hero-collage-overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-collage-overlay-left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.85) 20%,
+    rgba(10, 10, 10, 0.6) 45%,
+    rgba(10, 10, 10, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+.hero-collage-overlay-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(10, 10, 10, 0.7) 40%,
+    transparent 100%
+  );
+}
+
+/* Subtle top fade */
+.hero-collage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.5) 0%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-collage-overlay-left {
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.5) 0%,
+      rgba(10, 10, 10, 0.7) 50%,
+      rgba(10, 10, 10, 0.9) 100%
+    );
+  }
+}
+
+/* ==========================================================================
    Cards
    ========================================================================== */
 
