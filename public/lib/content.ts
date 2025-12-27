@@ -1,9 +1,9 @@
 export const homeContent = {
   hero: {
     eyebrow: {
-      en: "Established 1997 · Uttarpara, West Bengal",
-      bn: "প্রতিষ্ঠিত ১৯৯৭ · উত্তরপাড়া, পশ্চিমবঙ্গ",
-      hi: "स्थापित 1997 · उत्तरपाड़ा, पश्चिम बंगाल"
+      en: "Established 1999 · Uttarpara, West Bengal",
+      bn: "প্রতিষ্ঠিত ১৯৯৯ · উত্তরপাড়া, পশ্চিমবঙ্গ",
+      hi: "स्थापित 1999 · उत्तरपाड़ा, पश्चिम बंगाल"
     },
     title: {
       en: "Samatat Sanskriti",
@@ -28,11 +28,11 @@ export const homeContent = {
   },
 
   stats: {
-    years: { en: "28", bn: "২৮", hi: "28" },
+    years: { en: "26", bn: "২৬", hi: "26" },
     yearsLabel: { en: "Years of Theatre", bn: "বছর নাট্যচর্চা", hi: "वर्ष रंगमंच" },
     productions: { en: "150+", bn: "১৫০+", hi: "150+" },
     productionsLabel: { en: "Productions", bn: "প্রযোজনা", hi: "प्रस्तुतियाँ" },
-    festivals: { en: "24", bn: "২৪", hi: "24" },
+    festivals: { en: "25", bn: "২৫", hi: "25" },
     festivalsLabel: { en: "Annual Festivals", bn: "বার্ষিক উৎসব", hi: "वार्षिक महोत्सव" },
     workshops: { en: "500+", bn: "৫০০+", hi: "500+" },
     workshopsLabel: { en: "Artists Trained", bn: "প্রশিক্ষিত শিল্পী", hi: "प्रशिक्षित कलाकार" }
@@ -103,9 +103,9 @@ export const homeContent = {
       {
         type: { en: "Festival", bn: "উৎসব", hi: "महोत्सव" },
         title: {
-          en: "25th Samatat Natya Mela",
-          bn: "২৫তম সমতট নাট্য মেলা",
-          hi: "25वां समतट नाट्य मेला"
+          en: "26th Samatat Natya Mela",
+          bn: "২৬তম সমতট নাট্য মেলা",
+          hi: "26वां समतट नाट्य मेला"
         },
         date: { en: "April 14-21, 2025", bn: "১৪-২১ এপ্রিল, ২০২৫", hi: "14-21 अप्रैल, 2025" },
         description: {
@@ -125,9 +125,9 @@ export const homeContent = {
       hi: "समुदाय के रूप में रंगमंच"
     },
     description: {
-      en: "Founded in 1997 by a group of theatre enthusiasts in Uttarpara, Samatat Sanskriti has grown into one of West Bengal's most respected community theatre organizations.",
-      bn: "১৯৯৭ সালে উত্তরপাড়ায় নাট্যপ্রেমীদের একটি দল দ্বারা প্রতিষ্ঠিত, সমতট সংস্কৃতি পশ্চিমবঙ্গের সবচেয়ে সম্মানিত কমিউনিটি থিয়েটার সংস্থাগুলির একটিতে পরিণত হয়েছে।",
-      hi: "1997 में उत्तरपाड़ा में रंगमंच प्रेमियों के एक समूह द्वारा स्थापित, समतट संस्कृति पश्चिम बंगाल के सबसे सम्मानित सामुदायिक रंगमंच संगठनों में से एक बन गई है।"
+      en: "Founded in 1999 by a group of theatre enthusiasts in Uttarpara, Samatat Sanskriti has grown into one of West Bengal's most respected community theatre organizations.",
+      bn: "১৯৯৯ সালে উত্তরপাড়ায় নাট্যপ্রেমীদের একটি দল দ্বারা প্রতিষ্ঠিত, সমতট সংস্কৃতি পশ্চিমবঙ্গের সবচেয়ে সম্মানিত কমিউনিটি থিয়েটার সংস্থাগুলির একটিতে পরিণত হয়েছে।",
+      hi: "1999 में उत्तरपाड़ा में रंगमंच प्रेमियों के एक समूह द्वारा स्थापित, समतट संस्कृति पश्चिम बंगाल के सबसे सम्मानित सामुदायिक रंगमंच संगठनों में से एक बन गई है।"
     },
     paragraph1: {
       en: "Our name, 'Samatat,' refers to the ancient Bengali kingdom that once flourished in this region. Like our namesake, we believe in building something enduring—a cultural practice rooted in place yet reaching outward.",
@@ -135,9 +135,9 @@ export const homeContent = {
       hi: "'समतट' नाम प्राचीन बंगाली राज्य को संदर्भित करता है जो कभी इस क्षेत्र में फला-फूला था। अपने नाम की तरह, हम कुछ स्थायी बनाने में विश्वास करते हैं—एक सांस्कृतिक अभ्यास जो स्थान में निहित है फिर भी बाहर की ओर पहुंचता है।"
     },
     paragraph2: {
-      en: "Over 28 years, we have produced more than 150 original productions, hosted 24 annual theatre festivals, trained hundreds of young artists, and taken our work to stages across India. Yet our heart remains in Uttarpara, where every Sunday rehearsal and every audience member reminds us why we do this work.",
-      bn: "২৮ বছরে, আমরা ১৫০টিরও বেশি মৌলিক প্রযোজনা তৈরি করেছি, ২৪টি বার্ষিক নাট্য উৎসব আয়োজন করেছি, শত শত তরুণ শিল্পীকে প্রশিক্ষিত করেছি এবং আমাদের কাজ ভারতজুড়ে মঞ্চে নিয়ে গেছি। তবুও আমাদের হৃদয় উত্তরপাড়ায় রয়ে গেছে, যেখানে প্রতি রবিবারের রিহার্সাল এবং প্রতিটি দর্শক আমাদের মনে করিয়ে দেয় কেন আমরা এই কাজ করি।",
-      hi: "28 वर्षों में, हमने 150 से अधिक मौलिक प्रस्तुतियाँ प्रस्तुत की हैं, 24 वार्षिक रंगमंच महोत्सवों की मेजबानी की है, सैकड़ों युवा कलाकारों को प्रशिक्षित किया है और अपने काम को भारत भर के मंचों पर ले गए हैं। फिर भी हमारा दिल उत्तरपाड़ा में रहता है, जहां हर रविवार का पूर्वाभ्यास और हर दर्शक हमें याद दिलाता है कि हम यह काम क्यों करते हैं।"
+      en: "Over 26 years, we have produced more than 150 original productions, hosted 25 annual theatre festivals since December 2000, trained hundreds of young artists, and taken our work to stages across India. Yet our heart remains in Uttarpara, where every Sunday rehearsal and every audience member reminds us why we do this work.",
+      bn: "২৬ বছরে, আমরা ১৫০টিরও বেশি মৌলিক প্রযোজনা তৈরি করেছি, ২০০০ সালের ডিসেম্বর থেকে ২৫টি বার্ষিক নাট্য উৎসব আয়োজন করেছি, শত শত তরুণ শিল্পীকে প্রশিক্ষিত করেছি এবং আমাদের কাজ ভারতজুড়ে মঞ্চে নিয়ে গেছি। তবুও আমাদের হৃদয় উত্তরপাড়ায় রয়ে গেছে, যেখানে প্রতি রবিবারের রিহার্সাল এবং প্রতিটি দর্শক আমাদের মনে করিয়ে দেয় কেন আমরা এই কাজ করি।",
+      hi: "26 वर्षों में, हमने 150 से अधिक मौलिक प्रस्तुतियाँ प्रस्तुत की हैं, दिसंबर 2000 से 25 वार्षिक रंगमंच महोत्सवों की मेजबानी की है, सैकड़ों युवा कलाकारों को प्रशिक्षित किया है और अपने काम को भारत भर के मंचों पर ले गए हैं। फिर भी हमारा दिल उत्तरपाड़ा में रहता है, जहां हर रविवार का पूर्वाभ्यास और हर दर्शक हमें याद दिलाता है कि हम यह काम क्यों करते हैं।"
     },
     cta: { en: "Read More About Us", bn: "আমাদের সম্পর্কে আরও পড়ুন", hi: "हमारे बारे में और पढ़ें" }
   },
@@ -175,9 +175,9 @@ export const homeContent = {
       {
         title: { en: "Natya Mela Festival", bn: "নাট্য মেলা উৎসব", hi: "नाट्य मेला महोत्सव" },
         description: {
-          en: "Annual week-long festival since 2000 featuring theatre groups from across Bengal with workshops, seminars, and performances.",
-          bn: "২০০০ সাল থেকে বার্ষিক সপ্তাহব্যাপী উৎসব যেখানে কর্মশালা, সেমিনার এবং পরিবেশনা সহ বাংলা জুড়ে থিয়েটার গ্রুপ অংশগ্রহণ করে।",
-          hi: "2000 से वार्षिक सप्ताह भर का त्योहार जिसमें कार्यशालाओं, संगोष्ठियों और प्रदर्शनों के साथ बंगाल भर के रंगमंच समूह शामिल हैं।"
+          en: "Annual week-long festival since December 2000 featuring theatre groups from across Bengal with workshops, seminars, and performances.",
+          bn: "২০০০ সালের ডিসেম্বর থেকে বার্ষিক সপ্তাহব্যাপী উৎসব যেখানে কর্মশালা, সেমিনার এবং পরিবেশনা সহ বাংলা জুড়ে থিয়েটার গ্রুপ অংশগ্রহণ করে।",
+          hi: "दिसंबर 2000 से वार्षिक सप्ताह भर का त्योहार जिसमें कार्यशालाओं, संगोष्ठियों और प्रदर्शनों के साथ बंगाल भर के रंगमंच समूह शामिल हैं।"
         }
       },
       {

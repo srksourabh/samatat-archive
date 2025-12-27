@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { PageHeader } from '../components/PageHeader';
+import { BackgroundPhotos } from '../components/BackgroundPhotos';
 
 const aboutSections = [
   {
@@ -57,13 +58,14 @@ export default function AboutPage() {
           hi: 'हमारी कहानी',
         }}
         description={{
-          en: 'Since 1997, Samatat Sanskriti has been dedicated to meaningful storytelling, cultural preservation, and community development through the performing arts in Uttarpara, West Bengal.',
-          bn: '১৯৯৭ সাল থেকে, সমতট সংস্কৃতি উত্তরপাড়ায় অর্থবহ গল্প বলা, সাংস্কৃতিক সংরক্ষণ এবং পারফর্মিং আর্টসের মাধ্যমে সম্প্রদায়ের উন্নয়নে নিবেদিত।',
-          hi: '1997 से, समतट संस्कृति उत्तरपाड़ा में सार्थक कहानी कहने, सांस्कृतिक संरक्षण और प्रदर्शन कलाओं के माध्यम से सामुदायिक विकास के लिए समर्पित है।',
+          en: 'Since 1999, Samatat Sanskriti has been dedicated to meaningful storytelling, cultural preservation, and community development through the performing arts in Uttarpara, West Bengal.',
+          bn: '১৯৯৯ সাল থেকে, সমতট সংস্কৃতি উত্তরপাড়ায় অর্থবহ গল্প বলা, সাংস্কৃতিক সংরক্ষণ এবং পারফর্মিং আর্টসের মাধ্যমে সম্প্রদায়ের উন্নয়নে নিবেদিত।',
+          hi: '1999 से, समतट संस्कृति उत्तरपाड़ा में सार्थक कहानी कहने, सांस्कृतिक संरक्षण और प्रदर्शन कलाओं के माध्यम से सामुदायिक विकास के लिए समर्पित है।',
         }}
       />
 
-      <section className="section section-charcoal">
+      <section className="section section-charcoal section-with-photos">
+        <BackgroundPhotos variant="corner" opacity={0.12} />
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {aboutSections.map((section) => (

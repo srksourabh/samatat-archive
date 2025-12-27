@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Samatat Sanskriti | Theatre Collective · Uttarpara",
-  description: "A theatre collective dedicated to meaningful storytelling, cultural preservation, and community development through the performing arts. Established 1997.",
+  description: "A theatre collective dedicated to meaningful storytelling, cultural preservation, and community development through the performing arts. Established 1999.",
 };
 
 export default function RootLayout({
@@ -48,7 +48,7 @@ export default function RootLayout({
                 <p className="text-gray text-sm leading-relaxed mb-6 max-w-sm">
                   A community theatre organization in Uttarpara, West Bengal,
                   dedicated to meaningful storytelling and cultural preservation
-                  since 1997.
+                  since 1999.
                 </p>
                 <div className="text-sm text-gray">
                   <p>Uttarpara, Hooghly</p>
@@ -104,7 +104,7 @@ export default function RootLayout({
             {/* Footer bottom */}
             <div className="footer-bottom">
               <p>&copy; {new Date().getFullYear()} Samatat Sanskriti, Uttarpara. All rights reserved.</p>
-              <p>Established 1997</p>
+              <p>Established 1999</p>
             </div>
           </div>
         </footer>

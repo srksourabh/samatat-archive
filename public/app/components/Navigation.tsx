@@ -109,7 +109,7 @@ export function Navigation() {
             <img
               src="/logo1.png"
               alt="Samatat Sanskriti"
-              style={{ height: '30px', width: 'auto', maxHeight: '30px' }}
+              style={{ height: '36px', width: 'auto', maxHeight: '36px' }}
             />
           </Link>
 

@@ -2,15 +2,15 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-// Configuration - faster timing with lightweight thumbnails
+// Configuration - Matrix bullet time effect with 4-second display
 const GRID_COLS = 8;
 const GRID_ROWS = 5;
 const TOTAL_CELLS = GRID_COLS * GRID_ROWS;
-const ANIMATION_INTERVAL = 500; // 500ms between new photos
-const CELL_DISPLAY_TIME = 2000; // 2 seconds visible as requested
-const FADE_DURATION = 800; // Fast fade for smooth transitions
-const INITIAL_DELAY = 500; // Quick start
-const INITIAL_STAGGER = 100; // Fast initial fill
+const ANIMATION_INTERVAL = 150; // Fast interval for matrix cascade effect
+const CELL_DISPLAY_TIME = 4000; // 4 seconds visible
+const FADE_DURATION = 1500; // 1.5 second smooth fade
+const INITIAL_DELAY = 300; // Quick start
+const INITIAL_STAGGER = 50; // Fast cascade for matrix effect
 
 // Optimized thumbnail URLs (400x400, ~15-20KB each instead of 5-18MB)
 const productionThumbnails: string[] = [
@@ -460,6 +460,7 @@ export function HeroCollage() {
         ))}
       </div>
       <div className="hero-collage-overlay hero-collage-overlay-left" />
+      <div className="hero-collage-overlay hero-collage-overlay-right" />
       <div className="hero-collage-overlay hero-collage-overlay-bottom" />
     </div>
   );

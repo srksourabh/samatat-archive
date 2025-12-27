@@ -47,7 +47,7 @@ export default function StatutoryPage() {
               </div>
               <div>
                 <span className="text-sm text-gray font-medium">Established</span>
-                <p className="text-white">1997</p>
+                <p className="text-white">1999</p>
               </div>
               <div>
                 <span className="text-sm text-gray font-medium">Type</span>

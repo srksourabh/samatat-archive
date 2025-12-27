@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { PageHeader } from '../components/PageHeader';
+import { BackgroundPhotos } from '../components/BackgroundPhotos';
 
 const workshopYears = [
   { year: '2024', description: 'Current year workshops and upcoming programs', href: '/workshops/2024' },
@@ -18,7 +19,8 @@ export default function WorkshopsPage() {
       />
 
       {/* What We Teach */}
-      <section className="section section-charcoal">
+      <section className="section section-charcoal section-with-photos">
+        <BackgroundPhotos variant="side" position="right" opacity={0.15} />
         <div className="container">
           <h2 className="section-title mb-8">What We Teach</h2>
           <div className="grid md:grid-cols-3 gap-6">
