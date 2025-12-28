@@ -1,74 +1,149 @@
-import Link from 'next/link';
-import { PageHeader } from '../components/PageHeader';
-import { BackgroundPhotos } from '../components/BackgroundPhotos';
+'use client';
 
-const workshopYears = [
-  { year: '2024', description: 'Current year workshops and upcoming programs', href: '/workshops/2024' },
-  { year: '2023', description: 'Acting fundamentals and voice training workshops', href: '/workshops/2023' },
-  { year: '2022', description: 'Post-pandemic revival programs', href: '/workshops/2022' },
-  { year: '2021', description: 'Online and hybrid workshop series', href: '/workshops/2021' },
+import { useState } from 'react';
+import { useLanguage, Language } from '../components/LanguageSwitcher';
+import Link from 'next/link';
+
+type TranslatedText = Record<Language, string>;
+
+// Mock Data
+const workshops: {
+  id: string;
+  title: TranslatedText;
+  date: string;
+  status: string;
+  image: string;
+  description: TranslatedText;
+}[] = [
+  {
+    id: 'ws-2025',
+    title: { en: 'Acting Intensive 2025', bn: 'অভিনয় কর্মশালা ২০২৫', hi: 'अभिनय गहन 2025' },
+    date: 'March 15-20, 2025',
+    status: 'upcoming',
+    image: '/images/workshop-2025.jpg',
+    description: { en: 'A 5-day intensive workshop focusing on voice and body movement.', bn: '৫ দিনের নিবিড় কর্মশালা যা কণ্ঠ ও শারীরিক নড়াচড়ার উপর ফোকাস করবে।', hi: 'आवाज और शारीरिक गतिविधि पर केंद्रित 5 दिवसीय गहन कार्यशाला।' }
+  },
+  {
+    id: 'ws-2023',
+    title: { en: 'Lighting Design Basics', bn: 'আলোক সজ্জার প্রাথমিক ধারণা', hi: 'प्रकाश डिजाइन मूल बातें' },
+    date: 'November 10, 2023',
+    status: 'completed',
+    image: '/images/workshop-light.jpg',
+    description: { en: 'Understanding the fundamentals of stage lighting.', bn: 'মঞ্চ আলোর মৌলিক বিষয়গুলি বোঝা।', hi: 'मंच प्रकाश की मूल बातें समझना।' }
+  },
+  {
+    id: 'ws-2022',
+    title: { en: 'Playwriting Masterclass', bn: 'নাটক রচনা মাস্টারক্লাস', hi: 'नाटक लेखन मास्टरक्लास' },
+    date: 'June 5, 2022',
+    status: 'completed',
+    image: '/images/workshop-write.jpg',
+    description: { en: 'From concept to script with renowned playwrights.', bn: 'বিখ্যাত নাট্যকারদের সাথে ধারণা থেকে স্ক্রিপ্ট পর্যন্ত।', hi: 'प्रसिद्ध नाटककारों के साथ अवधारणा से स्क्रिप्ट तक।' }
+  }
 ];
 
 export default function WorkshopsPage() {
+  const lang = useLanguage();
+  const [selectedYear, setSelectedYear] = useState('all');
+
+  const content = {
+    title: { en: 'Workshops & Training', bn: 'কর্মশালা ও প্রশিক্ষণ', hi: 'कार्यशाला और प्रशिक्षण' },
+    subtitle: { en: 'Nurturing the next generation of theatre artists.', bn: 'ভবিষ্যৎ নাট্যশিল্পীদের গড়ে তোলা।', hi: 'रंगमंच कलाकारों की अगली पीढ़ी का पोषण।' },
+    all: { en: 'All', bn: 'সব', hi: 'सभी' },
+    register: { en: 'Register Now', bn: 'এখনই নিবন্ধন করুন', hi: 'अभी पंजीकरण करें' },
+    open: { en: 'Open', bn: 'খোলা', hi: 'खुला' },
+    completed: { en: 'Completed', bn: 'সমাপ্ত', hi: 'पूर्ण' },
+    interested: { en: 'Interested in Future Workshops?', bn: 'ভবিষ্যতের কর্মশালায় আগ্রহী?', hi: 'भविष्य की कार्यशालाओं में रुचि?' },
+    mailingList: { en: 'Join our mailing list to get notified when new training programs are announced.', bn: 'নতুন প্রশিক্ষণ কর্মসূচি ঘোষণা করা হলে বিজ্ঞপ্তি পেতে আমাদের মেইলিং তালিকায় যোগ দিন।', hi: 'नए प्रशिक्षण कार्यक्रमों की घोषणा होने पर सूचित होने के लिए हमारी मेलिंग सूची में शामिल हों।' },
+    getNotified: { en: 'Get Notified', bn: 'বিজ্ঞপ্তি পান', hi: 'सूचित करें' },
+    noWorkshops: { en: 'No workshops found for this period.', bn: 'এই সময়ের জন্য কোনো কর্মশালা পাওয়া যায়নি।', hi: 'इस अवधि के लिए कोई कार्यशाला नहीं मिली।' }
+  };
+
+  const filteredWorkshops = selectedYear === 'all'
+    ? workshops
+    : workshops.filter(w => w.date.includes(selectedYear));
+
   return (
-    <main>
-      <PageHeader
-        eyebrow="Theatre Training"
-        title={{ en: 'Theatre Workshops', bn: 'থিয়েটার কর্মশালা', hi: 'थिएटर कार्यशालाएं' }}
-        description={{ en: 'Since 2000, we have trained over 1,000 aspiring theatre artists through our comprehensive workshop programs.', bn: '২০০০ সাল থেকে, আমরা আমাদের ব্যাপক কর্মশালা কার্যক্রমের মাধ্যমে ১,০০০-এরও বেশি উচ্চাকাঙ্ক্ষী থিয়েটার শিল্পীকে প্রশিক্ষিত করেছি।', hi: '2000 से, हमने अपने व्यापक कार्यशाला कार्यक्रमों के माध्यम से 1,000 से अधिक इच्छुक थिएटर कलाकारों को प्रशिक्षित किया है।' }}
-      />
-
-      {/* What We Teach */}
-      <section className="section section-charcoal section-with-photos">
-        <BackgroundPhotos variant="side" position="right" opacity={0.15} />
-        <div className="container">
-          <h2 className="section-title mb-8">What We Teach</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="card p-6">
-              <span className="text-4xl mb-4 block">🎭</span>
-              <h3 className="card-title">Acting Fundamentals</h3>
-              <p className="card-description">Character development, script analysis, stage presence, and improvisation techniques.</p>
-            </div>
-            <div className="card p-6">
-              <span className="text-4xl mb-4 block">🗣️</span>
-              <h3 className="card-title">Voice & Movement</h3>
-              <p className="card-description">Vocal technique, breath control, physical theatre, and stage combat basics.</p>
-            </div>
-            <div className="card p-6">
-              <span className="text-4xl mb-4 block">✍️</span>
-              <h3 className="card-title">Production Skills</h3>
-              <p className="card-description">Directing basics, stage management, lighting design, and costume design.</p>
-            </div>
-          </div>
-        </div>
+    <main className="bg-black text-white min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-900 to-black text-center">
+        <h1 className="text-5xl md:text-6xl font-bold theatre-text-gold mb-6">{content.title[lang]}</h1>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto">{content.subtitle[lang]}</p>
       </section>
 
-      {/* Workshop Archive by Year */}
-      <section className="section section-dark">
-        <div className="container">
-          <h2 className="section-title mb-8">Workshop Archive</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {workshopYears.map((item) => (
-              <Link key={item.year} href={item.href} className="card p-6 border border-transparent hover:border-gold/30 transition-all">
-                <span className="text-gold text-3xl font-light">{item.year}</span>
-                <p className="card-description mt-2">{item.description}</p>
-                <span className="btn-text mt-4 inline-block">View workshops</span>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/workshops/archive" className="btn btn-secondary">View Full Archive (2000-2020)</Link>
-          </div>
+      {/* Filter & List Section */}
+      <section className="container mx-auto px-6 py-12">
+        {/* Simple Year Filter */}
+        <div className="flex justify-center gap-4 mb-12">
+          <button
+            onClick={() => setSelectedYear('all')}
+            className={`px-4 py-2 rounded-full border ${selectedYear === 'all' ? 'bg-amber-600 border-amber-600 text-white' : 'border-gray-600 text-gray-400 hover:border-amber-500'}`}
+          >
+            {content.all[lang]}
+          </button>
+          <button
+            onClick={() => setSelectedYear('2025')}
+            className={`px-4 py-2 rounded-full border ${selectedYear === '2025' ? 'bg-amber-600 border-amber-600 text-white' : 'border-gray-600 text-gray-400 hover:border-amber-500'}`}
+          >
+            2025
+          </button>
+          <button
+             onClick={() => setSelectedYear('2023')}
+             className={`px-4 py-2 rounded-full border ${selectedYear === '2023' ? 'bg-amber-600 border-amber-600 text-white' : 'border-gray-600 text-gray-400 hover:border-amber-500'}`}
+          >
+            2023
+          </button>
         </div>
+
+        {/* Workshop Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredWorkshops.map((ws) => (
+            <div key={ws.id} className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-amber-600 transition group">
+              <div className="h-48 bg-gray-800 relative">
+                 {/* Placeholder for Image */}
+                 <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-20">📚</div>
+                 {ws.status === 'upcoming' && (
+                   <span className="absolute top-4 right-4 bg-green-600 text-white text-xs px-2 py-1 rounded font-bold uppercase tracking-wide">
+                     {content.open[lang]}
+                   </span>
+                 )}
+              </div>
+              <div className="p-6">
+                <div className="text-amber-500 text-sm font-semibold mb-2">{ws.date}</div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-amber-400 transition">{ws.title[lang]}</h3>
+                <p className="text-gray-400 mb-6 line-clamp-3">{ws.description[lang]}</p>
+
+                {ws.status === 'upcoming' ? (
+                  <Link href="/contact" className="inline-block bg-amber-600 text-white px-6 py-2 rounded hover:bg-amber-700 transition">
+                    {content.register[lang]}
+                  </Link>
+                ) : (
+                  <button className="text-gray-500 cursor-not-allowed text-sm">
+                    {content.completed[lang]}
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {filteredWorkshops.length === 0 && (
+          <div className="text-center text-gray-500 py-12">
+            {content.noWorkshops[lang]}
+          </div>
+        )}
       </section>
 
-      {/* Register CTA */}
-      <section className="section section-charcoal">
-        <div className="container text-center">
-          <h2 className="section-title mb-4">Interested in Our Workshops?</h2>
-          <p className="section-description mx-auto mb-8">Register your interest and we will notify you about upcoming workshop programs.</p>
-          <Link href="/contact#workshop" className="btn btn-primary">Register Interest</Link>
-        </div>
+      {/* CTA */}
+      <section className="bg-gray-900 py-16 text-center border-t border-gray-800">
+        <h2 className="text-3xl font-bold text-white mb-4">
+          {content.interested[lang]}
+        </h2>
+        <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          {content.mailingList[lang]}
+        </p>
+        <Link href="/contact" className="btn btn-primary bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">
+          {content.getNotified[lang]}
+        </Link>
       </section>
     </main>
   );

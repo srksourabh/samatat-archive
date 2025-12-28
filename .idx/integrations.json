@@ -1,3 +1,9 @@
 {
-  "firebase_hosting": {}
+  "firebase_hosting": {
+    "deploymentHostingUrl": "https://samatat-archive.web.app"
+  },
+  "cloud_run_deploy": {},
+  "gemini_api": {},
+  "google_maps_platform": {},
+  "secrets_manager": {}
 }
