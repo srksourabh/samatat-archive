@@ -44,6 +44,7 @@ export default function ActivitiesPage() {
         eyebrow={content.eyebrow}
         title={{ en: 'Cultural Activities', bn: 'সাংস্কৃতিক কার্যক্রম', hi: 'सांस्कृतिक गतिविधियां' }}
         description={{ en: 'Beyond theatre productions, we organize various cultural programs that celebrate Bengali heritage and foster community engagement.', bn: 'থিয়েটার প্রযোজনার বাইরেও, আমরা বিভিন্ন সাংস্কৃতিক অনুষ্ঠান আয়োজন করি যা বাঙালি ঐতিহ্য উদযাপন করে এবং সম্প্রদায়ের সম্পৃক্ততা বাড়ায়।', hi: 'थिएटर प्रोडक्शन के अलावा, हम विभिन्न सांस्कृतिक कार्यक्रम आयोजित करते हैं जो बंगाली विरासत का जश्न मनाते हैं और सामुदायिक जुड़ाव को बढ़ावा देते हैं।' }}
+        compact
       />
 
       <section className="section section-charcoal">

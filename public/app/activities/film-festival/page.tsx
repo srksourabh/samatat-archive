@@ -14,7 +14,7 @@ export default function FilmFestivalPage() {
   const lang = useLanguage();
   return (
     <main>
-      <PageHeader eyebrow={content.eyebrow} title={content.title} description={content.description} />
+      <PageHeader eyebrow={content.eyebrow} title={content.title} description={content.description} compact />
       <section className="section section-charcoal">
         <div className="container"><p className="text-center text-light-gray">{content.comingSoon[lang]}</p></div>
       </section>

@@ -5,7 +5,7 @@ import { useLanguage } from '../../components/LanguageSwitcher';
 
 export default function NGOPage() {
   const lang = useLanguage();
-  
+
   const docs = [
     { label: 'Registration Certificate', value: 'S/1L/2157 of 1999-2000' },
     { label: 'PAN Card', value: 'Available on Request' },
@@ -16,12 +16,13 @@ export default function NGOPage() {
 
   return (
     <main className="min-h-screen bg-charcoal">
-      <PageHeader 
-        eyebrow="Governance" 
-        title={{ en: 'NGO Information', bn: 'এনজিও তথ্য', hi: 'एनजीओ जानकारी' }} 
-        description={{ en: 'Official registration details and legal organizational status.', bn: 'অফিসিয়াল রেজিস্ট্রেশন তথ্য এবং আইনি সাংগঠনিক অবস্থা।', hi: 'आधिकारिक पंजीकरण विवरण और कानूनी संगठनात्मक स्थिति।' }} 
+      <PageHeader
+        eyebrow="Governance"
+        title={{ en: 'NGO Information', bn: 'এনজিও তথ্য', hi: 'एनजीओ जानकारी' }}
+        description={{ en: 'Official registration details and legal organizational status.', bn: 'অফিসিয়াল রেজিস্ট্রেশন তথ্য এবং আইনি সাংগঠনিক অবস্থা।', hi: 'आधिकारिक पंजीकरण विवरण और कानूनी संगठनात्मक स्थिति।' }}
+        compact
       />
-      
+
       <section className="section section-dark">
         <div className="container max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -36,7 +37,7 @@ export default function NGOPage() {
                 ))}
               </div>
             </div>
-            
+
             <div className="card p-8 bg-gold/5 border-gold/20">
               <h3 className="text-gold text-xl mb-4">Official Address</h3>
               <p className="text-light-gray leading-relaxed mb-6">
@@ -46,7 +47,7 @@ export default function NGOPage() {
               </p>
               <div className="pt-6 border-t border-gold/10">
                 <p className="text-gray text-sm italic">
-                  For official inquiries, please contact the General Secretary at 
+                  For official inquiries, please contact the General Secretary at
                   <span className="text-gold block not-italic mt-2">info@samatat.org</span>
                 </p>
               </div>

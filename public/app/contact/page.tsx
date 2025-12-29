@@ -95,6 +95,7 @@ export default function ContactPage() {
         eyebrow="Get In Touch"
         title={{ en: 'Contact Us', bn: 'যোগাযোগ করুন', hi: 'संपर्क करें' }}
         description={{ en: 'Connect with Samatat Sanskriti for inquiries, collaborations, or to join our theatre community.', bn: 'অনুসন্ধান, সহযোগিতা বা আমাদের থিয়েটার সম্প্রদায়ে যোগদানের জন্য সমতট সংস্কৃতির সাথে যোগাযোগ করুন।', hi: 'पूछताछ, सहयोग, या हमारे थिएटर समुदाय में शामिल होने के लिए समतट संस्कृति से जुड़ें।' }}
+        compact
       />
 
       {/* Contact Type Selection */}

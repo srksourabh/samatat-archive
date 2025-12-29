@@ -31,7 +31,7 @@ export default function Festival2025Page() {
 
   return (
     <main>
-      <PageHeader eyebrow={content.eyebrow} title={content.title} description={content.description} />
+      <PageHeader eyebrow={content.eyebrow} title={content.title} description={content.description} compact />
 
       <section className="section section-charcoal">
         <div className="container">

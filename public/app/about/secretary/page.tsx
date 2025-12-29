@@ -187,6 +187,7 @@ export default function SecretaryPage() {
         eyebrow="About Us"
         title={{ en: "Secretary's Desk", bn: 'সম্পাদকের ডেস্ক', hi: 'सचिव का डेस्क' }}
         description={content.description}
+        compact
       />
 
       {/* Welcome Message */}

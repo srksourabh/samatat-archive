@@ -14,10 +14,11 @@ export default function CommitteePage() {
   const lang = useLanguage();
   return (
     <main className="min-h-screen bg-charcoal">
-      <PageHeader 
-        eyebrow="Governance" 
-        title={{ en: 'Executive Committee', bn: 'কার্যনির্বাহী কমিটি', hi: 'कार्यकारी समिति' }} 
-        description={{ en: 'The leadership team guiding Samatat Sanskriti.', bn: 'সমতট সংস্কৃতির দিকনির্দেশনা প্রদানকারী নেতৃত্ব দল।', hi: 'समतट संस्कृति का मार्गदर्शन करने वाली नेतृत्व टीम।' }} 
+      <PageHeader
+        eyebrow="Governance"
+        title={{ en: 'Executive Committee', bn: 'কার্যনির্বাহী কমিটি', hi: 'कार्यकारी समिति' }}
+        description={{ en: 'The leadership team guiding Samatat Sanskriti.', bn: 'সমতট সংস্কৃতির দিকনির্দেশনা প্রদানকারী নেতৃত্ব দল।', hi: 'समतट संस्कृति का मार्गदर्शन करने वाली नेतृत्व टीम।' }}
+        compact
       />
       
       <section className="section section-dark relative overflow-hidden">

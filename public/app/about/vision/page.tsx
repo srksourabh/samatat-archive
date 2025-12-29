@@ -12,6 +12,7 @@ export default function VisionPage() {
           bn: 'নাট্য শুধু বিনোদন নয়; এটি সমাজের দর্পণ।',
           hi: 'रंगमंच सिर्फ मनोरंजन नहीं है; यह समाज का दर्पण है।'
         }}
+        compact
       />
 
       {/* Our Philosophy */}

@@ -24,6 +24,7 @@ export default function HistoryPage() {
           bn: 'সাংস্কৃতিক উৎসাহীদের থেকে একটি থিয়েটার আন্দোলনে',
           hi: 'सांस्कृतिक उत्साही लोगों से एक रंगमंच आंदोलन तक',
         }}
+        compact
       />
 
       {/* The Beginning */}

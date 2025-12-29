@@ -18,6 +18,7 @@ export default function StatutoryPage() {
         eyebrow="Governance"
         title={{ en: 'Statutory Compliances', bn: 'বিধিবদ্ধ সম্মতি', hi: 'वैधानिक अनुपालन' }}
         description={{ en: 'Transparency and compliance in all our operations. Access governance documents, committee information, and official records.', bn: 'আমাদের সমস্ত কার্যক্রমে স্বচ্ছতা এবং সম্মতি। শাসন নথি, কমিটির তথ্য এবং সরকারী রেকর্ড অ্যাক্সেস করুন।', hi: 'हमारे सभी कार्यों में पारदर्शिता और अनुपालन। शासन दस्तावेज, समिति जानकारी और आधिकारिक रिकॉर्ड तक पहुंचें।' }}
+        compact
       />
 
       <section className="section section-charcoal">

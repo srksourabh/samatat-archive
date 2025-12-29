@@ -192,6 +192,7 @@ export default function PresidentPage() {
         eyebrow="About Us"
         title={{ en: "President's Message", bn: 'সভাপতির বার্তা', hi: 'अध्यक्ष का संदेश' }}
         description={content.description}
+        compact
       />
 
       {/* Main Message */}

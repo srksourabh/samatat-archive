@@ -248,6 +248,7 @@ export default function FriendsPage() {
         eyebrow="About Us"
         title={{ en: 'Friend Organisations', bn: 'বন্ধু সংগঠন', hi: 'मित्र संगठन' }}
         description={content.description}
+        compact
       />
 
       {/* Introduction */}

@@ -345,6 +345,34 @@
   }
 }
 
+/* Compact collage for subpages - 30% smaller photos */
+.hero-collage-compact .hero-collage-grid {
+  /* Landing page: 8 cols. Subpages: ~30% smaller = 11 cols */
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 4px;
+  transform: rotate(-1deg) scale(1.08);
+}
+
+.hero-collage-compact .hero-collage-cell {
+  border-radius: 3px;
+}
+
+.hero-collage-compact .hero-collage-image {
+  border-radius: 3px;
+  filter: saturate(1.15) brightness(1.08) contrast(1.08);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-collage-compact .hero-collage-grid {
+    /* Mobile landing: 5 cols. Subpages: ~30% smaller = 7 cols */
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 3px;
+  }
+}
+
 /* ==========================================================================
    Cards
    ========================================================================== */

@@ -683,7 +683,7 @@ export const festivalsData: Festival[] = [
       },
       {
         title: { en: 'Sada O Kusum', bn: 'সাদা ও কুসুম', hi: 'सादा ओ कुसुम' },
-        group: { en: 'Sonstob', bn: 'সংস্তব', hi: 'संस्तब' },
+        group: { en: 'Sanstab', bn: 'সংস্তব', hi: 'संस्तब' },
         director: { en: 'Various', bn: 'বিভিন্ন', hi: 'विभिन्न' },
         date: '23 December 2017',
         time: '6:00 PM'
@@ -1672,7 +1672,7 @@ export const festivalsData: Festival[] = [
       },
       {
         title: { en: 'Ei Ghum', bn: 'এইঘুম', hi: 'ऐ घुम' },
-        group: { en: 'Sonstob', bn: 'সংস্তব', hi: 'संस्तब' },
+        group: { en: 'Sanstab', bn: 'সংস্তব', hi: 'संस्तब' },
         director: { en: 'Bijen Bandyopadhyay', bn: 'বিজেন বন্দ্যোপাধ্যায়', hi: 'बिजेन बंद्योपाध्याय' },
         date: '23 December 2007',
         time: '3:00 PM'
@@ -1713,8 +1713,8 @@ export const festivalsData: Festival[] = [
         time: '6:00 PM'
       },
       {
-        title: { en: 'Bachte Thaklo O Shronchapa', bn: 'বাঁচতে থাকল ও শ্রণচাপা', hi: 'बांचते थाकलो ओ श्रणचापा' },
-        group: { en: 'Sayer', bn: 'সায়ক', hi: 'सायक' },
+        title: { en: 'Bachte Thaklo O Shoronchapa', bn: 'বাঁচতে থাকল ও শরণচাপা', hi: 'बांचते थाकलो ओ शरणचापा' },
+        group: { en: 'Sayak', bn: 'সায়ক', hi: 'सायक' },
         director: { en: 'Meghnad Bhattacharya', bn: 'মেঘনাদ ভট্টাচার্য', hi: 'मेघनाद भट्टाचार्य' },
         date: '27 December 2007',
         time: '6:00 PM'
@@ -1773,13 +1773,13 @@ export const festivalsData: Festival[] = [
     plays: [
       {
         title: { en: 'Dildar', bn: 'দিলদার', hi: 'दिलदार' },
-        group: { en: 'Sayer', bn: 'সায়ক', hi: 'सायक' },
+        group: { en: 'Sayak', bn: 'সায়ক', hi: 'सायक' },
         director: { en: 'Meghnad Bhattacharya', bn: 'মেঘনাদ ভট্টাচার্য', hi: 'मेघनाद भट्टाचार्य' },
         date: '23 December 2006',
         time: '5:00 PM'
       },
       {
-        title: { en: 'Cancele Malsat', bn: 'ক্যান্সেলে মালসাট', hi: 'कैंसेले मालसाट' },
+        title: { en: 'Kanchele Malsat', bn: 'ক্যান্সেলে মালসাট', hi: 'कांचेले मालसाट' },
         group: { en: 'Tritiya Sutra', bn: 'তৃতীয় সূত্র', hi: 'तृतीय सूत्र' },
         director: { en: 'Suman Mukhopadhyay', bn: 'সুমন মুখোপাধ্যায়', hi: 'सुमन मुखोपाध्याय' },
         date: '24 December 2006',
@@ -1788,7 +1788,7 @@ export const festivalsData: Festival[] = [
       {
         title: { en: 'Shalbani', bn: 'শালবনী', hi: 'शालबनी' },
         group: { en: 'Swapnasandhani', bn: 'স্বপ্নসন্ধানী', hi: 'स्वप्नसंधानी' },
-        director: { en: 'Kaushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
+        director: { en: 'Koushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
         date: '25 December 2006',
         time: '3:00 PM'
       },
@@ -1796,8 +1796,64 @@ export const festivalsData: Festival[] = [
         title: { en: 'Kaliprasanna O Ora', bn: 'কালীপ্রসন্ন ও ওরা', hi: 'कालीप्रसन्न ओ ओरा' },
         group: { en: 'Nandikar/Samatat Sanskriti', bn: 'নান্দীকার/সমতট সংস্কৃতি', hi: 'नांदीकार/समतट संस्कृति' },
         director: { en: 'Sumanta Gangopadhyay', bn: 'সুমন্ত গঙ্গোপাধ্যায়', hi: 'सुमंत गंगोपाध्याय' },
+        date: '25 December 2006',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Manosamon', bn: 'মানসমন', hi: 'मानसमन' },
+        group: { en: 'Silpayan', bn: 'শিল্পায়ন', hi: 'शिल्पायन' },
+        director: { en: 'Ashok Mukhopadhyay', bn: 'অশোক মুখোপাধ্যায়', hi: 'अशोक मुखोपाध्याय' },
+        date: '26 December 2006',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Kabuli Waalla', bn: 'কাবুলিওয়ালা', hi: 'काबुलीवाला' },
+        group: { en: 'Gandharba', bn: 'গন্ধর্ব', hi: 'गंधर्व' },
+        director: { en: 'Baban Mukhopadhyay', bn: 'বাবন মুখোপাধ্যায়', hi: 'बाबन मुखोपाध्याय' },
+        date: '27 December 2006',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Bagh', bn: 'বাঘ', hi: 'बाघ' },
+        group: { en: 'Anya Theatre', bn: 'অন্য থিয়েটার', hi: 'अन्य थिएटर' },
+        director: { en: 'Bibhas Chakraborty', bn: 'বিভাস চক্রবর্তী', hi: 'बिभास चक्रवर्ती' },
+        date: '28 December 2006',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Prem Prem', bn: 'প্রেম প্রেম', hi: 'प्रेम प्रेम' },
+        group: { en: 'Sundaram', bn: 'সুন্দরম', hi: 'सुंदरम' },
+        director: { en: 'Manoj Mitra', bn: 'মনোজ মিত্র', hi: 'मनोज मित्र' },
+        date: '29 December 2006',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Madhabananda', bn: 'মাধবানন্দ', hi: 'माधबानंद' },
+        group: { en: 'Kalyani Natyacharcha Kendra', bn: 'কল্যাণী নাট্যচর্চা কেন্দ্র', hi: 'कल्याणी नाट्यचर्चा केंद्र' },
+        director: { en: 'Gautam Haldar', bn: 'গৌতম হালদার', hi: 'गौतम हालदार' },
         date: '30 December 2006',
         time: '3:00 PM'
+      },
+      {
+        title: { en: 'Paribartan', bn: 'পরিবর্তন', hi: 'परिबर्तन' },
+        group: { en: 'Theatre Passion', bn: 'থিয়েটার প্যাশন', hi: 'थिएटर पैशन' },
+        director: { en: 'Ramaprasad Banik', bn: 'রমাপ্রসাদ বণিক', hi: 'रामप्रसाद बनिक' },
+        date: '30 December 2006',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Chhayabaji', bn: 'ছায়াবাজি', hi: 'छायाबाजी' },
+        group: { en: 'Sayer', bn: 'সায়ের', hi: 'सायेर' },
+        director: { en: 'Sheyali Duttagupta', bn: 'শেয়ালী দত্তগুপ্ত', hi: 'शेयालि दत्तगुप्ता' },
+        date: '31 December 2006',
+        time: '3:00 PM'
+      },
+      {
+        title: { en: 'Tringsha Shatabdir Natak', bn: 'ত্রিংশ শতাব্দীর নাটক', hi: 'त्रिंश शताब्दीर नाटक' },
+        group: { en: 'Manashij', bn: 'মানসিজ', hi: 'मानसिज' },
+        director: { en: 'Shyamal Chakraborty', bn: 'শ্যামল চক্রবর্তী', hi: 'श्यामल चक्रवर्ती' },
+        date: '31 December 2006',
+        time: '6:00 PM'
       }
     ]
   },
@@ -1824,25 +1880,67 @@ export const festivalsData: Festival[] = [
     leafletImage: storageUrl('images/Festivals/Natyamela 2005/5.jpg'),
     plays: [
       {
-        title: { en: 'Bhiamar', bn: 'ভিয়ামার', hi: 'भियामार' },
+        title: { en: 'Bhoyam', bn: 'ভয়াম', hi: 'भयाम' },
         group: { en: 'Peoples Little Theatre', bn: 'পিপলস লিটল থিয়েটার', hi: 'पीपल्स लिटल थिएटर' },
         director: { en: 'Utpal Dutt', bn: 'উৎপল দত্ত', hi: 'उत्पल दत्त' },
         date: '24 December 2005',
         time: '6:00 PM'
       },
       {
-        title: { en: 'Kagaj Kali', bn: 'কাগজ কালী', hi: 'कागज काली' },
+        title: { en: 'Kagaj Kali', bn: 'কাগজ কালি', hi: 'कागज कालि' },
         group: { en: 'Nandikar, Samatat', bn: 'নান্দীকার, সমতট', hi: 'नांदीकार, समतट' },
-        director: { en: 'Debashankar Haldar', bn: 'দেবশঙ্কর হালদার', hi: 'देबशंकर हालदार' },
+        director: { en: 'Debshankar Haldar', bn: 'দেবশঙ্কর হালদার', hi: 'देबशंकर हालदार' },
         date: '25 December 2005',
         time: '10:30 AM'
+      },
+      {
+        title: { en: 'Mrityu Sanghita', bn: 'মৃত্যু সংহিতা', hi: 'मृत्यु संहिता' },
+        group: { en: 'Anya Theatre', bn: 'অন্য থিয়েটার', hi: 'अन्य थिएटर' },
+        director: { en: 'Bibhas Chakraborty', bn: 'বিভাস চক্রবর্তী', hi: 'बिभास चक्रवर्ती' },
+        date: '25 December 2005',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Ratri Sharbari', bn: 'রাত্রি সর্বাঙ্গ', hi: 'रात्रि सर्वांग' },
+        group: { en: 'Theatre Workshop', bn: 'থিয়েটার ওয়ার্কশপ', hi: 'थिएटर वर्कशॉप' },
+        director: { en: 'Ashok Mukhopadhyay', bn: 'অশোক মুখোপাধ্যায়', hi: 'अशोक मुखोपाध्याय' },
+        date: '26 December 2005',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Chhayadhey Mondobishey', bn: 'ছায়াদে মন্দবিশে', hi: 'छायादे मंदबिशे' },
+        group: { en: 'Sundaram', bn: 'সুন্দরম', hi: 'सुंदरम' },
+        director: { en: 'Manoj Mitra', bn: 'মনোজ মিত্র', hi: 'मनोज मित्र' },
+        date: '27 December 2005',
+        time: '6:00 PM'
       },
       {
         title: { en: 'Raja', bn: 'রাজা', hi: 'राजा' },
         group: { en: 'Ride Opera', bn: 'রাইড অপেরা', hi: 'राइड ओपेरा' },
         director: { en: 'Obhashish Gangopadhyay', bn: 'ওভাশিষ গঙ্গোপাধ্যায়', hi: 'ओभाषिष गंगोपाध्याय' },
-        date: '30 December 2005',
+        date: '28 December 2005',
         time: '6:30 PM'
+      },
+      {
+        title: { en: 'Ei Britanto', bn: 'এই বৃত্তান্ত', hi: 'ऐ बृत्तांत' },
+        group: { en: 'Sayer', bn: 'সায়ের', hi: 'सायेर' },
+        director: { en: 'Sheyali Duttagupta', bn: 'শেয়ালী দত্তগুপ্ত', hi: 'शेयालि दत्तगुप्ता' },
+        date: '29 December 2005',
+        time: '6:00 PM'
+      },
+      {
+        title: { en: 'Baki Itihas', bn: 'বাকি ইতিহাস', hi: 'बाकी इतिहास' },
+        group: { en: 'Swapnasandhani', bn: 'স্বপ্নসন্ধানী', hi: 'स्वप्नसंधानी' },
+        director: { en: 'Koushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
+        date: '30 December 2005',
+        time: '10:30 AM'
+      },
+      {
+        title: { en: 'Bhaboghure', bn: 'ভাবঘুরে', hi: 'भाबघुरे' },
+        group: { en: 'Pankashti', bn: 'পঙ্কষ্টি', hi: 'पंकष्टी' },
+        director: { en: 'Rata Basu', bn: 'রাতা বসু', hi: 'राता बसु' },
+        date: '30 December 2005',
+        time: '6:00 PM'
       },
       {
         title: { en: 'Shalya Parba', bn: 'শল্য পর্ব', hi: 'शल्य पर्व' },
@@ -1890,49 +1988,70 @@ export const festivalsData: Festival[] = [
     leafletImage: storageUrl('images/Festivals/Natyamela 2004/4.jpg'),
     plays: [
       {
-        title: { en: 'Santabenda', bn: 'সান্তাবেঁদা', hi: 'सांताबेंदा' },
-        group: { en: 'Sayer', bn: 'সায়ক', hi: 'सायक' },
+        title: { en: 'Satabendra', bn: 'সান্তাবেঁদা', hi: 'सांताबेंदा' },
+        group: { en: 'Sayak', bn: 'সায়ক', hi: 'सायक' },
         director: { en: 'Meghnad Bhattacharya', bn: 'মেঘনাদ ভট্টাচার্য', hi: 'मेघनाद भट्टाचार्य' },
         date: '24 December 2004',
         time: '6:00 PM'
       },
       {
-        title: { en: 'Jablai Bhola', bn: 'জাবলাই ভোলা', hi: 'जाबलाई भोला' },
+        title: { en: 'Jabla Ebong Bhola', bn: 'জাবলা এবং ভোলা', hi: 'जाबला एबं भोला' },
         group: { en: 'Theatre Passion', bn: 'থিয়েটার প্যাশন', hi: 'थिएटर पैशन' },
         director: { en: 'Ramaprasad Banik', bn: 'রমাপ্রসাদ বণিক', hi: 'रामप्रसाद बनिक' },
         date: '25 December 2004',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Balkotar Eupiye', bn: 'বালকোতার ইউপিয়ে', hi: 'बालकोतार ईउपिये' },
-        group: { en: 'Swapnasandhani', bn: 'স্বপ্নসাধনী', hi: 'स्वप्नसंधानी' },
-        director: { en: 'Kaushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
+        title: { en: 'Balkotar Yeupy', bn: 'বালকোতার ইউপিয়ে', hi: 'बालकोतार यूपी' },
+        group: { en: 'Swapnasandhani', bn: 'স্বপ্নসন্ধানী', hi: 'स्वप्नसंधानी' },
+        director: { en: 'Koushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
         date: '26 December 2004',
         time: '6:30 PM'
       },
       {
+        title: { en: 'Jai Jai Antaryami', bn: 'জৈ জৈ অন্তর্যামী', hi: 'जै जै अंतर्यामी' },
+        group: { en: 'Anya Theatre', bn: 'অন্য থিয়েটার', hi: 'अन्य थिएटर' },
+        director: { en: 'Bibhas Chakraborty', bn: 'বিভাস চক্রবর্তী', hi: 'बिभास चक्रवर्ती' },
+        date: '27 December 2004',
+        time: '6:30 PM'
+      },
+      {
         title: { en: 'Arohon', bn: 'আরোহণ', hi: 'आरोहण' },
-        group: { en: 'Mukhamukhi', bn: 'মুখোমুখি', hi: 'मुखामुखी' },
+        group: { en: 'Mukhamukhi', bn: 'মুখামুখি', hi: 'मुखामुखी' },
         director: { en: 'Soumitra Chattopadhyay', bn: 'সৌমিত্র চট্টোপাধ্যায়', hi: 'सौमित्र चट्टोपाध्याय' },
         date: '28 December 2004',
         time: '6:30 PM'
       },
       {
+        title: { en: 'Eijey Ami Pheyarwey', bn: 'এই যে আমি ফেয়ারওয়েল', hi: 'ऐजे आमी फेयारवे' },
+        group: { en: 'Nandikar', bn: 'নান্দীকার', hi: 'नांदीकार' },
+        director: { en: 'Rudraprasad Sengupta', bn: 'রুদ্রপ্রসাদ সেনগুপ্ত', hi: 'रुद्रप्रसाद सेनगुप्ता' },
+        date: '29 December 2004',
+        time: '6:30 PM'
+      },
+      {
         title: { en: '29 Tulai', bn: '২৯ তুলাই', hi: '29 तुलाई' },
-        group: { en: 'Pankashti', bn: 'পণকষ্টি', hi: 'पणकष्टी' },
+        group: { en: 'Pankashti', bn: 'পঙ্কষ্টি', hi: 'पंकष्टी' },
         director: { en: 'Rata Basu', bn: 'রাতা বসু', hi: 'राता बसु' },
         date: '30 December 2004',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Tyagendambhe Gamyay', bn: 'ত্যাগেনদম্ভে গম্যায়', hi: 'त्यागेनदम्भे गम्याय' },
+        title: { en: 'Tritiyo Babur Hatey Lathi', bn: 'তৃতীয় বাবুর হাতে লাঠি', hi: 'तृतीय बाबुर हाते लाठी' },
+        group: { en: 'Swapnasandhani', bn: 'স্বপ্নসন্ধানী', hi: 'स्वप्नसंधानी' },
+        director: { en: 'Koushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
+        date: '30 December 2004',
+        time: 'Morning'
+      },
+      {
+        title: { en: 'Tyagyen Dombhey Gamyay', bn: 'ত্যাগেনদম্ভে গম্যায়', hi: 'त्यागेनदम्भे गम्याय' },
         group: { en: 'Sundaram', bn: 'সুন্দরম', hi: 'सुंदरम' },
         director: { en: 'Manoj Mitra', bn: 'মনোজ মিত্র', hi: 'मनोज मित्र' },
         date: '31 December 2004',
         time: '6:00 PM'
       },
       {
-        title: { en: 'Ei Muhurte Marut', bn: 'এই মুহূর্তে মারুত', hi: 'ऐ मुहूर्ते मारुत' },
+        title: { en: 'E Muhurtey Marut', bn: 'এ মুহূর্তে মারুত', hi: 'ए मुहूर्ते मारुत' },
         group: { en: 'Theatre Workshop', bn: 'থিয়েটার ওয়ার্কশপ', hi: 'थिएटर वर्कशॉप' },
         director: { en: 'Ashok Mukhopadhyay', bn: 'অশোক মুখোপাধ্যায়', hi: 'अशोक मुखोपाध्याय' },
         date: '1 January 2005',
@@ -1963,7 +2082,7 @@ export const festivalsData: Festival[] = [
     leafletImage: storageUrl('images/Festivals/Natyamela 2003/3.jpg'),
     plays: [
       {
-        title: { en: 'Madhab Malancha Kahini', bn: 'মাধব মালঞ্চ কহিনী', hi: 'माधब मालंच कहिनी' },
+        title: { en: 'Madhab Malanchakonya', bn: 'মাধব মালঞ্চ কন্যা', hi: 'माधब मालंच कन्या' },
         group: { en: 'Anya Theatre', bn: 'অন্য থিয়েটার', hi: 'अन्य थिएटर' },
         director: { en: 'Bibhas Chakraborty', bn: 'বিভাস চক্রবর্তী', hi: 'बिभास चक्रवर्ती' },
         date: '20 December 2003',
@@ -1977,43 +2096,43 @@ export const festivalsData: Festival[] = [
         time: '6:30 PM'
       },
       {
-        title: { en: 'Gande Ken Chehara Sonar', bn: 'গাঁদে কেন চেহারা সোনার', hi: 'गांदे केन चेहारा सोनार' },
-        group: { en: 'Chayer', bn: 'চায়ের', hi: 'चायेर' },
+        title: { en: 'Gand Ken Chehara Sonar', bn: 'গাঁদে কেন চেহারা সোনার', hi: 'गांद केन चेहारा सोनार' },
+        group: { en: 'Sayer', bn: 'সায়ের', hi: 'सायेर' },
         director: { en: 'Sheyali Duttagupta', bn: 'শেয়ালী দত্তগুপ্ত', hi: 'शेयालि दत्तगुप्ता' },
         date: '22 December 2003',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Badi Ishwar', bn: 'বদি ঈশ্বর', hi: 'बदी ईश्वर' },
-        group: { en: 'Sayer', bn: 'সায়ক', hi: 'सायक' },
+        title: { en: 'Badi Iswar', bn: 'বদী ঈশ্বর', hi: 'बदी ईश्वर' },
+        group: { en: 'Sayak', bn: 'সায়ক', hi: 'सायक' },
         director: { en: 'Meghnad Bhattacharya', bn: 'মেঘনাদ ভট্টাচার্য', hi: 'मेघनाद भट्टाचार्य' },
         date: '23 December 2003',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Mati', bn: 'মাটিঃ', hi: 'माटी' },
+        title: { en: 'Mati', bn: 'মাটি', hi: 'माटी' },
         group: { en: 'Nandikar, Samatat', bn: 'নান্দীকার, সমতট', hi: 'नांदीकार, समतट' },
         director: { en: 'Gautam Haldar', bn: 'গৌতম হালদার', hi: 'गौतम हालदार' },
         date: '24 December 2003',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Bhadeshwarir Galpo', bn: 'ভাদেশ্বরীর গল্প', hi: 'भादेश्वरीर गल्प' },
-        group: { en: 'Nabamukh', bn: 'নবম্যুখ', hi: 'नबम्युख' },
+        title: { en: 'Bhadeswarir Galpo', bn: 'ভাদেশ্বরীর গল্প', hi: 'भादेश्वरीर गल्प' },
+        group: { en: 'Nabamukha', bn: 'নবমুখ', hi: 'नबमुख' },
         director: { en: 'Rishi Mukhopadhyay', bn: 'ঋষি মুখোপাধ্যায়', hi: 'ऋषि मुखोपाध्याय' },
         date: '25 December 2003',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Dibyer No. 1', bn: 'দিব্যের No. 1', hi: 'दिव्येर नंबर 1' },
-        group: { en: 'Swapnasandhani', bn: 'স্বপ্নসাধনী', hi: 'स्वप्नसंधानी' },
+        title: { en: 'Dibyer No. 1', bn: 'দিব্যের নং ১', hi: 'दिव्येर नंबर 1' },
+        group: { en: 'Swapnasandhani', bn: 'স্বপ্নসন্ধানী', hi: 'स्वप्नसंधानी' },
         director: { en: 'Kaushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
         date: '26 December 2003',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Raktakarabi', bn: 'রক্তকরবী', hi: 'रक्तकरबी' },
-        group: { en: 'Bangladesh', bn: 'বাংলাদেশ', hi: 'बांग्लादेश' },
+        title: { en: 'Raktokarobi', bn: 'রক্তকরবী', hi: 'रक्तकरबी' },
+        group: { en: 'Bangladesh Natyasanstha', bn: 'বাংলাদেশ নাট্যসংস্থা', hi: 'बांग्लादेश नाट्यसंस्था' },
         director: { en: 'Ahmed Iqbal Haidar', bn: 'আহমেদ ইকবাল হায়দার', hi: 'अहमद इकबाल हैदर' },
         playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रवींद्रनाथ टैगोर' },
         date: '27 December 2003',
@@ -2027,7 +2146,7 @@ export const festivalsData: Festival[] = [
         time: '6:30 PM'
       },
       {
-        title: { en: 'Operation Bhomragarh', bn: 'অপারেশন ভোমরাগড়', hi: 'ऑपरेशन भोमरागड़' },
+        title: { en: 'Operation Bhomaragarh', bn: 'অপারেশন ভোমরাগড়', hi: 'ऑपरेशन भोमरागड़' },
         group: { en: 'Sundaram', bn: 'সুন্দরম', hi: 'सुंदरम' },
         director: { en: 'Manoj Mitra', bn: 'মনোজ মিত্র', hi: 'मनोज मित्र' },
         date: '29 December 2003',
@@ -2065,9 +2184,9 @@ export const festivalsData: Festival[] = [
         time: 'Evening'
       },
       {
-        title: { en: 'Arshidesher Porshira', bn: 'আরশিদেশের পড়শীরা', hi: 'आरशीदेशेर पोड़शीरा' },
-        group: { en: 'Shudhak/Samatat', bn: 'শুদ্ধক/সমতট', hi: 'शुद्धक/समतट' },
-        director: { en: 'Biplanu Mitra', bn: 'বিপ্লানু মিত্র', hi: 'बिप्लानु मित्र' },
+        title: { en: 'Arsidheser Porshira', bn: 'আরশিদেশের পড়শিরা', hi: 'आरशीदेशेर पोड़शीरा' },
+        group: { en: 'Shuddhak/Samatat', bn: 'শুদ্ধক/সমতট', hi: 'शुद्धक/समतट' },
+        director: { en: 'Bipanu Mitra', bn: 'বিপানু মিত্র', hi: 'बिपानु मित्र' },
         date: '23 December 2001',
         time: 'Morning'
       },
@@ -2086,36 +2205,36 @@ export const festivalsData: Festival[] = [
         time: 'Evening'
       },
       {
-        title: { en: 'Dakshinrayer Pala / Dharmayuddha', bn: 'দক্ষিণরায়ের পালা / ধর্মযুদ্ধ', hi: 'दक्षिणरायेर पाला / धर्मयुद्ध' },
-        group: { en: 'Kasba Arghya, Raja Parry Mohan College', bn: 'কসবা অর্ঘ্য, রাজা প্যারীমোহল কলেজ', hi: 'कसबा अर्घ्य, राजा पैरी मोहन कॉलेज' },
-        director: { en: 'Manish Mitra, Kutul Mukhopadhyay', bn: 'মণীষ মিত্র, কুতুল মুখোপাধ্যায়', hi: 'मनीष मित्र, कुतुल मुखोपाध्याय' },
+        title: { en: 'Dakshinrayer Pala / Dharmajuddha', bn: 'দক্ষিণরায়ের পালা / ধর্মযুদ্ধ', hi: 'दक्षिणरायेर पाला / धर्मयुद्ध' },
+        group: { en: 'Kasba Arghya, Raja Parry Mohan College', bn: 'কসবা অর্ঘ্য, রাজা প্যারী মোহন কলেজ', hi: 'कसबा अर्घ्य, राजा पैरी मोहन कॉलेज' },
+        director: { en: 'Manish Mitra, Kutub Mukhopadhyay', bn: 'মণীষ মিত্র, কুতুব মুখোপাধ্যায়', hi: 'मनीष मित्र, कुतुब मुखोपाध्याय' },
         date: '25 December 2001',
         time: 'Afternoon'
       },
       {
-        title: { en: 'Mushtiyog', bn: 'মুষ্টিযোগ', hi: 'मुष्टियोग' },
-        group: { en: 'Sonstob', bn: 'সংস্তব', hi: 'संस्तब' },
-        director: { en: 'Bijen Bandyopadhyay', bn: 'বিজেন বন্দ্যোপাধ্যায়', hi: 'बिजेन बंद्योपाध्याय' },
+        title: { en: 'Mushtijug', bn: 'মুষ্টিযুগ', hi: 'मुष्टियुग' },
+        group: { en: 'Sanstab', bn: 'সংস্তব', hi: 'संस्तब' },
+        director: { en: 'Bijen Bandopadhyay', bn: 'বিজেন বন্দ্যোপাধ্যায়', hi: 'बिजेन बंदोपाध्याय' },
         date: '25 December 2001',
         time: 'Evening'
       },
       {
         title: { en: 'Ankagali', bn: 'অঙ্কগলি', hi: 'अंकगली' },
-        group: { en: 'Sayer', bn: 'সায়ক', hi: 'सायक' },
+        group: { en: 'Sayak', bn: 'সায়ক', hi: 'सायक' },
         director: { en: 'Meghnad Bhattacharya', bn: 'মেঘনাদ ভট্টাচার্য', hi: 'मेघनाद भट्टाचार्य' },
         date: '26 December 2001',
         time: 'Evening'
       },
       {
-        title: { en: 'Dhritabansi', bn: 'ধৃতবানসি', hi: 'धृतबांसी' },
+        title: { en: 'Dhritabanshi', bn: 'ধৃতাবংশী', hi: 'धृताबंशी' },
         group: { en: 'Bahurupi', bn: 'বহুরূপী', hi: 'बहुरूपी' },
-        director: { en: 'Tarapada Mukhopadhyay', bn: 'তারাপদ মুখোপাধ্যায়', hi: 'तारापद मुखोपाध्याय' },
+        director: { en: 'Tarapodo Mukhopadhyay', bn: 'তারাপদ মুখোপাধ্যায়', hi: 'तारापद मुखोपाध्याय' },
         date: '27 December 2001',
         time: 'Evening'
       },
       {
-        title: { en: 'Sirajdaula', bn: 'সিরাজদৌলা', hi: 'सिराजदौला' },
-        group: { en: 'Natyarang', bn: 'নাট্যরঙ্গ', hi: 'नाट्यरंग' },
+        title: { en: 'Sirajdaulla', bn: 'সিরাজদৌলা', hi: 'सिराजदौला' },
+        group: { en: 'Natyaranga', bn: 'নাট্যরঙ্গ', hi: 'नाट्यरंग' },
         director: { en: 'Swapan Sengupta', bn: 'স্বপন সেনগুপ্ত', hi: 'स्वपन सेनगुप्ता' },
         date: '28 December 2001',
         time: 'Evening'
@@ -2128,9 +2247,9 @@ export const festivalsData: Festival[] = [
         time: 'Evening'
       },
       {
-        title: { en: 'Rupnagorer Rupkatha', bn: 'রূপনগরের রূপকথা', hi: 'रूपनगोरेर रूपकथा' },
+        title: { en: 'Rupnagarer Rupkatha', bn: 'রূপনগরের রূপকথা', hi: 'रूपनगरेर रूपकथा' },
         group: { en: 'Nandikar/Samatat', bn: 'নান্দীকার/সমতট', hi: 'नांदीकार/समतट' },
-        director: { en: 'Debashankar Haldar', bn: 'দেবশঙ্কর হালদার', hi: 'देबशंकर हालदार' },
+        director: { en: 'Debshonkor Haldar', bn: 'দেবশঙ্কর হালদার', hi: 'देबशंकर हालदार' },
         date: '30 December 2001',
         time: 'Morning'
       },
@@ -2166,28 +2285,28 @@ export const festivalsData: Festival[] = [
     leafletImage: storageUrl('images/Festivals/Natyamela 2000/2000.jpg'),
     plays: [
       {
-        title: { en: 'Jibon Chhandira', bn: 'জীবন ছন্দীরা', hi: 'जीबन छंदिरा' },
+        title: { en: 'Jibon Chhanda', bn: 'জীবন ছন্দ', hi: 'जीबन छंद' },
         group: { en: 'Pindak', bn: 'পিন্ডক', hi: 'पिंडक' },
         director: { en: 'Timir Barun Roy', bn: 'তিমির বরুণ রায়', hi: 'तिमिर बरुण राय' },
         date: '24 December 2000',
         time: 'Morning'
       },
       {
-        title: { en: 'Rajme Pagal', bn: 'রাজমে পাগল', hi: 'राजमे पागल' },
+        title: { en: 'Rajmeistri', bn: 'রাজমিস্ত্রী', hi: 'राजमिस्त्री' },
         group: { en: 'Sundaram', bn: 'সুন্দরম', hi: 'सुंदरम' },
         director: { en: 'Manoj Mitra', bn: 'মনোজ মিত্র', hi: 'मनोज मित्र' },
         date: '24 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Badi Bedambha', bn: 'বাদি বেদম্ভ', hi: 'बादी बेदम्भ' },
+        title: { en: 'Badi Bedambar', bn: 'বড়ি বেদম্বর', hi: 'बड़ी बेदम्बर' },
         group: { en: 'Theatre Workshop', bn: 'থিয়েটার ওয়ার্কশপ', hi: 'थिएटर वर्कशॉप' },
         director: { en: 'Ashok Mukhopadhyay', bn: 'অশোক মুখোপাধ্যায়', hi: 'अशोक मुखोपाध्याय' },
         date: '25 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Roker Bahir', bn: 'রকের বাহির', hi: 'रोकेर बाहिर' },
+        title: { en: 'Rokter Bahire Rokta', bn: 'রক্তের বাইরে রক্ত', hi: 'रक्तेर बाहिरे रक्त' },
         group: { en: 'Theatre Passion', bn: 'থিয়েটার প্যাশন', hi: 'थिएटर पैशन' },
         director: { en: 'Ramaprasad Banik', bn: 'রমাপ্রসাদ বণিক', hi: 'रामप्रसाद बनिक' },
         date: '26 December 2000',
@@ -2195,42 +2314,42 @@ export const festivalsData: Festival[] = [
       },
       {
         title: { en: 'Dayabaddha', bn: 'দায়বদ্ধ', hi: 'दायबद्ध' },
-        group: { en: 'Sayer', bn: 'সায়ক', hi: 'सायक' },
+        group: { en: 'Sayak', bn: 'সায়ক', hi: 'सायक' },
         director: { en: 'Meghnad Bhattacharya', bn: 'মেঘনাদ ভট্টাচার্য', hi: 'मेघनाद भट्टाचार्य' },
         date: '27 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Etukukar Epitaph', bn: 'এটুকুকর এপিটাফ', hi: 'एटुकुकर एपिटाफ' },
+        title: { en: 'Itukur Epitaph', bn: 'ইটকুর এপিটাফ', hi: 'इटकुर एपिटाफ' },
         group: { en: 'Nandikar', bn: 'নান্দীকার', hi: 'नांदीकार' },
         director: { en: 'Rudraprasad Sengupta', bn: 'রুদ্রপ্রসাদ সেনগুপ্ত', hi: 'रुद्रप्रसाद सेनगुप्ता' },
         date: '28 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Janmadini', bn: 'জন্মদিনী', hi: 'जन्मदिनी' },
-        group: { en: 'Chupkatha', bn: 'চুপকথা', hi: 'चुपकथा' },
+        title: { en: 'Janmadin', bn: 'জন্মদিন', hi: 'जन्मदिन' },
+        group: { en: 'Chhupkatha', bn: 'ছুপকথা', hi: 'छुपकथा' },
         director: { en: 'Asit Mukhopadhyay', bn: 'অসিত মুখোপাধ্যায়', hi: 'असित मुखोपाध्याय' },
         date: '29 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Duiksur Kakatua', bn: 'দুইক্ষুর কাকাতুয়া', hi: 'दुईक्षुर काकातुया' },
+        title: { en: 'Dyui Dukkhu Kakatiuya', bn: 'দুই দুঃখু কাকাতুয়া', hi: 'दुई दुक्खु काकातुया' },
         group: { en: 'Bahurupi', bn: 'বহুরূপী', hi: 'बहुरूपी' },
         director: { en: 'Kumar Roy', bn: 'কুমার রায়', hi: 'कुमार राय' },
         date: '30 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Manush Bhet', bn: 'মানুষ ভেত', hi: 'मानुष भेत' },
-        group: { en: 'Mandalak', bn: 'মন্ডলক', hi: 'मंडलक' },
+        title: { en: 'Manush Khota', bn: 'মানুষ খোঁতা', hi: 'मानुष खोंता' },
+        group: { en: 'Mandal', bn: 'মন্ডল', hi: 'मंडल' },
         director: { en: 'Samir Biswas', bn: 'সমীর বিশ্বাস', hi: 'समीर बिस्वास' },
         date: '31 December 2000',
         time: 'Evening'
       },
       {
-        title: { en: 'Ayko', bn: 'আয়কো', hi: 'आयको' },
-        group: { en: 'Natyarang', bn: 'নাট্যরঙ্গ', hi: 'नाट्यरंग' },
+        title: { en: 'Aiko', bn: 'আইকো', hi: 'आइको' },
+        group: { en: 'Natyaranga', bn: 'নাট্যরঙ্গ', hi: 'नाट्यरंग' },
         director: { en: 'Swapan Sengupta', bn: 'স্বপন সেনগুপ্ত', hi: 'स्वपन सेनगुप्ता' },
         date: '1 January 2001',
         time: 'Evening'

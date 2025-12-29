@@ -14,10 +14,11 @@ export default function ReportsPage() {
   const lang = useLanguage();
   return (
     <main className="min-h-screen bg-charcoal">
-      <PageHeader 
-        eyebrow="Compliance" 
-        title={{ en: 'Annual Reports', bn: 'বার্ষিক প্রতিবেদন', hi: 'वार्षिक रिपोर्ट' }} 
-        description={{ en: 'Transparency through yearly activity and financial disclosures.', bn: 'বার্ষিক কার্যক্রম এবং আর্থিক প্রকাশের মাধ্যমে স্বচ্ছতা।', hi: 'वार्षिक गतिविधि और वित्तीय खुलासे के माध्यम से पारदर्शिता।' }} 
+      <PageHeader
+        eyebrow="Compliance"
+        title={{ en: 'Annual Reports', bn: 'বার্ষিক প্রতিবেদন', hi: 'वार्षिक रिपोर्ट' }}
+        description={{ en: 'Transparency through yearly activity and financial disclosures.', bn: 'বার্ষিক কার্যক্রম এবং আর্থিক প্রকাশের মাধ্যমে স্বচ্ছতা।', hi: 'वार्षिक गतिविधि और वित्तीय खुलासे के माध्यम से पारदर्शिता।' }}
+        compact
       />
       
       <section className="section section-dark relative">

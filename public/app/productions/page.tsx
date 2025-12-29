@@ -1,135 +1,36 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { PageHeader } from '../components/PageHeader';
 import { BackgroundPhotos } from '../components/BackgroundPhotos';
 import { useLanguage } from '../components/LanguageSwitcher';
+import { ProductionGalleryModal } from '../components/ProductionGalleryModal';
+import { productions, Production } from '../../lib/productionsData';
 
-const productions = [
-  {
-    title: 'Bisarjan',
-    category: { en: 'Tagore Classic', bn: 'রবীন্দ্র ক্লাসিক', hi: 'टैगोर क्लासिक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Bisarjan%20Natok%20edited/CT2A7966.jpg',
-    description: {
-      en: "Rabindranath Tagore's classic play about sacrifice and devotion.",
-      bn: 'ত্যাগ এবং ভক্তি সম্পর্কে রবীন্দ্রনাথ ঠাকুরের ক্লাসিক নাটক।',
-      hi: 'बलिदान और भक्ति के बारे में रवींद्रनाथ टैगोर का क्लासिक नाटक।'
-    }
-  },
-  {
-    title: 'Satmar Paloan',
-    category: { en: 'Cultural Drama', bn: 'সাংস্কৃতিক নাটক', hi: 'सांस्कृतिक नाटक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Saatmar%20Palawan/20220219201621_IMG_5339.jpg',
-    description: {
-      en: 'A powerful drama about wrestling and tradition in rural Bengal.',
-      bn: 'গ্রামীণ বাংলার কুস্তি এবং ঐতিহ্য সম্পর্কে একটি শক্তিশালী নাটক।',
-      hi: 'ग्रामीण बंगाल में कुश्ती और परंपरा के बारे में एक शक्तिशाली नाटक।'
-    }
-  },
-  {
-    title: 'Charandas Chor',
-    category: { en: 'Classic Adaptation', bn: 'ক্লাসিক অভিযোজন', hi: 'क्लासिक रूपांतरण' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Charandas%20chor/1.jpg',
-    description: {
-      en: "Habib Tanvir's legendary play about an honest thief.",
-      bn: 'একজন সৎ চোর সম্পর্কে হাবিব তানভীরের কিংবদন্তি নাটক।',
-      hi: 'एक ईमानदार चोर के बारे में हबीब तनवीर का प्रसिद्ध नाटक।'
-    }
-  },
-  {
-    title: 'Tota Kahini',
-    category: { en: 'Satirical Drama', bn: 'ব্যঙ্গাত্মক নাটক', hi: 'व्यंग्य नाटक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Tota%20kahini/09.jpg',
-    description: {
-      en: 'A satirical masterpiece that uses the metaphor of parrots to comment on society.',
-      bn: 'একটি ব্যঙ্গাত্মক মাস্টারপিস যা সমাজের উপর মন্তব্য করতে তোতার রূপক ব্যবহার করে।',
-      hi: 'एक व्यंग्यात्मक कृति जो समाज पर टिप्पणी करने के लिए तोतों के रूपक का उपयोग करती है।'
-    }
-  },
-  {
-    title: 'Arshi Desher Porshira',
-    category: { en: 'Original Drama', bn: 'মৌলিক নাটক', hi: 'मूल नाटक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Arshi%20Desher%20Porshira/Picture-07.jpg',
-    description: {
-      en: "Our debut production that marked the beginning of Samatat's journey.",
-      bn: 'আমাদের প্রথম প্রযোজনা যা সমতটের যাত্রার সূচনা করেছে।',
-      hi: 'हमारी पहली प्रस्तुति जिसने समतट की यात्रा की शुरुआत की।'
-    }
-  },
-  {
-    title: 'Adharmoni',
-    category: { en: 'Social Drama', bn: 'সামাজিক নাটক', hi: 'सामाजिक नाटक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Adharmoni/IMG_8432.jpg',
-    description: {
-      en: 'A compelling social drama exploring human relationships and conflicts.',
-      bn: 'মানুষের সম্পর্ক এবং দ্বন্দ্ব অন্বেষণকারী একটি আকর্ষণীয় সামাজিক নাটক।',
-      hi: 'मानवीय संबंधों और संघर्षों की खोज करने वाला एक आकर्षक सामाजिक नाटक।'
-    }
-  },
-  {
-    title: 'Jodi aar ekbar',
-    category: { en: 'Modern Drama', bn: 'আধুনিক নাটক', hi: 'आधुनिक नाटक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Jodi%20aar%20ekbar/IMG_9104.jpg',
-    description: {
-      en: 'A contemporary exploration of life, choices, and second chances.',
-      bn: 'জীবন, পছন্দ এবং দ্বিতীয় সুযোগের সমসাময়িক অন্বেষণ।',
-      hi: 'जीवन, विकल्पों और दूसरे अवसरों की एक समकालीन खोज।'
-    }
-  },
-  {
-    title: 'Kagoj Kahini',
-    category: { en: 'Experimental', bn: 'পরীক্ষামূলক', hi: 'प्रयोगात्मक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Kagoj%20Kahini/Picture-08.jpg',
-    description: {
-      en: 'An experimental piece using paper as a central motif and storytelling tool.',
-      bn: 'কাগজকে একটি কেন্দ্রীয় মোটিফ এবং গল্প বলার সরঞ্জাম হিসাবে ব্যবহার করে একটি পরীক্ষামূলক কাজ।',
-      hi: 'कागज को एक केंद्रीय रूपांकन और कहानी कहने के उपकरण के रूप में उपयोग करने वाला एक प्रयोगात्मक टुकड़ा।'
-    }
-  },
-  {
-    title: 'Kaliprasanna o ora',
-    category: { en: 'Historical', bn: 'ঐতিহাসিক', hi: 'ऐतिहासिक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Kaliprasanna%20o%20ora/Picture-02.jpg',
-    description: {
-      en: 'A historical drama based on the life and times of Kaliprasanna Singha.',
-      bn: 'কালীপ্রসন্ন সিংহের জীবন ও সময়ের ওপর ভিত্তি করে একটি ঐতিহাসিক নাটক।',
-      hi: 'कालीप्रसन्न सिंह के जीवन और समय पर आधारित एक ऐतिहासिक नाटक।'
-    }
-  },
-  {
-    title: 'Podi pishi',
-    category: { en: 'Comedy', bn: 'কমেডি', hi: 'कॉमेडी' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Podi%20pishi/Picture%20370.jpg',
-    description: {
-      en: 'A delightful comedy that captures the eccentricities of life.',
-      bn: 'জীবনের অদ্ভুততাগুলিকে ধরে রাখা একটি আনন্দদায়ক কমেডি।',
-      hi: 'एक आनंदमय कॉमेडी जो जीवन की विलक्षणताओं को दर्शाती है।'
-    }
-  },
-  {
-    title: 'Roopnagarer roopkotha',
-    category: { en: 'Fantasy/Folk', bn: 'কল্পকাহিনী/লোক', hi: 'काल्पनिक/लोक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Roopnagarer%20roopkotha/Picture-01.jpg',
-    description: {
-      en: 'A folk-inspired fantasy tale woven with music and magic.',
-      bn: 'সঙ্গীত এবং জাদুর সাথে বোনা একটি লোক-অনুপ্রাণিত রূপকথা।',
-      hi: 'संगीत और जादू से बुनी गई एक लोक-प्रेरित काल्पनिक कहानी।'
-    }
-  },
-  {
-    title: 'Swapnomoy',
-    category: { en: 'Dream Drama', bn: 'স্বপ্ন নাটক', hi: 'स्वप्न नाटक' },
-    image: 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Swapnomoy/IMG_1114.jpg',
-    description: {
-      en: 'A journey through dreams and the subconscious mind.',
-      bn: 'স্বপ্ন এবং অবচেতন মনের মধ্য দিয়ে একটি যাত্রা।',
-      hi: 'सपनों और अवचेतन मन के माध्यम से एक यात्रा।'
-    }
-  }
-];
+// Get unique categories for filtering
+const allCategories = Array.from(new Set(productions.map(p => p.category.en)));
 
 export default function ProductionsPage() {
   const lang = useLanguage();
+  const [selectedProduction, setSelectedProduction] = useState<Production | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filter productions based on category and search
+  const filteredProductions = useMemo(() => {
+    return productions.filter(prod => {
+      const matchesCategory = selectedCategory === 'All' || prod.category.en === selectedCategory;
+      const matchesSearch = searchQuery === '' ||
+        prod.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        prod.description.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (prod.playwright?.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
+
+  // Stats
+  const totalPhotos = productions.reduce((sum, p) => sum + p.photoCount, 0);
 
   return (
     <main className="min-h-screen bg-charcoal">
@@ -141,80 +42,167 @@ export default function ProductionsPage() {
           bn: '১৯৯৯ সাল থেকে ১৫০+ মৌলিক প্রযোজনা, অর্থবহ গল্পকে জীবন্ত করে তুলছে',
           hi: '1999 से 150+ मूल प्रोडक्शन, सार्थक कहानियों को जीवंत करते हुए'
         }}
+        compact
       />
 
-      {/* Philosophy Section */}
-      <section className="section section-dark relative overflow-hidden">
-        <BackgroundPhotos variant="corner" opacity={0.05} position="right" />
-        <div className="container max-w-4xl relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="section-title mb-6">Our Production Philosophy</h2>
-            <p className="text-light-gray text-lg leading-relaxed">
-              At Samatat, we bridge the gap between "Star Theatre" and "Pure Theatre." 
-              Our goal is to cultivate an audience that appreciates the art form for its 
-              craft, story, and direction rather than just famous faces.
-            </p>
+      {/* Search and Filter Section */}
+      <section className="section section-charcoal pt-8 pb-4">
+        <div className="container">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-8">
+            {/* Search */}
+            <div className="relative w-full md:w-80">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-light-gray/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search productions..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-light-gray/50 focus:border-gold/50 focus:outline-none transition-colors"
+              />
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap gap-2 justify-center">
+              <button
+                onClick={() => setSelectedCategory('All')}
+                className={`px-4 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${
+                  selectedCategory === 'All'
+                    ? 'bg-gold text-black'
+                    : 'bg-white/5 text-light-gray hover:bg-white/10'
+                }`}
+              >
+                All ({productions.length})
+              </button>
+              {allCategories.slice(0, 6).map(cat => {
+                const count = productions.filter(p => p.category.en === cat).length;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-4 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${
+                      selectedCategory === cat
+                        ? 'bg-gold text-black'
+                        : 'bg-white/5 text-light-gray hover:bg-white/10'
+                    }`}
+                  >
+                    {cat} ({count})
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {[
-              { icon: '📖', label: 'Story First' },
-              { icon: '👥', label: 'Ensemble' },
-              { icon: '🎬', label: 'Technical' },
-              { icon: '🌿', label: 'Roots' }
-            ].map((item, i) => (
-              <div key={i} className="text-center p-4 rounded-lg bg-black/20 border border-white/5">
-                <div className="text-3xl mb-2">{item.icon}</div>
-                <div className="text-gold text-sm font-medium uppercase tracking-wider">{item.label}</div>
-              </div>
-            ))}
-          </div>
+
+          {/* Results count */}
+          <p className="text-light-gray/60 text-sm mb-6">
+            Showing {filteredProductions.length} production{filteredProductions.length !== 1 ? 's' : ''}
+            {searchQuery && ` for "${searchQuery}"`}
+          </p>
         </div>
       </section>
 
       {/* Production Gallery */}
-      <section className="section section-charcoal">
+      <section className="section section-charcoal pt-0">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {productions.map((prod, i) => (
-              <div key={i} className="group relative bg-black/40 rounded-xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold/10">
-                {/* Image Container */}
-                <div className="aspect-[16/10] overflow-hidden relative">
-                  <img 
-                    src={prod.image} 
-                    alt={prod.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-gold/90 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                      {prod.category[lang]}
-                    </span>
-                  </div>
-                </div>
+          {filteredProductions.length === 0 ? (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🎭</div>
+              <p className="text-light-gray text-lg">No productions found matching your criteria</p>
+              <button
+                onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
+                className="mt-4 text-gold hover:text-gold-light transition-colors"
+              >
+                Clear filters
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {filteredProductions.map((prod) => {
+                const title = lang === 'bn' && prod.titleBn ? prod.titleBn :
+                             lang === 'hi' && prod.titleHi ? prod.titleHi :
+                             prod.title;
 
-                {/* Content */}
-                <div className="p-6 md:p-8">
-                  <h3 className="text-2xl font-light text-white mb-3 group-hover:text-gold transition-colors">
-                    {prod.title}
-                  </h3>
-                  <p className="text-light-gray/80 text-sm leading-relaxed mb-6 line-clamp-2">
-                    {prod.description[lang]}
-                  </p>
-                  <Link 
-                    href={`/productions/archive?play=${prod.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="inline-flex items-center text-gold text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all"
+                return (
+                  <div
+                    key={prod.id}
+                    className="group relative bg-black/40 rounded-xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold/10 cursor-pointer"
+                    onClick={() => setSelectedProduction(prod)}
                   >
-                    View Details <span className="ml-2 text-lg">→</span>
-                  </Link>
-                </div>
+                    {/* Image Container */}
+                    <div className="aspect-[16/10] overflow-hidden relative">
+                      <img
+                        src={prod.thumbnailUrl}
+                        alt={prod.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80" />
 
-                {/* Decorative border */}
-                <div className="absolute inset-0 border border-white/5 rounded-xl pointer-events-none" />
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gold transition-all duration-500 group-hover:w-full" />
-              </div>
-            ))}
-          </div>
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-gold/90 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                          {prod.category[lang]}
+                        </span>
+                      </div>
+
+                      {/* Photo Count Badge */}
+                      <div className="absolute top-4 right-4 flex items-center gap-1 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {prod.photoCount}
+                      </div>
+
+                      {/* Video indicator */}
+                      {prod.youtubeVideoId && (
+                        <div className="absolute bottom-4 right-4 flex items-center gap-1 bg-red-600/90 text-white text-xs px-2 py-1 rounded-full">
+                          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                          Video
+                        </div>
+                      )}
+
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+                        <div className="bg-gold text-black px-4 py-2 rounded-full font-medium text-sm flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          View Gallery
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 md:p-6">
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3 className="text-xl font-light text-white group-hover:text-gold transition-colors">
+                          {title}
+                        </h3>
+                        {prod.year && (
+                          <span className="text-light-gray/50 text-sm flex-shrink-0">{prod.year}</span>
+                        )}
+                      </div>
+
+                      {prod.playwright && (
+                        <p className="text-gold/70 text-xs mb-2">by {prod.playwright}</p>
+                      )}
+
+                      <p className="text-light-gray/70 text-sm leading-relaxed line-clamp-2">
+                        {prod.description[lang]}
+                      </p>
+                    </div>
+
+                    {/* Decorative elements */}
+                    <div className="absolute inset-0 border border-white/5 rounded-xl pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gold transition-all duration-500 group-hover:w-full" />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -223,9 +211,9 @@ export default function ProductionsPage() {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { n: '150+', l: 'Productions' },
+              { n: productions.length.toString(), l: 'Archived Productions' },
               { n: '26', l: 'Years' },
-              { n: '500+', l: 'Performances' },
+              { n: totalPhotos.toString(), l: 'Photos' },
               { n: '50K+', l: 'Audience' }
             ].map((s, i) => (
               <div key={i}>
@@ -237,18 +225,113 @@ export default function ProductionsPage() {
         </div>
       </section>
 
+      {/* Philosophy Section */}
+      <section className="section section-charcoal relative overflow-hidden">
+        <BackgroundPhotos variant="corner" opacity={0.05} position="right" />
+        <div className="container max-w-4xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="section-title mb-6">Our Production Philosophy</h2>
+            <p className="text-light-gray text-lg leading-relaxed">
+              At Samatat, we bridge the gap between "Star Theatre" and "Pure Theatre."
+              Our goal is to cultivate an audience that appreciates the art form for its
+              craft, story, and direction rather than just famous faces.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {[
+              { icon: '📖', label: 'Story First', desc: 'Narrative excellence' },
+              { icon: '👥', label: 'Ensemble', desc: 'Collaborative art' },
+              { icon: '🎬', label: 'Technical', desc: 'Production quality' },
+              { icon: '🌿', label: 'Roots', desc: 'Cultural heritage' }
+            ].map((item, i) => (
+              <div key={i} className="text-center p-4 rounded-lg bg-black/20 border border-white/5 hover:border-gold/20 transition-colors">
+                <div className="text-3xl mb-2">{item.icon}</div>
+                <div className="text-gold text-sm font-medium uppercase tracking-wider">{item.label}</div>
+                <div className="text-light-gray/50 text-xs mt-1">{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Productions Highlight */}
+      <section className="section section-charcoal">
+        <div className="container">
+          <h2 className="section-title text-center mb-12">Featured Highlights</h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Most Photos */}
+            <div
+              className="group bg-gradient-to-br from-gold/10 to-transparent rounded-2xl p-6 border border-gold/20 cursor-pointer hover:border-gold/40 transition-colors"
+              onClick={() => setSelectedProduction(productions.find(p => p.id === 'saatmar-palawan') || null)}
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                  <img
+                    src={productions.find(p => p.id === 'saatmar-palawan')?.thumbnailUrl}
+                    alt="Saatmar Palawan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-gold text-xs uppercase tracking-widest mb-1">Most Photographed</div>
+                  <h3 className="text-xl text-white group-hover:text-gold transition-colors">Saatmar Palawan</h3>
+                  <p className="text-light-gray/60 text-sm">147 photos from this epic production</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Classic Tagore */}
+            <div
+              className="group bg-gradient-to-br from-burgundy/20 to-transparent rounded-2xl p-6 border border-burgundy/30 cursor-pointer hover:border-burgundy/50 transition-colors"
+              onClick={() => setSelectedProduction(productions.find(p => p.id === 'bisarjan') || null)}
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                  <img
+                    src={productions.find(p => p.id === 'bisarjan')?.thumbnailUrl}
+                    alt="Bisarjan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-burgundy text-xs uppercase tracking-widest mb-1">Tagore Classic</div>
+                  <h3 className="text-xl text-white group-hover:text-gold transition-colors">Bisarjan</h3>
+                  <p className="text-light-gray/60 text-sm">Rabindranath Tagore's masterpiece</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section section-charcoal text-center border-t border-white/5">
         <div className="container max-w-2xl">
-          <h2 className="text-3xl font-light text-white mb-6">Explore Our Full History</h2>
+          <h2 className="text-3xl font-light text-white mb-6">Want to See Us Live?</h2>
           <p className="text-light-gray mb-10">
-            Dive into our digital archive spanning over two decades of theatrical excellence in Uttarpara.
+            Check out our upcoming shows and festivals to experience Samatat theatre in person.
           </p>
-          <Link href="/productions/archive" className="btn btn-primary px-10">
-            View Full Archive
-          </Link>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link href="/shows" className="btn btn-primary px-10">
+              Upcoming Shows
+            </Link>
+            <Link href="/festivals" className="btn btn-secondary px-10">
+              Our Festivals
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* Gallery Modal */}
+      {selectedProduction && (
+        <ProductionGalleryModal
+          production={selectedProduction}
+          isOpen={!!selectedProduction}
+          onClose={() => setSelectedProduction(null)}
+        />
+      )}
     </main>
   );
 }
