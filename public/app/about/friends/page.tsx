@@ -2,7 +2,7 @@
 
 import { PageHeader } from '../../components/PageHeader';
 import { BackgroundPhotos } from '../../components/BackgroundPhotos';
-import { useLanguage, Language } from '../../components/LanguageSwitcher';
+import { useLanguage } from '../../components/LanguageSwitcher';
 
 // Translations
 const content = {

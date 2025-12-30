@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface MosaicCell {
   id: number;
@@ -32,9 +32,10 @@ const gradientColors = [
 export function MosaicBackground() {
   const [hoveredCell, setHoveredCell] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [gridCells, setGridCells] = useState<MosaicCell[]>([]);
 
-  // Generate mosaic grid cells
-  const gridCells = useMemo(() => {
+  // Generate mosaic grid cells on mount (client-side only to avoid hydration mismatch)
+  useEffect(() => {
     const cols = 20;
     const rows = 12;
     const cells: MosaicCell[] = [];
@@ -47,10 +48,9 @@ export function MosaicBackground() {
         delay: Math.random() * 5, // Random delay for animation stagger
       });
     }
-    return cells;
-  }, []);
-
-  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Client-side initialization
+    setGridCells(cells);
+     
     setMounted(true);
   }, []);
 

@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import { CMSDocument, uploadFile, ContentType } from '../../lib/firebase';
-import { Timestamp } from 'firebase/firestore';
 
 type Language = 'en' | 'bn' | 'hi';
 

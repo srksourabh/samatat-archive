@@ -13,9 +13,10 @@ export default function Home() {
   const [randomQuote, setRandomQuote] = useState(homeContent.quotes[0]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Select a random quote on each page load
+  // Select a random quote on each page load (client-side only)
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * homeContent.quotes.length);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Client-side initialization
     setRandomQuote(homeContent.quotes[randomIndex]);
   }, []);
 

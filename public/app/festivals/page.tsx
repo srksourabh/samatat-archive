@@ -1,11 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { useLanguage, Language } from '../components/LanguageSwitcher';
-import { festivalsData, getFestivalsSorted, Festival, Play } from '../lib/festivalData';
-
-type TranslatedText = Record<Language, string>;
+import { useLanguage } from '../components/LanguageSwitcher';
+import { getFestivalsSorted, Festival } from '../lib/festivalData';
 
 // Content translations
 const content = {
@@ -35,28 +32,6 @@ const content = {
   schedule: { en: 'Schedule', bn: 'সময়সূচী', hi: 'कार्यक्रम' }
 };
 
-// Upcoming festival placeholder
-const upcomingFestival: Festival = {
-  year: 2025,
-  edition: 26,
-  title: {
-    en: 'Samatat Natyamela 2025',
-    bn: 'সমতট নাট্যমেলা ২০২৫',
-    hi: 'समतट नाट्यमेला 2025'
-  },
-  dates: {
-    en: 'December 2025 (Dates TBA)',
-    bn: 'ডিসেম্বর ২০২৫ (তারিখ ঘোষণা করা হবে)',
-    hi: 'दिसंबर 2025 (तारीखें घोषित होंगी)'
-  },
-  venue: {
-    en: 'Uttarpara Gangabhaban',
-    bn: 'উত্তরপাড়া গঙ্গাভবন',
-    hi: 'उत्तरपाड़ा गंगाभवन'
-  },
-  leafletImage: '',
-  plays: []
-};
 
 // Calculate statistics
 const getTotalPlays = () => festivalsData.reduce((acc, f) => acc + f.plays.length, 0);
@@ -74,8 +49,8 @@ export default function FestivalsPage() {
   const [selectedFestival, setSelectedFestival] = useState<Festival | null>(null);
   const [showLeaflet, setShowLeaflet] = useState(false);
 
-  // All festivals including upcoming
-  const allFestivals = [upcomingFestival, ...sortedFestivals];
+  // All festivals sorted by year (newest first)
+  const allFestivals = sortedFestivals;
 
   // Stats
   const totalPlays = getTotalPlays();

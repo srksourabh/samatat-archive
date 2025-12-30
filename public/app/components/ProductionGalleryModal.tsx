@@ -14,11 +14,12 @@ export function ProductionGalleryModal({ production, isOpen, onClose }: Producti
   const lang = useLanguage();
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
-  const [isLoading, setIsLoading] = useState(true);
+  const [, setIsLoading] = useState(true);
 
   // Reset state when modal opens/closes
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- Resetting state on modal open is intentional
       setSelectedPhotoIndex(null);
       setLoadedImages(new Set());
       setIsLoading(true);

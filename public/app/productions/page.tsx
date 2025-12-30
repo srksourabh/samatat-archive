@@ -232,7 +232,7 @@ export default function ProductionsPage() {
           <div className="text-center mb-16">
             <h2 className="section-title mb-6">Our Production Philosophy</h2>
             <p className="text-light-gray text-lg leading-relaxed">
-              At Samatat, we bridge the gap between "Star Theatre" and "Pure Theatre."
+              At Samatat, we bridge the gap between &ldquo;Star Theatre&rdquo; and &ldquo;Pure Theatre.&rdquo;
               Our goal is to cultivate an audience that appreciates the art form for its
               craft, story, and direction rather than just famous faces.
             </p>
@@ -298,7 +298,7 @@ export default function ProductionsPage() {
                 <div>
                   <div className="text-burgundy text-xs uppercase tracking-widest mb-1">Tagore Classic</div>
                   <h3 className="text-xl text-white group-hover:text-gold transition-colors">Bisarjan</h3>
-                  <p className="text-light-gray/60 text-sm">Rabindranath Tagore's masterpiece</p>
+                  <p className="text-light-gray/60 text-sm">Rabindranath Tagore&apos;s masterpiece</p>
                 </div>
               </div>
             </div>

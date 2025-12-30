@@ -4,7 +4,7 @@ import { PageHeader } from '../../components/PageHeader';
 import { useLanguage } from '../../components/LanguageSwitcher';
 
 export default function NGOPage() {
-  const lang = useLanguage();
+  useLanguage(); // Hook call for consistency
 
   const docs = [
     { label: 'Registration Certificate', value: 'S/1L/2157 of 1999-2000' },

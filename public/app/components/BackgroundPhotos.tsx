@@ -28,11 +28,16 @@ export function BackgroundPhotos({
 }: BackgroundPhotosProps) {
   const [loaded, setLoaded] = useState(false);
   const [photos, setPhotos] = useState<string[]>([]);
+  const [opacityMultipliers, setOpacityMultipliers] = useState<number[]>([]);
 
+  // Initialize random values on client-side only to avoid hydration mismatch
   useEffect(() => {
-    // Shuffle and select photos
     const shuffled = [...backgroundPhotos].sort(() => Math.random() - 0.5);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Client-side initialization
     setPhotos(shuffled.slice(0, 4));
+     
+    setOpacityMultipliers([0.8 + Math.random() * 0.4, 0.8 + Math.random() * 0.4, 0.8 + Math.random() * 0.4, 0.8 + Math.random() * 0.4]);
+     
     setLoaded(true);
   }, []);
 
@@ -104,7 +109,7 @@ export function BackgroundPhotos({
             className={`background-photo background-photo-scattered background-photo-scattered-${index + 1}`}
             style={{
               backgroundImage: `url(${photo})`,
-              opacity: opacity * (0.8 + Math.random() * 0.4)
+              opacity: opacity * (opacityMultipliers[index] || 1)
             }}
           />
         ))}

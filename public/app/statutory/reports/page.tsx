@@ -11,7 +11,7 @@ const reports = [
 ];
 
 export default function ReportsPage() {
-  const lang = useLanguage();
+  useLanguage(); // Hook call for consistency
   return (
     <main className="min-h-screen bg-charcoal">
       <PageHeader

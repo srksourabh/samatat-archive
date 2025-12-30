@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 type NewsItem = {
   title: string;
@@ -41,68 +41,74 @@ export function NewsTicker() {
   const scrollPositionRef = useRef(0);
   const isPausedRef = useRef(false);
 
-  // Fetch news from RSS feeds
-  const fetchNews = useCallback(async () => {
-    // Check cache first
-    const cached = localStorage.getItem(NEWS_CACHE_KEY);
-    if (cached) {
-      try {
-        const { news: cachedNews, timestamp } = JSON.parse(cached);
-        if (Date.now() - timestamp < NEWS_CACHE_EXPIRY && cachedNews.length > 0) {
-          setNews(cachedNews);
-          setIsLoading(false);
-          return;
-        }
-      } catch (e) {
-        // Cache invalid, fetch fresh
-      }
-    }
-
-    const allNews: NewsItem[] = [];
-
-    // Try to fetch from RSS feeds using rss2json API
-    for (const feed of RSS_FEEDS.slice(0, 3)) { // Limit to 3 feeds to avoid rate limiting
-      try {
-        const response = await fetch(
-          `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=5`,
-          { signal: AbortSignal.timeout(5000) }
-        );
-
-        if (response.ok) {
-          const data = await response.json();
-          if (data.status === 'ok' && data.items) {
-            const items = data.items.slice(0, 5).map((item: { title: string; link: string }) => ({
-              title: item.title.replace(/<[^>]*>/g, '').trim(),
-              link: item.link,
-              source: feed.source,
-            }));
-            allNews.push(...items);
-          }
-        }
-      } catch (error) {
-        // Feed failed, continue with others
-        console.log(`Failed to fetch ${feed.source}`);
-      }
-    }
-
-    // If we got some news, use it; otherwise use fallback
-    const finalNews = allNews.length > 0 ? allNews : FALLBACK_NEWS;
-
-    // Shuffle news for variety
-    const shuffled = [...finalNews].sort(() => Math.random() - 0.5);
-
-    // Cache the news
-    localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({
-      news: shuffled,
-      timestamp: Date.now(),
-    }));
-
-    setNews(shuffled);
-    setIsLoading(false);
-  }, []);
-
-  // Initialize and restore scroll position
+  // Initialize and fetch news on mount
   useEffect(() => {
+    let isMounted = true;
+
+    // Fetch news from RSS feeds
+    const fetchNews = async () => {
+      // Check cache first
+      const cached = localStorage.getItem(NEWS_CACHE_KEY);
+      if (cached) {
+        try {
+          const { news: cachedNews, timestamp } = JSON.parse(cached);
+          if (Date.now() - timestamp < NEWS_CACHE_EXPIRY && cachedNews.length > 0) {
+            if (isMounted) {
+              setNews(cachedNews);
+              setIsLoading(false);
+            }
+            return;
+          }
+        } catch {
+          // Cache invalid, fetch fresh
+        }
+      }
+
+      const allNews: NewsItem[] = [];
+
+      // Try to fetch from RSS feeds using rss2json API
+      for (const feed of RSS_FEEDS.slice(0, 3)) { // Limit to 3 feeds to avoid rate limiting
+        try {
+          const response = await fetch(
+            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=5`,
+            { signal: AbortSignal.timeout(5000) }
+          );
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data.status === 'ok' && data.items) {
+              const items = data.items.slice(0, 5).map((item: { title: string; link: string }) => ({
+                title: item.title.replace(/<[^>]*>/g, '').trim(),
+                link: item.link,
+                source: feed.source,
+              }));
+              allNews.push(...items);
+            }
+          }
+        } catch {
+          // Feed failed, continue with others
+          console.log(`Failed to fetch ${feed.source}`);
+        }
+      }
+
+      // If we got some news, use it; otherwise use fallback
+      const finalNews = allNews.length > 0 ? allNews : FALLBACK_NEWS;
+
+      // Shuffle news for variety
+      const shuffled = [...finalNews].sort(() => Math.random() - 0.5);
+
+      // Cache the news
+      localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({
+        news: shuffled,
+        timestamp: Date.now(),
+      }));
+
+      if (isMounted) {
+        setNews(shuffled);
+        setIsLoading(false);
+      }
+    };
+
     fetchNews();
 
     // Restore scroll position
@@ -127,11 +133,12 @@ export function NewsTicker() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
+      isMounted = false;
       window.removeEventListener('beforeunload', handleBeforeUnload);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       sessionStorage.setItem(SCROLL_POSITION_KEY, scrollPositionRef.current.toString());
     };
-  }, [fetchNews]);
+  }, []);
 
   // Continuous scrolling animation
   useEffect(() => {

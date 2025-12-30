@@ -2,9 +2,7 @@
 
 import Link from 'next/link';
 import { PageHeader } from '../components/PageHeader';
-import { useLanguage, Language } from '../components/LanguageSwitcher';
-
-type TranslatedText = Record<Language, string>;
+import { useLanguage } from '../components/LanguageSwitcher';
 
 const WORKSHOP_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/workshops';
 
