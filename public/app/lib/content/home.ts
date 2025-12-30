@@ -85,9 +85,9 @@ export const homeContent = {
       hi: 'समतट संस्कृति पश्चिम बंगाल के हुगली के उत्तरपाड़ा में स्थित एक पंजीकृत सांस्कृतिक संगठन है। 1999 में हमारी स्थापना के बाद से, हम बंगाली रंगमंच और सांस्कृतिक विरासत के प्रचार और संरक्षण के लिए समर्पित हैं।',
     } as TranslatedContent,
     formalP2: {
-      en: 'We have staged over 150 productions, conducted hundreds of workshops, and organized numerous cultural events that have touched the lives of thousands in our community.',
-      bn: 'আমরা ১৫০টিরও বেশি প্রযোজনা মঞ্চস্থ করেছি, শত শত কর্মশালা পরিচালনা করেছি এবং অসংখ্য সাংস্কৃতিক অনুষ্ঠানের আয়োজন করেছি যা আমাদের সম্প্রদায়ের হাজার হাজার মানুষের জীবনকে স্পর্শ করেছে।',
-      hi: 'हमने 150 से अधिक प्रस्तुतियाँ मंचित की हैं, सैकड़ों कार्यशालाएँ आयोजित की हैं, और कई सांस्कृतिक कार्यक्रमों का आयोजन किया है जिन्होंने हमारे समुदाय में हजारों लोगों के जीवन को छुआ है।',
+      en: 'We have staged 25+ original productions with 500+ shows, conducted hundreds of workshops, and organized numerous cultural events that have touched the lives of thousands in our community.',
+      bn: 'আমরা ২৫+ মৌলিক প্রযোজনা ৫০০+ শো সহ মঞ্চস্থ করেছি, শত শত কর্মশালা পরিচালনা করেছি এবং অসংখ্য সাংস্কৃতিক অনুষ্ঠানের আয়োজন করেছি যা আমাদের সম্প্রদায়ের হাজার হাজার মানুষের জীবনকে স্পর্শ করেছে।',
+      hi: 'हमने 25+ मूल प्रस्तुतियाँ 500+ शो के साथ मंचित की हैं, सैकड़ों कार्यशालाएँ आयोजित की हैं, और कई सांस्कृतिक कार्यक्रमों का आयोजन किया है जिन्होंने हमारे समुदाय में हजारों लोगों के जीवन को छुआ है।',
     } as TranslatedContent,
     communityTitle: {
       en: 'AT HEART',

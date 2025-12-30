@@ -9,6 +9,36 @@ const historyPhotos = [
   'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Saatmar%20Palawan/20220219201621_IMG_5339.jpg',
 ];
 
+const LANDMARKS_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/landmarks';
+
+// Historical landmarks of Uttarpara
+const landmarks = [
+  {
+    title: 'Uttarpara Railway Station',
+    titleBn: 'উত্তরপাড়া রেলওয়ে স্টেশন',
+    year: '1854',
+    description: 'One of the oldest railway stations in Eastern India, part of the first passenger railway line in this region. A historic landmark that witnessed the arrival of modern transportation in Bengal.',
+    descriptionBn: 'পূর্ব ভারতের প্রাচীনতম রেলওয়ে স্টেশনগুলির মধ্যে একটি, এই অঞ্চলের প্রথম যাত্রীবাহী রেলপথের অংশ। বাংলায় আধুনিক পরিবহনের আগমন প্রত্যক্ষ করা একটি ঐতিহাসিক স্থান।',
+    image: `${LANDMARKS_BASE}/uttarpara-station.jpg`,
+  },
+  {
+    title: 'Jaykrishna Public Library',
+    titleBn: 'জয়কৃষ্ণ পাবলিক লাইব্রেরি',
+    year: '1859',
+    description: 'The first free public library in Asia, established by Rai Jaykrishna Mukherjee. A majestic colonial building that has been a beacon of knowledge and learning for over 165 years.',
+    descriptionBn: 'এশিয়ার প্রথম বিনামূল্যে জনসাধারণের গ্রন্থাগার, রায় জয়কৃষ্ণ মুখোপাধ্যায় কর্তৃক প্রতিষ্ঠিত। একটি মহিমান্বিত ঔপনিবেশিক ভবন যা ১৬৫ বছরেরও বেশি সময় ধরে জ্ঞান ও শিক্ষার আলোকবর্তিকা।',
+    image: `${LANDMARKS_BASE}/jaykrishna-library.jpg`,
+  },
+  {
+    title: 'Vande Mataram Bhawan',
+    titleBn: 'বন্দে মাতরম ভবন',
+    year: '1882',
+    description: 'The residence in Chinsurah where Bankim Chandra Chattopadhyay composed "Vande Mataram", the national song of India. A pilgrimage site for every Indian patriot and lover of Bengali literature.',
+    descriptionBn: 'চুঁচুড়ার যে বাড়িতে বঙ্কিমচন্দ্র চট্টোপাধ্যায় ভারতের জাতীয় সংগীত "বন্দে মাতরম" রচনা করেছিলেন। প্রতিটি ভারতীয় দেশপ্রেমিক এবং বাংলা সাহিত্যপ্রেমীর তীর্থস্থান।',
+    image: `${LANDMARKS_BASE}/bankim-chandra-house.jpg`,
+  },
+];
+
 export default function HistoryPage() {
   return (
     <main>
@@ -61,8 +91,44 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* The Stalwart's Challenge */}
+      {/* Heritage of Uttarpara */}
       <section className="section section-dark">
+        <div className="container">
+          <h2 className="text-gold text-3xl mb-4 text-center">Heritage of Uttarpara</h2>
+          <p className="text-light-gray text-center max-w-3xl mx-auto mb-12">
+            Our home, Uttarpara, is steeped in history and culture. These landmarks represent the rich heritage
+            that inspires our work and connects us to generations of Bengali intellectuals and freedom fighters.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {landmarks.map((landmark) => (
+              <div key={landmark.title} className="card overflow-hidden group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={landmark.image}
+                    alt={landmark.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute top-4 right-4 bg-gold text-black px-3 py-1 rounded text-sm font-bold">
+                    Est. {landmark.year}
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-xl font-semibold">{landmark.title}</h3>
+                    <p className="text-gold text-sm">{landmark.titleBn}</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-light-gray text-sm leading-relaxed">{landmark.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Stalwart's Challenge */}
+      <section className="section section-charcoal">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative">
@@ -124,7 +190,7 @@ export default function HistoryPage() {
               <h3 className="text-xl text-white mb-3">2015-Present - A Premier Institution</h3>
               <p className="text-light-gray">
                 Today, nearly three decades later, Samatat stands as a premier cultural institution in Bengal.
-                We have produced over 150 original productions, hosted 25 annual theatre festivals, and trained
+                We have produced 25+ original productions with 500+ shows, hosted 25 annual theatre festivals, and trained
                 hundreds of young artists who now work professionally across India&apos;s theatre industry.
               </p>
             </div>
@@ -141,7 +207,7 @@ export default function HistoryPage() {
               <div className="stat-label">Years of Theatre</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">150+</div>
+              <div className="stat-number">25+</div>
               <div className="stat-label">Productions</div>
             </div>
             <div className="stat-item">
@@ -150,7 +216,7 @@ export default function HistoryPage() {
             </div>
             <div className="stat-item">
               <div className="stat-number">500+</div>
-              <div className="stat-label">Artists Trained</div>
+              <div className="stat-label">Shows Completed</div>
             </div>
           </div>
         </div>

@@ -61,16 +61,21 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside - use mousedown to avoid interfering with link clicks
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (!target.closest('.nav-dropdown')) {
+      // Don't interfere if clicking on a link
+      if (target.closest('a')) {
+        setOpenDropdown(null);
+        return;
+      }
+      if (!target.closest('.nav-dropdown-trigger')) {
         setOpenDropdown(null);
       }
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Helper to get label - returns the key itself if it's a year (number)
@@ -100,7 +105,7 @@ export function Navigation() {
                   <>
                     <button
                       onClick={() => setOpenDropdown(openDropdown === item.labelKey ? null : item.labelKey)}
-                      className="nav-link flex items-center gap-1 px-3 py-2"
+                      className="nav-link nav-dropdown-trigger flex items-center gap-1 px-3 py-2"
                     >
                       {getLabel(item.labelKey)}
                       <svg

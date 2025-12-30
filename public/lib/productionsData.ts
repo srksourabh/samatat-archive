@@ -274,6 +274,7 @@ export const productions: Production[] = [
     thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`,
     folderName: 'Swapnomoy',
     photoCount: 31,
+    youtubeVideoId: 'g5HsWviujn0',
     photos: generatePhotoUrls('Swapnomoy', [
       'IMG_1086.jpg', 'IMG_1087.jpg', 'IMG_1095.jpg', 'IMG_1099.jpg', 'IMG_1100.jpg',
       'IMG_1104.jpg', 'IMG_1105.jpg', 'IMG_1111.jpg', 'IMG_1112.jpg', 'IMG_1114.jpg',
@@ -403,6 +404,57 @@ export const productions: Production[] = [
     photos: generatePhotoUrls('wazeb mianr biya', [
       'samatat033.jpg', 'samatat034.jpg', 'samatat035.jpg', 'samatat036.jpg', 'samatat038.jpg', 'samatat039.jpg'
     ])
+  },
+  {
+    id: 'asamoy',
+    title: 'Asamoy',
+    titleBn: 'অসময়',
+    titleHi: 'असमय',
+    category: { en: 'Social Drama', bn: 'সামাজিক নাটক', hi: 'सामाजिक नाटक' },
+    description: {
+      en: 'A powerful social drama exploring the complexities of time and circumstance in human life. This thought-provoking production examines how untimely events shape our destiny.',
+      bn: 'মানব জীবনে সময় এবং পরিস্থিতির জটিলতা অন্বেষণকারী একটি শক্তিশালী সামাজিক নাটক।',
+      hi: 'मानव जीवन में समय और परिस्थिति की जटिलताओं का पता लगाने वाला एक शक्तिशाली सामाजिक नाटक।'
+    },
+    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1111.jpg`,
+    folderName: 'Asamoy',
+    photoCount: 0,
+    youtubeVideoId: '--cFyPdo6aM',
+    photos: []
+  },
+  {
+    id: 'mithai-er-autograph',
+    title: 'Mithai er Autograph',
+    titleBn: 'মিঠাই এর অটোগ্রাফ',
+    titleHi: 'मिठाई एर ऑटोग्राफ',
+    category: { en: 'Comedy', bn: 'কমেডি', hi: 'कॉमेडी' },
+    description: {
+      en: 'A heartwarming comedy about the sweet pursuit of autographs and the unexpected connections they create. This delightful production blends humor with touching moments of human connection.',
+      bn: 'অটোগ্রাফের মিষ্টি অন্বেষণ এবং তারা যে অপ্রত্যাশিত সংযোগ তৈরি করে সে সম্পর্কে একটি হৃদয়গ্রাহী কমেডি।',
+      hi: 'ऑटोग्राफ की मधुर खोज और उनसे बनने वाले अप्रत्याशित संबंधों के बारे में एक दिल को छू लेने वाली कॉमेडी।'
+    },
+    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`,
+    folderName: 'Mithai er autograph',
+    photoCount: 0,
+    youtubeVideoId: 'Yb8X1YVoXjI',
+    photos: []
+  },
+  {
+    id: 'nana-ronger-din',
+    title: 'Nana Ronger Din',
+    titleBn: 'নানা রঙের দিন',
+    titleHi: 'नाना रंगेर दिन',
+    category: { en: 'Classic Drama', bn: 'ক্লাসিক নাটক', hi: 'क्लासिक नाटक' },
+    description: {
+      en: 'A timeless classic celebrating the vibrant spectrum of life and emotions. This production captures the essence of colorful days through compelling storytelling and memorable performances.',
+      bn: 'জীবন এবং আবেগের প্রাণবন্ত বর্ণালী উদযাপনকারী একটি চিরন্তন ক্লাসিক।',
+      hi: 'जीवन और भावनाओं के जीवंत स्पेक्ट्रम का जश्न मनाने वाला एक कालातीत क्लासिक।'
+    },
+    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`,
+    folderName: 'Nana Ronger Din',
+    photoCount: 0,
+    youtubeVideoId: 'dXqkYl147d0',
+    photos: []
   }
 ];
 

@@ -304,19 +304,19 @@ export default function ContactPage() {
                 <div className="card p-4">
                   <span className="text-2xl mb-2 block">📍</span>
                   <h3 className="text-white font-medium mb-1">Address</h3>
-                  <p className="text-light-gray text-sm">Samatat Sanskriti, Uttarpara<br />Hooghly District<br />West Bengal, India</p>
+                  <p className="text-light-gray text-sm">201 Jai Krishna Street<br />Uttarpara, Hooghly District<br />West Bengal, India</p>
                 </div>
                 <div className="card p-4">
                   <span className="text-2xl mb-2 block">📧</span>
                   <h3 className="text-white font-medium mb-1">Email</h3>
-                  <a href="mailto:contact@samatatuttarpara.org" className="text-gold text-sm hover:text-gold-light">
-                    contact@samatatuttarpara.org
+                  <a href="mailto:srksourabh@gmail.com" className="text-gold text-sm hover:text-gold-light">
+                    srksourabh@gmail.com
                   </a>
                 </div>
                 <div className="card p-4">
                   <span className="text-2xl mb-2 block">📱</span>
                   <h3 className="text-white font-medium mb-1">Phone / WhatsApp</h3>
-                  <p className="text-light-gray text-sm">+91 98765 43210</p>
+                  <a href="tel:+919831051262" className="text-light-gray text-sm hover:text-gold">+91 98310 51262</a>
                   <p className="text-gray text-xs mt-1">Available Mon-Sat, 10AM-6PM</p>
                 </div>
                 <div className="card p-4">

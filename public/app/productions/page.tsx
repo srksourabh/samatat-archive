@@ -38,9 +38,9 @@ export default function ProductionsPage() {
         eyebrow="Our Work"
         title={{ en: 'Theatre Productions', bn: 'থিয়েটার প্রযোজনা', hi: 'थिएटर प्रोडक्शन' }}
         description={{
-          en: '150+ original productions since 1999, bringing meaningful stories to life',
-          bn: '১৯৯৯ সাল থেকে ১৫০+ মৌলিক প্রযোজনা, অর্থবহ গল্পকে জীবন্ত করে তুলছে',
-          hi: '1999 से 150+ मूल प्रोडक्शन, सार्थक कहानियों को जीवंत करते हुए'
+          en: '25+ original productions with 500+ shows since 1999, bringing meaningful stories to life',
+          bn: '১৯৯৯ সাল থেকে ২৫+ মৌলিক প্রযোজনা ৫০০+ শো সহ, অর্থবহ গল্পকে জীবন্ত করে তুলছে',
+          hi: '1999 से 25+ मूल प्रोडक्शन 500+ शो के साथ, सार्थक कहानियों को जीवंत करते हुए'
         }}
         compact
       />

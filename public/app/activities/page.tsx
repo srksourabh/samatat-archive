@@ -3,6 +3,8 @@
 import { useLanguage } from '../components/LanguageSwitcher';
 import { PageHeader } from '../components/PageHeader';
 
+const EVENTS_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/events';
+
 const content = {
   eyebrow: { en: 'Beyond Theatre', bn: 'থিয়েটারের বাইরে', hi: 'थिएटर से परे' },
   title: { en: 'Cultural Activities', bn: 'সাংস্কৃতিক কার্যক্রম', hi: 'सांस्कृतिक गतिविधियाँ' },
@@ -32,7 +34,8 @@ const activities = [
     timing: { en: 'March (during Dol Purnima)', bn: 'মার্চ (দোল পূর্ণিমার সময়)', hi: 'मार्च (दोल पूर्णिमा के दौरान)' },
     icon: '🌸',
     color: 'from-pink-500/20 to-orange-500/20',
-    borderColor: 'border-pink-500/30'
+    borderColor: 'border-pink-500/30',
+    image: `${EVENTS_BASE}/DSC06530.JPG`
   },
   {
     id: 'bhasha-dibos',
@@ -52,7 +55,8 @@ const activities = [
     timing: { en: '21st February every year', bn: 'প্রতি বছর ২১শে ফেব্রুয়ারি', hi: 'हर साल 21 फरवरी' },
     icon: '📚',
     color: 'from-blue-500/20 to-purple-500/20',
-    borderColor: 'border-blue-500/30'
+    borderColor: 'border-blue-500/30',
+    image: `${EVENTS_BASE}/100_3322.JPG`
   },
   {
     id: 'rabindra-jayanti',
@@ -72,7 +76,8 @@ const activities = [
     timing: { en: '25 Boisakh (May)', bn: '২৫শে বৈশাখ (মে)', hi: '25 बैसाख (मई)' },
     icon: '🎭',
     color: 'from-amber-500/20 to-yellow-500/20',
-    borderColor: 'border-amber-500/30'
+    borderColor: 'border-amber-500/30',
+    image: `${EVENTS_BASE}/DSC_3851.JPG`
   },
   {
     id: 'film-festival',
@@ -92,7 +97,8 @@ const activities = [
     timing: { en: 'November (Children\'s Day week)', bn: 'নভেম্বর (শিশু দিবস সপ্তাহ)', hi: 'नवंबर (बाल दिवस सप्ताह)' },
     icon: '🎬',
     color: 'from-red-500/20 to-pink-500/20',
-    borderColor: 'border-red-500/30'
+    borderColor: 'border-red-500/30',
+    image: `${EVENTS_BASE}/DSC00064.JPG`
   }
 ];
 
@@ -189,13 +195,19 @@ export default function ActivitiesPage() {
                 {/* Visual Side */}
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className={`relative aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br ${activity.color} border ${activity.borderColor}`}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-[120px] opacity-30">{activity.icon}</span>
+                    <img
+                      src={activity.image}
+                      alt={activity.title[lang]}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="text-4xl">{activity.icon}</span>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4">
-                      <div className="text-white/90 text-sm">
-                        {lang === 'en' ? 'Photos and videos coming soon' : lang === 'bn' ? 'ছবি এবং ভিডিও শীঘ্রই আসছে' : 'फ़ोटो और वीडियो जल्द आ रहे हैं'}
+                      <div className="text-white font-medium text-lg">
+                        {activity.title[lang]}
                       </div>
                     </div>
                   </div>
