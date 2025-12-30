@@ -6,6 +6,7 @@ export const en: Record<string, string> = {
   'nav.productions': 'Productions',
   'nav.festival': 'Festival',
   'nav.activities': 'Cultural Activities',
+  'nav.news': 'News',
   'nav.statutory': 'Statutory',
   'nav.contact': 'Contact',
 
@@ -45,6 +46,7 @@ export const en: Record<string, string> = {
   'footer.alumni': 'Alumni',
   'footer.president': "President's Message",
   'footer.programs': 'Programs',
+  'footer.news': 'News & Updates',
   'footer.workshops': 'Workshops',
   'footer.productions': 'Productions',
   'footer.festival': 'Theatre Festival',
@@ -69,6 +71,12 @@ export const en: Record<string, string> = {
   'common.upcoming': 'Upcoming',
   'common.completed': 'Completed',
   'common.register': 'Register Now',
+
+  // Social Media
+  'social.followUs': 'Follow Us',
+  'social.facebook': 'Facebook',
+  'social.youtube': 'YouTube',
+  'social.connectWithUs': 'Connect with us on social media',
 };
 
 // Bengali translations
@@ -79,6 +87,7 @@ export const bn: Record<string, string> = {
   'nav.productions': 'প্রযোজনা',
   'nav.festival': 'উৎসব',
   'nav.activities': 'সাংস্কৃতিক কার্যক্রম',
+  'nav.news': 'খবর',
   'nav.statutory': 'বিধিবদ্ধ',
   'nav.contact': 'যোগাযোগ',
 
@@ -118,6 +127,7 @@ export const bn: Record<string, string> = {
   'footer.alumni': 'প্রাক্তন',
   'footer.president': 'সভাপতির বার্তা',
   'footer.programs': 'কার্যক্রম',
+  'footer.news': 'খবর ও আপডেট',
   'footer.workshops': 'কর্মশালা',
   'footer.productions': 'প্রযোজনা',
   'footer.festival': 'থিয়েটার উৎসব',
@@ -142,6 +152,12 @@ export const bn: Record<string, string> = {
   'common.upcoming': 'আসন্ন',
   'common.completed': 'সম্পন্ন',
   'common.register': 'এখনই নিবন্ধন করুন',
+
+  // Social Media
+  'social.followUs': 'আমাদের অনুসরণ করুন',
+  'social.facebook': 'ফেসবুক',
+  'social.youtube': 'ইউটিউব',
+  'social.connectWithUs': 'সোশ্যাল মিডিয়ায় আমাদের সাথে যুক্ত হন',
 };
 
 // Hindi translations
@@ -152,6 +168,7 @@ export const hi: Record<string, string> = {
   'nav.productions': 'प्रस्तुतियाँ',
   'nav.festival': 'उत्सव',
   'nav.activities': 'सांस्कृतिक गतिविधियाँ',
+  'nav.news': 'समाचार',
   'nav.statutory': 'वैधानिक',
   'nav.contact': 'संपर्क',
 
@@ -191,6 +208,7 @@ export const hi: Record<string, string> = {
   'footer.alumni': 'पूर्व छात्र',
   'footer.president': 'अध्यक्ष का संदेश',
   'footer.programs': 'कार्यक्रम',
+  'footer.news': 'समाचार और अपडेट',
   'footer.workshops': 'कार्यशाला',
   'footer.productions': 'प्रस्तुतियाँ',
   'footer.festival': 'थिएटर उत्सव',
@@ -215,4 +233,10 @@ export const hi: Record<string, string> = {
   'common.upcoming': 'आगामी',
   'common.completed': 'पूर्ण',
   'common.register': 'अभी पंजीकरण करें',
+
+  // Social Media
+  'social.followUs': 'हमें फ़ॉलो करें',
+  'social.facebook': 'फेसबुक',
+  'social.youtube': 'यूट्यूब',
+  'social.connectWithUs': 'सोशल मीडिया पर हमसे जुड़ें',
 };

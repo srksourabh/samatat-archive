@@ -39,13 +39,6 @@ const navItemKeys: NavItemKey[] = [
   {
     labelKey: 'nav.activities',
     href: '/activities',
-    children: [
-      { labelKey: 'nav.activities.all', href: '/activities' },
-      { labelKey: 'nav.activities.basanta', href: '/activities/basanta-utsav' },
-      { labelKey: 'nav.activities.film', href: '/activities/film-festival' },
-      { labelKey: 'nav.activities.bhasha', href: '/activities/bhasha-dibos' },
-      { labelKey: 'nav.activities.rabindra', href: '/activities/rabindra-jayanti' },
-    ],
   },
   {
     labelKey: 'nav.statutory',

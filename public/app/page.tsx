@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { T } from './components/TranslatedContent';
 import { HeroCollage } from './components/HeroCollage';
+import { FacebookNewsSection } from './components/FacebookNewsSection';
 import { homeContent } from '../lib/content';
 
 export default function Home() {
@@ -89,6 +90,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Facebook News Section */}
+      <FacebookNewsSection />
 
       {/* Upcoming Events */}
       <section className="section section-dark">

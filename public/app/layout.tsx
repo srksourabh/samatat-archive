@@ -5,6 +5,7 @@ import "./theatre-theme.css";
 import { ClientLayout } from "./components/ClientLayout";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
+import { MosaicBackgroundCSS } from "./components/MosaicBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <MosaicBackgroundCSS />
         <ClientLayout>
           <Navigation />
           {children}
