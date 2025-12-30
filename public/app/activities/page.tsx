@@ -2,6 +2,7 @@
 
 import { useLanguage } from '../components/LanguageSwitcher';
 import { PageHeader } from '../components/PageHeader';
+import { ActivitySlideshow } from '../components/ActivitySlideshow';
 
 const EVENTS_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/events';
 
@@ -35,7 +36,15 @@ const activities = [
     icon: '🌸',
     color: 'from-pink-500/20 to-orange-500/20',
     borderColor: 'border-pink-500/30',
-    image: `${EVENTS_BASE}/DSC06530.JPG`
+    images: [
+      `${EVENTS_BASE}/DSC06530.JPG`,
+      `${EVENTS_BASE}/DSC06532.JPG`,
+      `${EVENTS_BASE}/DSC06536.JPG`,
+      `${EVENTS_BASE}/DSC06543.JPG`,
+      `${EVENTS_BASE}/DSC06545.JPG`,
+      `${EVENTS_BASE}/DSC06546.JPG`,
+      `${EVENTS_BASE}/DSC06547.JPG`
+    ]
   },
   {
     id: 'bhasha-dibos',
@@ -56,11 +65,19 @@ const activities = [
     icon: '📚',
     color: 'from-blue-500/20 to-purple-500/20',
     borderColor: 'border-blue-500/30',
-    image: `${EVENTS_BASE}/100_3322.JPG`
+    images: [
+      `${EVENTS_BASE}/100_3322.JPG`,
+      `${EVENTS_BASE}/100_3316.JPG`,
+      `${EVENTS_BASE}/100_3317.JPG`,
+      `${EVENTS_BASE}/100_3309.JPG`,
+      `${EVENTS_BASE}/100_3301.JPG`,
+      `${EVENTS_BASE}/100_3299.JPG`,
+      `${EVENTS_BASE}/100_3278.JPG`
+    ]
   },
   {
     id: 'rabindra-jayanti',
-    title: { en: 'Rabindra Jayanti', bn: 'রবীন্দ্র জয়ন্তী', hi: 'रवींद्र जयंती' },
+    title: { en: 'Rabindra Jayanti', bn: 'রবীন্দ্র জয়ন্তী', hi: 'রवींद्र जयंती' },
     subtitle: { en: 'Tagore Birth Anniversary', bn: 'রবীন্দ্রনাথের জন্মদিন', hi: 'टैगोर जन्म वर्षगाँठ' },
     description: {
       en: 'We celebrate the birth anniversary of Rabindranath Tagore, Bengal\'s Nobel laureate poet, philosopher, and cultural icon. Through music, dance, drama, and recitations, we pay homage to his timeless contributions to literature, art, and the spiritual awakening of India.',
@@ -77,11 +94,17 @@ const activities = [
     icon: '🎭',
     color: 'from-amber-500/20 to-yellow-500/20',
     borderColor: 'border-amber-500/30',
-    image: `${EVENTS_BASE}/DSC_3851.JPG`
+    images: [
+      `${EVENTS_BASE}/DSC_3851.JPG`,
+      `${EVENTS_BASE}/DSC_3840.JPG`,
+      `${EVENTS_BASE}/DSC_3861.JPG`,
+      `${EVENTS_BASE}/100_3417.JPG`,
+      `${EVENTS_BASE}/100_3453.JPG`
+    ]
   },
   {
     id: 'film-festival',
-    title: { en: 'Children Film Festival', bn: 'শিশু চলচ্চিত্র উৎসব', hi: 'बाल फिल्म महोत्सव' },
+    title: { en: 'Children Film Festival', bn: 'শিশু চলচ্চিত্র উৎসব', hi: 'বাল ফিল্ম মহোৎসব' },
     subtitle: { en: 'Cinema for Young Minds', bn: 'তরুণ মনের জন্য সিনেমা', hi: 'युवा मन के लिए सिनेमा' },
     description: {
       en: 'Our Children Film Festival introduces young audiences to the magic of cinema. We screen carefully curated films from around the world that entertain, educate, and inspire. This festival nurtures an appreciation for visual storytelling and diverse cultures among the next generation.',
@@ -98,28 +121,37 @@ const activities = [
     icon: '🎬',
     color: 'from-red-500/20 to-pink-500/20',
     borderColor: 'border-red-500/30',
-    image: `${EVENTS_BASE}/DSC00064.JPG`
+    images: [
+      `${EVENTS_BASE}/DSC00064.JPG`,
+      `${EVENTS_BASE}/DSC00076.JPG`,
+      `${EVENTS_BASE}/DSC00077.JPG`,
+      `${EVENTS_BASE}/DSC00078.JPG`,
+      `${EVENTS_BASE}/DSC00032.JPG`,
+      `${EVENTS_BASE}/DSC00033.JPG`,
+      `${EVENTS_BASE}/DSC00044.JPG`,
+      `${EVENTS_BASE}/DSC00015.JPG`
+    ]
   }
 ];
 
 const otherActivities = {
-  title: { en: 'Other Cultural Programs', bn: 'অন্যান্য সাংস্কৃতিক অনুষ্ঠান', hi: 'अन्य सांस्कृतिक कार्यक्रम' },
+  title: { en: 'Other Cultural Programs', bn: 'অন্যান্য সাংস্কৃতিক অনুষ্ঠান', hi: 'অন্যান্য সাংস্কৃতিক কার্যক্রম' },
   items: [
     {
-      name: { en: 'Saraswati Puja', bn: 'সরস্বতী পূজা', hi: 'सरस्वती पूजा' },
-      description: { en: 'Celebration of the goddess of knowledge and arts', bn: 'জ্ঞান ও শিল্পের দেবীর উদযাপন', hi: 'ज्ञान और कला की देवी का उत्सव' }
+      name: { en: 'Samatat Choir', bn: 'সমতট সমবেত সংগীত দল', hi: 'সमतट गाना बजाना' },
+      description: { en: 'Musical ensemble performing choral works and traditional Bengali songs.', bn: 'সমবেত সংগীত এবং ঐতিহ্যবাহী বাংলা গান পরিবেশনকারী সংগীত দল।', hi: 'कोरल कार्य और पारंपरिक बंगाली गीत प्रस्तुत करने वाला संगीत समूह।' }
     },
     {
-      name: { en: 'Independence Day Programs', bn: 'স্বাধীনতা দিবসের অনুষ্ঠান', hi: 'स्वतंत्रता दिवस कार्यक्रम' },
-      description: { en: 'Patriotic performances and cultural shows', bn: 'দেশাত্মবোধক পরিবেশনা ও সাংস্কৃতিক অনুষ্ঠান', hi: 'देशभक्ति प्रस्तुतियाँ और सांस्कृतिक कार्यक्रम' }
+      name: { en: 'District Theatre Fest', bn: 'জেলা নাট্য উৎসব', hi: 'जिला रंगमंच उत्सव' },
+      description: { en: 'A regional celebration of theatrical arts across the district.', bn: 'জেলা জুড়ে নাট্য শিল্পের একটি আঞ্চলিক উদযাপন।', hi: 'पूरे जिले में नाट्य कला का एक क्षेत्रीय उत्सव।' }
     },
     {
-      name: { en: 'Durga Puja Cultural Events', bn: 'দুর্গা পূজার সাংস্কৃতিক অনুষ্ঠান', hi: 'दुर्गा पूजा सांस्कृतिक कार्यक्रम' },
-      description: { en: 'Theatre and music during the festive season', bn: 'উৎসবের সময় থিয়েটার ও সংগীত', hi: 'उत्सव के मौसम में थिएटर और संगीत' }
+      name: { en: 'Anti-War Publication', bn: 'যুদ্ধবিরোধী প্রকাশনা', hi: 'युद्ध विरोधी प्रकाशन' },
+      description: { en: 'Literary works and newsletters promoting peace and anti-war awareness.', bn: 'শান্তি এবং যুদ্ধবিরোধী সচেতনতা প্রচারকারী সাহিত্যকর্ম ও নিউজলেটার।', hi: 'शांति और युद्ध-विरोधी जागरूकता को बढ़ावा देने वाली साहित्यिक रचनाएँ और समाचार पत्र।' }
     },
     {
-      name: { en: 'Netaji Jayanti', bn: 'নেতাজী জয়ন্তী', hi: 'नेताजी जयंती' },
-      description: { en: 'Tribute to Subhas Chandra Bose', bn: 'সুভাষ চন্দ্র বসুকে শ্রদ্ধাঞ্জলি', hi: 'सुभाष चंद्र बोस को श्रद्धांजलि' }
+      name: { en: 'Community Services', bn: 'জনসেবামূলক কাজ', hi: 'सामुदायिक सेवाएं' },
+      description: { en: 'Social initiatives and outreach programs for local community development.', bn: 'স্থানীয় সম্প্রদায়ের উন্নয়নের জন্য সামাজিক উদ্যোগ এবং আউটরিচ প্রোগ্রাম।', hi: 'स्थानीय सामुदायिक विकास के लिए सामाजिक पहल और आउटरीच कार्यक्रम।' }
     }
   ]
 };
@@ -195,18 +227,15 @@ export default function ActivitiesPage() {
                 {/* Visual Side */}
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className={`relative aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br ${activity.color} border ${activity.borderColor}`}>
-                    <img
-                      src={activity.image}
+                    <ActivitySlideshow
+                      images={activity.images}
                       alt={activity.title[lang]}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 z-10">
                       <span className="text-4xl">{activity.icon}</span>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="text-white font-medium text-lg">
+                    <div className="absolute bottom-12 left-0 right-0 z-10 pointer-events-none">
+                      <div className="text-white font-medium text-lg text-center drop-shadow-md px-4">
                         {activity.title[lang]}
                       </div>
                     </div>

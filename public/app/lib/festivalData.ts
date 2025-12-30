@@ -36,9 +36,9 @@ export const festivalsData: Festival[] = [
     year: 2025,
     edition: 26,
     title: {
-      en: 'Samatat Natyamela 2025',
-      bn: 'সমতট নাট্যমেলা ২০২৫',
-      hi: 'समतट नाट्यमेला 2025'
+      en: '26th Samatat Natyamela',
+      bn: '২৬তম সমতট নাট্যমেলা',
+      hi: '26वां समतट नाट्यमेला'
     },
     dates: {
       en: '16-30 December 2025',
@@ -50,141 +50,134 @@ export const festivalsData: Festival[] = [
       bn: 'গণভবন, উত্তরপাড়া',
       hi: 'गणभवन, उत्तरपाड़ा'
     },
-    leafletImage: '',
+    leafletImage: storageUrl('images/festivals/2025/2025 leaflet.jpg'),
     plays: [
       {
-        title: { en: 'Alor Pother Jatri', bn: 'আলোর পথের যাত্রী', hi: 'आलोर पथेर जात्री' },
-        group: { en: 'Samatat Sanskriti, Uttarpara', bn: 'সমতট সংস্কৃতি, উত্তরপাড়া', hi: 'समतट संस्कृति, उत्तरपाड़ा' },
-        director: { en: 'Dipankar Saha', bn: 'দীপঙ্কর সাহা', hi: 'दीपंकर साहा' },
-        playwright: { en: 'Dipankar Saha', bn: 'দীপঙ্কর সাহা', hi: 'दीपंकर साहा' },
+        title: { en: 'Je Janalaigulo Akash Chhilo', bn: 'যে জানালাগুলো আকাশ ছিল', hi: 'जे जानालागुलो आकाश छिलो' },
+        group: { en: 'Ichchemoto Kolkata', bn: 'ইচ্ছেমতো কলকাতা', hi: 'इच्छेमोतो कोलकाता' },
+        director: { en: 'Saurav Palodhi', bn: 'সৌরভ পালোধি', hi: 'सौरभ पालोधी' },
+        cast: { en: 'Rahul Arunoday Banerjee, Turna Das, Bimal Chakraborty', bn: 'রাহুল অরুণোদয় বন্দ্যোপাধ্যায়, তূর্ণা দাস, বিমল চক্রবর্তী', hi: 'राहुल अरुणोदय बनर्जी, तूर्णा दास, बिमल चक्रवर्ती' },
         date: '16 December 2025',
-        time: '6:30 PM'
+        time: '6:00 PM'
       },
       {
-        title: { en: 'Khela', bn: 'খেলা', hi: 'खेला' },
-        group: { en: 'Rangayan, Kolkata', bn: 'রঙ্গায়ন, কলকাতা', hi: 'रंगायन, कोलकाता' },
-        director: { en: 'Shyamal Chakraborty', bn: 'শ্যামল চক্রবর্তী', hi: 'श्यामल चक्रवर्ती' },
-        playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रबीन्द्रनाथ टैगोर' },
+        title: { en: 'Natok Shuru Hocche', bn: 'নাটক শুরু হচ্ছে', hi: 'नाटक शुरू होच्छे' },
+        group: { en: 'Bidhannagar Kalpataru', bn: 'বিধাননগর কল্পতরু', hi: 'बिधाननगर कल्पतरु' },
+        director: { en: 'Debashish', bn: 'দেবাশিস', hi: 'देबाशीष' },
+        cast: { en: 'Koushik Pradhan, Dana Roy', bn: 'কৌশিক প্রধান, দানা রায়', hi: 'कौशिक प्रधान, दाना रॉय' },
         date: '17 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Banchara', bn: 'বাঁচারা', hi: 'बांचारा' },
-        group: { en: 'Sanglap, Hooghly', bn: 'সংলাপ, হুগলী', hi: 'संगलाप, हुगली' },
-        director: { en: 'Partha Pratim Das', bn: 'পার্থ প্রতিম দাস', hi: 'पार्थ प्रतिम दास' },
-        playwright: { en: 'Manoj Mitra', bn: 'মনোজ মিত্র', hi: 'मनोज मित्र' },
+        title: { en: 'Rajnoitik Hotya?', bn: 'রাজনৈতিক হত্যা?', hi: 'राजनीतिक हत्या?' },
+        group: { en: 'Pancham Baidic', bn: 'পঞ্চম বৈদিক', hi: 'पंचम वैदिक' },
+        director: { en: 'Arpita Ghosh', bn: 'অর্পিতা ঘোষ', hi: 'अर्पिता घोष' },
+        cast: { en: 'Arna Mukhopadhyay, Arpita Ghosh, Babu Dutta Roy', bn: 'অর্ণ মুখোপাধ্যায়, অর্পিতা ঘোষ, বাবু দত্ত রায়', hi: 'अर्णा मुखोपाध्याय, अर्पिता घोष, बाबू दत्त राय' },
         date: '18 December 2025',
-        time: '6:30 PM'
+        time: '6:00 PM'
       },
       {
-        title: { en: 'Natun Yehudi', bn: 'নতুন ইয়েহুদি', hi: 'नतुन येहुदी' },
-        group: { en: 'Sanhati, Serampore', bn: 'সম্মতি, শ্রীরামপুর', hi: 'सम्मति, सेरामपुर' },
-        director: { en: 'Bibhas Chakraborty', bn: 'বিভাস চক্রবর্তী', hi: 'बिभास चक्रवर्ती' },
-        playwright: { en: 'D.L. Roy', bn: 'ডি.এল. রায়', hi: 'डी.एल. रॉय' },
+        title: { en: 'ChorjaPoder Kobi', bn: 'চর্যাপদের কবি', hi: 'चर्यापदेर कोबी' },
+        group: { en: 'Bhumisuta Theatre', bn: 'ভূমিস্ত থিয়েটার', hi: 'भूमिस्त थिएटर' },
+        director: { en: 'Swapnadeep Sengupta', bn: 'স্বপ্নদীপ সেনগুপ্ত', hi: 'स्वप्नदीप सेनगुप्ता' },
+        playwright: { en: 'Zulfiqar Nimma', bn: 'জুলফিকার নিম্ম', hi: 'जुल्फिकार निम्मा' },
         date: '19 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Chander Pahar', bn: 'চাঁদের পাহাড়', hi: 'चांदेर पहाड़' },
-        group: { en: 'Theatre Unit, Chandannagar', bn: 'থিয়েটার ইউনিট, চন্দননগর', hi: 'थिएटर यूनिट, चंदननगर' },
-        director: { en: 'Sanjay Ghosh', bn: 'সঞ্জয় ঘোষ', hi: 'संजय घोष' },
-        playwright: { en: 'Bibhutibhushan Bandyopadhyay', bn: 'বিভূতিভূষণ বন্দ্যোপাধ্যায়', hi: 'बिभूतिभूषण बंद्योपाध्याय' },
+        title: { en: 'Basanter Bajranirghos', bn: 'বসন্তের বজ্রনির্ঘোষ', hi: 'बसंतेर बज्रनिर्घोष' },
+        group: { en: 'Prachya', bn: 'প্রাচ্য', hi: 'प्राच्य' },
+        director: { en: 'Biplab Bandyopadhyay', bn: 'বিপ্লব বন্দ্যোপাধ্যায়', hi: 'बिप्लव बंद्योपाध्याय' },
+        cast: { en: 'Supriyo Dutta, Shatadal Chakraborty, Dipanwita Chakraborty', bn: 'সুপ্রিয় দত্ত, শতদল চক্রবর্তী, দীপান্বিতা চক্রবর্তী', hi: 'सुप्रियो दत्त, शतदल चक्रवर्ती, दीपान्विता चक्रवर्ती' },
         date: '20 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Kinu Kaharer Thetre', bn: 'কিনু কাহারের থেটার', hi: 'किनु काहारेर थेटर' },
-        group: { en: 'Chetana, Rishra', bn: 'চেতনা, রিষড়া', hi: 'चेतना, रिषड़ा' },
-        director: { en: 'Ashok Mukherjee', bn: 'অশোক মুখার্জী', hi: 'अशोक मुखर्जी' },
-        playwright: { en: 'Shaoli Mitra', bn: 'শাওলী মিত্র', hi: 'शाओली मित्र' },
+        title: { en: 'Daybaddha', bn: 'দায়বদ্ধ', hi: 'दायबद्ध' },
+        group: { en: 'Naihati Bratyajon', bn: 'নৈহাটি ব্রাত্যজন', hi: 'नैहाटी ब्रात्यजन' },
+        director: { en: 'Aritra Banerjee', bn: 'অরিত্র বন্দ্যোপাধ্যায়', hi: 'अरित्र बंद्योपाध्याय' },
+        date: '21 December 2025',
+        time: '3:30 PM'
+      },
+      {
+        title: { en: 'Chhera-Phata Ek Manchitra & Streer Potro', bn: 'ছেঁড়া-ফাটা এক মানচিত্র ও স্ত্রীর পত্র', hi: 'छेड़ा-फाटा एक मानचित्र और स्त्रीर पत्र' },
+        group: { en: 'Prantik Baharampur', bn: 'প্রান্তিক বহরমপুর', hi: 'प्रान्तिक बहरमपुर' },
+        director: { en: 'Tomojit Roy', bn: 'তমজিৎ রায়', hi: 'तमजीत राय' },
+        playwright: { en: 'Tomojit Roy', bn: 'তমজিৎ রায়', hi: 'तमजीत राय' },
         date: '21 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Raja', bn: 'রাজা', hi: 'राजा' },
-        group: { en: 'Nandikar, Kolkata', bn: 'নান্দীকার, কলকাতা', hi: 'नांदीकार, कोलकाता' },
-        director: { en: 'Rudraprasad Sengupta', bn: 'রুদ্রপ্রসাদ সেনগুপ্ত', hi: 'रुद्रप्रसाद सेनगुप्त' },
-        playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रबीन्द्रनाथ टैगोर' },
+        title: { en: 'Mala O Moli', bn: 'মালা ও মলি', hi: 'माला ओ मोली' },
+        group: { en: 'Chakdaha Natyajan', bn: 'চাকদহ নাট্যজন', hi: 'चाकदहा नाट्यजन' },
+        director: { en: 'Sudip Gupta', bn: 'সুদীপ গুপ্ত', hi: 'सुदीप गुप्ता' },
+        playwright: { en: 'Ujjwal Chattopadhyay', bn: 'উজ্জ্বল চট্টোপাধ্যায়', hi: 'उज्ज्वल चट्टोपाध्याय' },
+        cast: { en: 'Sanjib Sarkar, Bidisha Ghosh', bn: 'সঞ্জীব সরকার, বিদিশা ঘোষ', hi: 'संजीब सरकार, बिदिशा घोष' },
         date: '22 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Mareech Sambad', bn: 'মারীচ সংবাদ', hi: 'मारीच संबाद' },
-        group: { en: 'Swapnasandhani, Kolkata', bn: 'স্বপ্নসন্ধানী, কলকাতা', hi: 'स्वप्नसंधानी, कोलकाता' },
-        director: { en: 'Kaushik Sen', bn: 'কৌশিক সেন', hi: 'कौशिक सेन' },
-        playwright: { en: 'Arun Mukherjee', bn: 'অরুণ মুখার্জী', hi: 'अरुण मुखर्जी' },
+        title: { en: 'Antigone', bn: 'অ্যান্টিগনি', hi: 'एंटीगोने' },
+        group: { en: 'Sanskriti Kolkata', bn: 'সংস্কৃতি কলকাতা', hi: 'संस्कृति कोलकाता' },
+        director: { en: 'Debesh Chattopadhyay', bn: 'দেবেশ চট্টোপাধ্যায়', hi: 'देवेश चट्टोपाध्याय' },
+        cast: { en: 'Debshankar Halder, Turna Das, Anjnyan Mukherjee', bn: 'দেবশঙ্কর হালদার, তূর্ণা দাস, অঞ্জন মুখোপাধ্যায়', hi: 'देबशंकर हालदार, तूर्णा दास, अंजन मुखोपाध्याय' },
         date: '23 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Sei Shomoy', bn: 'সেই সময়', hi: 'सेई समय' },
-        group: { en: 'Sayak, Burdwan', bn: 'সায়ক, বর্ধমান', hi: 'सायक, बर्धमान' },
-        director: { en: 'Dipankar Ghosh', bn: 'দীপঙ্কর ঘোষ', hi: 'दीपंकर घोष' },
-        playwright: { en: 'Sunil Gangopadhyay', bn: 'সুনীল গঙ্গোপাধ্যায়', hi: 'सुनील गंगोपाध्याय' },
+        title: { en: 'Galpo Ya Nei', bn: 'গল্প যা নেই', hi: 'गल्पो या नेई' },
+        group: { en: 'Getwing Kolkata', bn: 'গেটউইং কলকাতা', hi: 'गेटविंग कोलकाता' },
+        director: { en: 'Chandan Sen', bn: 'চন্দন সেন', hi: 'चंदन सेन' },
+        cast: { en: 'Meghnad Bhattacharya, Shantilal Mukherjee, Chandan Sen, Swatantra Mukherjee', bn: 'মেঘনাদ ভট্টাচার্য, শান্তিলাল মুখোপাধ্যায়, চন্দন সেন, স্বতন্ত্র মুখোপাধ্যায়', hi: 'मेघनाद भट्टाचार्य, शांतिलाल मुखोपाध्याय, चंदन सेन, स्वतंत्र मुखोपाध्याय' },
         date: '24 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Meghe Dhaka Tara', bn: 'মেঘে ঢাকা তারা', hi: 'मेघे ढाका तारा' },
-        group: { en: 'Prachya, Durgapur', bn: 'প্রাচ্য, দুর্গাপুর', hi: 'प्राच्य, दुर्गापुर' },
-        director: { en: 'Subrata Mukhopadhyay', bn: 'সুব্রত মুখোপাধ্যায়', hi: 'सुब्रत मुखोपाध्याय' },
-        playwright: { en: 'Shaktipada Rajguru', bn: 'শক্তিপদ রাজগুরু', hi: 'शक्तिपद राजगुरु' },
+        title: { en: 'Hulusthul', bn: 'হুলুস্থুল', hi: 'हुलुस्थुल' },
+        group: { en: 'Sanglap Kolkata', bn: 'সংলাপ কলকাতা', hi: 'संगलाप कोलकाता' },
+        director: { en: 'Debashish', bn: 'দেবাশিস', hi: 'देबाशीष' },
+        playwright: { en: 'Kuntal Mukhopadhyay', bn: 'কুন্তল মুখোপাধ্যায়', hi: 'कुंतल मुखोपाध्याय' },
         date: '25 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Aguner Poroshmoni', bn: 'আগুনের পরশমণি', hi: 'आगुनेर परशमणि' },
-        group: { en: 'Utsa, Howrah', bn: 'উৎস, হাওড়া', hi: 'उत्स, हावड़ा' },
-        director: { en: 'Probir Guha', bn: 'প্রবীর গুহ', hi: 'प्रबीर गुहा' },
-        playwright: { en: 'Humayun Ahmed', bn: 'হুমায়ূন আহমেদ', hi: 'हुमायूं अहमद' },
+        title: { en: 'Bonospotir Chhaya', bn: 'বনস্পতির ছায়া', hi: 'बनोस्पतिर छाया' },
+        group: { en: 'Twist Kolkata', bn: 'টুইস্ট কলকাতা', hi: 'ट्विस्ट कोलकाता' },
+        director: { en: 'Biplab Bandyopadhyay', bn: 'বিপ্লব বন্দ্যোপাধ্যায়', hi: 'बिप्लव बंद्योपाध्याय' },
+        cast: { en: 'Debshankar Halder, Gautam Chattopadhyay, Shreya Bhattacharya', bn: 'দেবশঙ্কর হালদার, গৌতম চট্টোপাধ্যায়, শ্রেয়া ভট্টাচার্য', hi: 'देबशंकर हालदार, गौतम चट्टोपाध्याय, श्रेया भट्टाचार्य' },
         date: '26 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Raktakarabi', bn: 'রক্তকরবী', hi: 'रक्तकरबी' },
-        group: { en: 'Bohurupee, Kolkata', bn: 'বহুরূপী, কলকাতা', hi: 'बहुरूपी, कोलकाता' },
-        director: { en: 'Sohag Sen', bn: 'সোহাগ সেন', hi: 'सोहाग सेन' },
-        playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रबीन्द्रनाथ टैगोर' },
+        title: { en: 'Kabira Khara Bazaar Main', bn: 'কবিরা খাড়া বাজার মে', hi: 'कबीरा खड़ा बाजार में' },
+        group: { en: 'Gobardanga Naksha', bn: 'গোবরডাঙা নকশা', hi: 'गोबरडांगा नक्शा' },
+        director: { en: 'Ashis Das', bn: 'আশিস দাস', hi: 'आशीष दास' },
         date: '27 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Gharer Baire', bn: 'ঘরে বাইরে', hi: 'घरे बाइरे' },
-        group: { en: 'Gandharva, Barrackpore', bn: 'গন্ধর্ব, ব্যারাকপুর', hi: 'गंधर्व, बैरकपुर' },
-        director: { en: 'Anirban Roy', bn: 'অনির্বাণ রায়', hi: 'अनिर्बाण राय' },
-        playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रबीन्द्रनाथ टैगोर' },
+        title: { en: 'Mithuier Autograph', bn: 'মিঠাইয়ের অটোগ্রাফ', hi: 'मिठाईयेर ऑटोग्राफ' },
+        group: { en: 'Samatat Sanskriti', bn: 'সমতট সংস্কৃতি', hi: 'समतट संस्कृति' },
+        director: { en: 'Basudeb Hui, Farhin Sultana', bn: 'বাসুদেব হুই, ফারহিন সুলতানা', hi: 'बासुदेव हुई, फारहिन सुलताना' },
+        playwright: { en: 'Humayun Ahmed', bn: 'হুমায়ূন আহমেদ', hi: 'हुमायूं अहमद' },
+        cast: { en: 'Abhijit Mukhopadhyay', bn: 'অভিজিৎ মুখোপাধ্যায়', hi: 'अभिजीत मुखोपाध्याय' },
         date: '28 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Muktodhara', bn: 'মুক্তধারা', hi: 'मुक्तधारा' },
-        group: { en: 'Natya Bharati, Asansol', bn: 'নাট্য ভারতী, আসানসোল', hi: 'नाट्य भारती, आसानसोल' },
-        director: { en: 'Gautam Halder', bn: 'গৌতম হালদার', hi: 'गौतम हालदार' },
-        playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रबीन्द्रनाथ टैगोर' },
+        title: { en: 'Paul O Vincent & Banijye Bosote Lakshmi', bn: 'পল ও ভিনসেন্ট এবং বাণিজ্যে বসতে লক্ষ্মী', hi: 'पॉल ओ विंसेंट एवं बाणिज्ये बसते लक्ष्मी' },
+        group: { en: 'Ekata (New Jersey)', bn: 'একতা (নিউ জার্সি)', hi: 'एकता (न्यू जर्सी)' },
+        director: { en: 'Sudipto Bhawmik', bn: 'সুদীপ্ত ভৌমিক', hi: 'सुदीप्त भौमिक' },
         date: '29 December 2025',
         time: '6:30 PM'
       },
       {
-        title: { en: 'Special Matinee Show', bn: 'বিশেষ মাটিনি শো', hi: 'विशेष मैटिनी शो' },
-        group: { en: 'Youth Group Performance', bn: 'যুব দলের অভিনয়', hi: 'युवा समूह प्रदर्शन' },
-        director: { en: 'Various Directors', bn: 'বিভিন্ন পরিচালক', hi: 'विभिन्न निर्देशक' },
-        date: '29 December 2025',
-        time: '3:00 PM'
-      },
-      {
-        title: { en: 'Bisarjan', bn: 'বিসর্জন', hi: 'बिसर्जन' },
-        group: { en: 'Samatat Sanskriti, Uttarpara', bn: 'সমতট সংস্কৃতি, উত্তরপাড়া', hi: 'समतट संस्कृति, उत्तरपाड़ा' },
-        director: { en: 'Dipankar Saha', bn: 'দীপঙ্কর সাহা', hi: 'दीपंकर साहा' },
-        playwright: { en: 'Rabindranath Tagore', bn: 'রবীন্দ্রনাথ ঠাকুর', hi: 'रबीन्द्रनाथ टैगोर' },
+        title: { en: 'Sei Harano Sur', bn: 'সেই হারানো সুর', hi: 'सेई हारानो सुर' },
+        group: { en: 'The New Agragami Jatra Company', bn: 'দা নিউ অগ্রগামী যাত্রা কোম্পানি', hi: 'द न्यू अग्रगामी जात्रा कंपनी' },
+        director: { en: 'Kakoli & Anal', bn: 'কাকলি ও অনল', hi: 'काकोली और अनल' },
+        cast: { en: 'Kakoli & Anal', bn: 'কাকলি ও অনল', hi: 'काकोली और अनल' },
         date: '30 December 2025',
-        time: '6:30 PM'
-      },
-      {
-        title: { en: 'Closing Ceremony & Awards', bn: 'সমাপনী অনুষ্ঠান ও পুরস্কার বিতরণ', hi: 'समापन समारोह और पुरस्कार' },
-        group: { en: 'Festival Committee', bn: 'উৎসব কমিটি', hi: 'उत्सव समिति' },
-        director: { en: 'Festival Committee', bn: 'উৎসব কমিটি', hi: 'उत्सव समिति' },
-        date: '30 December 2025',
-        time: '9:00 PM'
+        time: '6:00 PM'
       }
     ]
   },
