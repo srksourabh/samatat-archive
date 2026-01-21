@@ -304,27 +304,22 @@ export default function ContactPage() {
                 <div className="card p-4">
                   <span className="text-2xl mb-2 block">📍</span>
                   <h3 className="text-white font-medium mb-1">Address</h3>
-                  <p className="text-light-gray text-sm">201 Jai Krishna Street<br />Uttarpara, Hooghly District<br />West Bengal, India</p>
+                  <p className="text-light-gray text-sm">209 Jai Krishna Street<br />Uttarpara, Hooghly District<br />West Bengal, India</p>
                 </div>
                 <div className="card p-4">
                   <span className="text-2xl mb-2 block">📧</span>
                   <h3 className="text-white font-medium mb-1">Email</h3>
-                  <a href="mailto:srksourabh@gmail.com" className="text-gold text-sm hover:text-gold-light">
-                    srksourabh@gmail.com
+                  <a href="mailto:samatatsanskritiuttarpara2000@gmail.com?cc=srksourabh@gmail.com" className="text-gold text-sm hover:text-gold-light break-all">
+                    samatatsanskritiuttarpara2000@gmail.com
                   </a>
                 </div>
                 <div className="card p-4">
                   <span className="text-2xl mb-2 block">📱</span>
                   <h3 className="text-white font-medium mb-1">Phone / WhatsApp</h3>
                   <a href="tel:+919831051262" className="text-light-gray text-sm hover:text-gold">+91 98310 51262</a>
-                  <p className="text-gray text-xs mt-1">Available Mon-Sat, 10AM-6PM</p>
+                  <p className="text-gray text-xs mt-1">Welcome always</p>
                 </div>
-                <div className="card p-4">
-                  <span className="text-2xl mb-2 block">🕐</span>
-                  <h3 className="text-white font-medium mb-1">Office Hours</h3>
-                  <p className="text-light-gray text-sm">Mon-Fri: 10AM - 6PM<br />Sat: 10AM - 2PM<br />Sun: Closed</p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
