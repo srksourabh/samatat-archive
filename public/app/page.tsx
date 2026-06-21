@@ -239,7 +239,7 @@ export default function Home() {
             <div className="hidden lg:block">
               <div className="aspect-[4/3] rounded overflow-hidden">
                 <img
-                  src="https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Swapnomoy/IMG_1111.jpg"
+                  src="https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSwapnomoy%2FIMG_1111.jpg?alt=media"
                   alt="Samatat Sanskriti Performance"
                   className="w-full h-full object-cover"
                 />

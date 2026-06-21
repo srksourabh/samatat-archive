@@ -467,7 +467,7 @@ export const homeContent = {
         }
       ]
     },
-    backgroundImage: "https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Bisarjan%20Natok%20edited/CT2A7966.jpg",
+    backgroundImage: "https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FBisarjan%20Natok%20edited%2FCT2A7966.jpg?alt=media",
     cta: {
       en: "Explore Our Heritage",
       bn: "আমাদের ঐতিহ্য অন্বেষণ করুন",

@@ -3,9 +3,9 @@ import { BackgroundPhotos } from '../../components/BackgroundPhotos';
 
 // Team photos from productions
 const teamPhotos = [
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Swapnomoy/IMG_1111.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Jodi%20aar%20ekbar/IMG_9073.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Adharmoni/IMG_8391.jpg',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSwapnomoy%2FIMG_1111.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FJodi%20aar%20ekbar%2FIMG_9073.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FAdharmoni%2FIMG_8391.jpg?alt=media',
 ];
 
 export default function TeamPage() {

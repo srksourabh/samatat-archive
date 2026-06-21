@@ -1,8 +1,14 @@
 // Productions Data - Comprehensive list of all Samatat Theatre productions
 // Images sourced from Firebase Storage: images/productions/{folder_name}/
 
-const STORAGE_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/productions';
-const THUMBNAIL_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails';
+const STORAGE_BASE = 'images/productions';
+const THUMBNAIL_BASE = 'images/thumbnails';
+
+export function getFirebaseImageUrl(path: string): string {
+  // Split path by / and encode each segment to handle spaces and special chars
+  const encodedPath = path.split('/').map(encodeURIComponent).join('%2F');
+  return `https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/${encodedPath}?alt=media`;
+}
 
 export interface Production {
   id: string;
@@ -32,7 +38,7 @@ export interface Production {
 // Helper to generate photo URLs from Firebase Storage
 function generatePhotoUrls(folderName: string, fileNames: string[]): string[] {
   return fileNames.map(name =>
-    `${STORAGE_BASE}/${encodeURIComponent(folderName)}/${encodeURIComponent(name)}`
+    getFirebaseImageUrl(`${STORAGE_BASE}/${folderName}/${name}`)
   );
 }
 
@@ -50,7 +56,7 @@ export const productions: Production[] = [
     },
     year: '2023',
     playwright: 'Rabindranath Tagore',
-    thumbnailUrl: `${THUMBNAIL_BASE}/Bisarjan%20Natok%20edited/CT2A7966.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Bisarjan%20Natok%20edited/CT2A7966.jpg`),
     folderName: 'Bisarjan Natok edited',
     photoCount: 25,
     photos: generatePhotoUrls('Bisarjan Natok edited', [
@@ -73,7 +79,7 @@ export const productions: Production[] = [
       hi: 'ग्रामीण बंगाल में कुश्ती और परंपरा के बारे में एक शक्तिशाली नाटक। यह महाकाव्य कहानी पारंपरिक कुश्ती संस्कृति की भावना का जश्न मनाती है।'
     },
     year: '2022',
-    thumbnailUrl: `${THUMBNAIL_BASE}/Saatmar%20Palawan/20220219201621_IMG_5339.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Saatmar%20Palawan/20220219201621_IMG_5339.jpg`),
     folderName: 'Saatmar Palawan',
     photoCount: 147,
     photos: generatePhotoUrls('Saatmar Palawan', [
@@ -99,7 +105,7 @@ export const productions: Production[] = [
       hi: 'एक ईमानदार चोर के बारे में हबीब तनवीर का प्रसिद्ध नाटक जो झूठ नहीं बोल सकता।'
     },
     playwright: 'Habib Tanvir',
-    thumbnailUrl: `${THUMBNAIL_BASE}/Charandas%20chor/1.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Charandas%20chor/1.jpg`),
     folderName: 'Charandas chor',
     photoCount: 4,
     photos: generatePhotoUrls('Charandas chor', ['1.jpg', '2.jpg', '3.jpg', '4.jpg'])
@@ -116,7 +122,7 @@ export const productions: Production[] = [
       hi: 'एक व्यंग्यात्मक कृति जो समाज पर टिप्पणी करने के लिए तोतों के रूपक का उपयोग करती है।'
     },
     playwright: 'Rabindranath Tagore',
-    thumbnailUrl: `${THUMBNAIL_BASE}/Tota%20kahini/09.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Tota%20kahini/09.jpg`),
     folderName: 'Tota kahini',
     photoCount: 13,
     photos: generatePhotoUrls('Tota kahini', [
@@ -137,7 +143,7 @@ export const productions: Production[] = [
       hi: 'हमारी पहली प्रस्तुति जिसने समतट की यात्रा की शुरुआत की।'
     },
     year: '1999',
-    thumbnailUrl: `${THUMBNAIL_BASE}/Arshi%20Desher%20Porshira/Picture-07.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Arshi%20Desher%20Porshira/Picture-07.jpg`),
     folderName: 'Arshi Desher Porshira',
     photoCount: 3,
     photos: generatePhotoUrls('Arshi Desher Porshira', ['Picture-07.jpg', 'dfv.JPG', 'samatat007.jpg'])
@@ -153,7 +159,7 @@ export const productions: Production[] = [
       bn: 'মানুষের সম্পর্ক এবং দ্বন্দ্ব অন্বেষণকারী একটি আকর্ষণীয় সামাজিক নাটক।',
       hi: 'मानवीय संबंधों और संघर्षों की खोज करने वाला एक आकर्षक सामाजिक नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Adharmoni/IMG_8432.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Adharmoni/IMG_8432.jpg`),
     folderName: 'Adharmoni',
     photoCount: 15,
     photos: generatePhotoUrls('Adharmoni', [
@@ -173,7 +179,7 @@ export const productions: Production[] = [
       bn: 'জীবন, পছন্দ এবং দ্বিতীয় সুযোগের সমসাময়িক অন্বেষণ।',
       hi: 'जीवन, विकल्पों और दूसरे अवसरों की एक समकालीन खोज।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Jodi%20aar%20ekbar/IMG_9104.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Jodi%20aar%20ekbar/IMG_9104.jpg`),
     folderName: 'Jodi aar ekbar',
     photoCount: 33,
     photos: generatePhotoUrls('Jodi aar ekbar', [
@@ -197,7 +203,7 @@ export const productions: Production[] = [
       bn: 'কাগজকে একটি কেন্দ্রীয় মোটিফ এবং গল্প বলার সরঞ্জাম হিসাবে ব্যবহার করে একটি পরীক্ষামূলক কাজ।',
       hi: 'कागज को एक केंद्रीय रूपांकन और कहानी कहने के उपकरण के रूप में उपयोग करने वाला एक प्रयोगात्मक टुकड़ा।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Kagoj%20Kahini/Picture-08.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Kagoj%20Kahini/Picture-08.jpg`),
     folderName: 'Kagoj Kahini',
     photoCount: 5,
     photos: generatePhotoUrls('Kagoj Kahini', ['44.jpg', '45.jpg', '46.jpg', 'Picture-08.jpg', 'Picture-09.jpg'])
@@ -213,7 +219,7 @@ export const productions: Production[] = [
       bn: 'কালীপ্রসন্ন সিংহের জীবন ও সময়ের ওপর ভিত্তি করে একটি ঐতিহাসিক নাটক।',
       hi: 'कालीप्रसन्न सिंह के जीवन और समय पर आधारित एक ऐतिहासिक नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Kaliprasanna%20o%20ora/Picture-02.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Kaliprasanna%20o%20ora/Picture-02.jpg`),
     folderName: 'Kaliprasanna o ora',
     photoCount: 9,
     photos: generatePhotoUrls('Kaliprasanna o ora', [
@@ -232,7 +238,7 @@ export const productions: Production[] = [
       bn: 'জীবনের অদ্ভুততাগুলিকে ধরে রাখা একটি আনন্দদায়ক কমেডি।',
       hi: 'एक आनंदमय कॉमेडी जो जीवन की विलक्षणताओं को दर्शाती है।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Podi%20pishi/Picture%20370.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Podi%20pishi/Picture%20370.jpg`),
     folderName: 'Podi pishi',
     photoCount: 14,
     photos: generatePhotoUrls('Podi pishi', [
@@ -252,7 +258,7 @@ export const productions: Production[] = [
       bn: 'সঙ্গীত এবং জাদুর সাথে বোনা একটি লোক-অনুপ্রাণিত রূপকথা।',
       hi: 'संगीत और जादू से बुनी गई एक लोक-प्रेरित काल्पनिक कहानी।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Roopnagarer%20roopkotha/Picture-01.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Roopnagarer%20roopkotha/Picture-01.jpg`),
     folderName: 'Roopnagarer roopkotha',
     photoCount: 8,
     photos: generatePhotoUrls('Roopnagarer roopkotha', [
@@ -271,7 +277,7 @@ export const productions: Production[] = [
       bn: 'স্বপ্ন এবং অবচেতন মনের মধ্য দিয়ে একটি যাত্রা।',
       hi: 'सपनों और अवचेतन मन के माध्यम से एक यात्रा।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`),
     folderName: 'Swapnomoy',
     photoCount: 31,
     youtubeVideoId: 'g5HsWviujn0',
@@ -295,7 +301,7 @@ export const productions: Production[] = [
       bn: 'কিংবদন্তি কুস্তি নাটকের আরেকটি দৃষ্টিভঙ্গি।',
       hi: 'प्रसिद्ध कुश्ती नाटक पर एक और दृष्टिकोण।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Satmar%20Paloyan/IMG_5358.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Satmar%20Paloyan/IMG_5358.jpg`),
     folderName: 'Satmar Paloyan',
     photoCount: 19,
     photos: generatePhotoUrls('Satmar Paloyan', [
@@ -316,7 +322,7 @@ export const productions: Production[] = [
       bn: 'দৈনন্দিন জীবনে ভয় এবং সাহসের অন্বেষণকারী একটি চিন্তা-উদ্দীপক সামাজিক নাটক।',
       hi: 'रोजमर्रा की जिंदगी में डर और साहस की खोज करने वाला एक विचारोत्तेजक सामाजिक नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Mabhoi/Picture-21.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Mabhoi/Picture-21.jpg`),
     folderName: 'Mabhoi',
     photoCount: 6,
     photos: generatePhotoUrls('Mabhoi', ['26.jpg', '27.jpg', '28.jpg', 'Picture-21.jpg', 'samatat041.jpg', 'samatat042.jpg'])
@@ -332,7 +338,7 @@ export const productions: Production[] = [
       bn: 'অধরা নীল ফুল সম্পর্কে একটি কাব্যিক নাটক।',
       hi: 'अधूरे नीले फूल के बारे में एक काव्यात्मक नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Neel%20Phool/Picture-18.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Neel%20Phool/Picture-18.jpg`),
     folderName: 'Neel Phool',
     photoCount: 4,
     photos: generatePhotoUrls('Neel Phool', ['12.jpg', '58.jpg', '59.jpg', 'Picture-18.jpg'])
@@ -348,7 +354,7 @@ export const productions: Production[] = [
       bn: 'স্বপ্নের ক্ষণস্থায়ী মুহূর্ত এবং কল্পনার জাদু সম্পর্কে একটি রোমান্টিক নাটক।',
       hi: 'सपनों के क्षणिक पलों और कल्पना के जादू के बारे में एक रोमांटिक नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Shopno%20muhurte/Picture-17.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Shopno%20muhurte/Picture-17.jpg`),
     folderName: 'Shopno muhurte',
     photoCount: 4,
     photos: generatePhotoUrls('Shopno muhurte', ['47.jpg', '48.jpg', '60.jpg', 'Picture-17.jpg'])
@@ -364,7 +370,7 @@ export const productions: Production[] = [
       bn: 'শুকিয়ে যাওয়া গঙ্গা এবং পরিবেশগত সংকট সম্পর্কে একটি শক্তিশালী পরিবেশ নাটক।',
       hi: 'सूखती गंगा और पारिस्थितिक संकट के बारे में एक शक्तिशाली पर्यावरणीय नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Sukhno%20Gange%20Ashuk/W94A5817.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Sukhno%20Gange%20Ashuk/W94A5817.jpg`),
     folderName: 'Sukhno Gange Ashuk',
     photoCount: 3,
     photos: generatePhotoUrls('Sukhno Gange Ashuk', ['W94A5817.jpg', 'W94A5818.jpg', 'W94A5825.jpg'])
@@ -380,7 +386,7 @@ export const productions: Production[] = [
       bn: 'একটি সামাজিক ব্যঙ্গ যা সমাজের সামনে আয়না ধরে।',
       hi: 'एक सामाजिक व्यंग्य जो समाज के सामने दर्पण रखता है।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Telenapotar%20moto/IMG_8718.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Telenapotar%20moto/IMG_8718.jpg`),
     folderName: 'Telenapotar moto',
     photoCount: 5,
     photos: generatePhotoUrls('Telenapotar moto', [
@@ -398,7 +404,7 @@ export const productions: Production[] = [
       bn: 'ওয়াজেব মিয়ানের বিয়ের অ্যাডভেঞ্চার নিয়ে একটি হাস্যকর কমেডি।',
       hi: 'वाज़ेब मियाँ की शादी के रोमांच के बारे में एक हँसोड़ कॉमेडी।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/wazeb%20mianr%20biya/samatat033.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/wazeb%20mianr%20biya/samatat033.jpg`),
     folderName: 'wazeb mianr biya',
     photoCount: 6,
     photos: generatePhotoUrls('wazeb mianr biya', [
@@ -416,7 +422,7 @@ export const productions: Production[] = [
       bn: 'মানব জীবনে সময় এবং পরিস্থিতির জটিলতা অন্বেষণকারী একটি শক্তিশালী সামাজিক নাটক।',
       hi: 'मानव जीवन में समय और परिस्थिति की जटिलताओं का पता लगाने वाला एक शक्तिशाली सामाजिक नाटक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1111.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Swapnomoy/IMG_1111.jpg`),
     folderName: 'Asamoy',
     photoCount: 0,
     youtubeVideoId: '--cFyPdo6aM',
@@ -433,7 +439,7 @@ export const productions: Production[] = [
       bn: 'অটোগ্রাফের মিষ্টি অন্বেষণ এবং তারা যে অপ্রত্যাশিত সংযোগ তৈরি করে সে সম্পর্কে একটি হৃদয়গ্রাহী কমেডি।',
       hi: 'ऑटोग्राफ की मधुर खोज और उनसे बनने वाले अप्रत्याशित संबंधों के बारे में एक दिल को छू लेने वाली कॉमेडी।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`),
     folderName: 'Mithai er autograph',
     photoCount: 0,
     youtubeVideoId: 'Yb8X1YVoXjI',
@@ -450,7 +456,7 @@ export const productions: Production[] = [
       bn: 'জীবন এবং আবেগের প্রাণবন্ত বর্ণালী উদযাপনকারী একটি চিরন্তন ক্লাসিক।',
       hi: 'जीवन और भावनाओं के जीवंत स्पेक्ट्रम का जश्न मनाने वाला एक कालातीत क्लासिक।'
     },
-    thumbnailUrl: `${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`,
+    thumbnailUrl: getFirebaseImageUrl(`${THUMBNAIL_BASE}/Swapnomoy/IMG_1114.jpg`),
     folderName: 'Nana Ronger Din',
     photoCount: 0,
     youtubeVideoId: 'dXqkYl147d0',

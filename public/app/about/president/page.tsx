@@ -206,7 +206,7 @@ export default function PresidentPage() {
                 <div
                   className="w-48 h-48 rounded-full mx-auto mb-6 overflow-hidden shadow-2xl border-4 border-gold/30"
                   style={{
-                    backgroundImage: 'url(https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Bisarjan%20Natok%20edited/CT2A7966.jpg)',
+                    backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FBisarjan%20Natok%20edited%2FCT2A7966.jpg)?alt=media',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}

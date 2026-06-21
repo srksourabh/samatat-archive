@@ -3,13 +3,13 @@ import { BackgroundPhotos } from '../../components/BackgroundPhotos';
 
 // Production photos for visual storytelling
 const historyPhotos = [
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Charandas%20chor/1.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Arshi%20Desher%20Porshira/Picture-07.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Bisarjan%20Natok%20edited/CT2A7966.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Saatmar%20Palawan/20220219201621_IMG_5339.jpg',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FCharandas%20chor%2F1.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FArshi%20Desher%20Porshira%2FPicture-07.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FBisarjan%20Natok%20edited%2FCT2A7966.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSaatmar%20Palawan%2F20220219201621_IMG_5339.jpg?alt=media',
 ];
 
-const LANDMARKS_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/landmarks';
+const LANDMARKS_BASE = 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Flandmarks?alt=media';
 
 // Historical landmarks of Uttarpara
 const landmarks = [

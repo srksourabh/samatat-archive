@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PageHeader } from '../components/PageHeader';
 import { useLanguage } from '../components/LanguageSwitcher';
 
-const WORKSHOP_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/workshops';
+const WORKSHOP_BASE = 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fworkshops?alt=media';
 
 // Workshop types offered
 const workshopTypes = [

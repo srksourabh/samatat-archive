@@ -5,14 +5,14 @@ import { useEffect, useState } from 'react';
 // Curated selection of production thumbnails for backgrounds
 // Using already-optimized thumbnails (400x400, ~15-20KB each)
 const backgroundPhotos = [
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Adharmoni/IMG_8391.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Bisarjan%20Natok%20edited/CT2A7966.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Jodi%20aar%20ekbar/IMG_9073.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Swapnomoy/IMG_1111.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Saatmar%20Palawan/20220219201621_IMG_5339.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Tota%20kahini/Picture%20712.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Podi%20pishi/Picture-35.jpg',
-  'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/thumbnails/Satmar%20Paloyan/IMG_5358.jpg',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FAdharmoni%2FIMG_8391.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FBisarjan%20Natok%20edited%2FCT2A7966.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FJodi%20aar%20ekbar%2FIMG_9073.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSwapnomoy%2FIMG_1111.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSaatmar%20Palawan%2F20220219201621_IMG_5339.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FTota%20kahini%2FPicture%20712.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FPodi%20pishi%2FPicture-35.jpg?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSatmar%20Paloyan%2FIMG_5358.jpg?alt=media',
 ];
 
 interface BackgroundPhotosProps {

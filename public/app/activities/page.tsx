@@ -4,7 +4,7 @@ import { useLanguage } from '../components/LanguageSwitcher';
 import { PageHeader } from '../components/PageHeader';
 import { ActivitySlideshow } from '../components/ActivitySlideshow';
 
-const EVENTS_BASE = 'https://storage.googleapis.com/samatat-archive.firebasestorage.app/images/events';
+const EVENTS_BASE = 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fevents?alt=media';
 
 const content = {
   eyebrow: { en: 'Beyond Theatre', bn: 'থিয়েটারের বাইরে', hi: 'थिएटर से परे' },
