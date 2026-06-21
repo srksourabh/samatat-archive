@@ -5,9 +5,10 @@ import { useLanguage } from '../../components/LanguageSwitcher';
 import { BackgroundPhotos } from '../../components/BackgroundPhotos';
 
 const reports = [
-  { year: '2023-2024', title: 'Annual Activity Report', status: 'Available', color: 'gold' },
-  { year: '2022-2023', title: 'Annual Activity Report', status: 'Available', color: 'gray' },
-  { year: '2021-2022', title: 'Annual Activity Report', status: 'Available', color: 'gray' },
+  { year: '2025-2026', title: 'Annual Activity Report', status: 'Available', color: 'gold', url: 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/documents%2Freports%2Fbarshik_protibedan_2026.pdf?alt=media' },
+  { year: '2023-2024', title: 'Annual Activity Report', status: 'Available', color: 'gray', url: '#' },
+  { year: '2022-2023', title: 'Annual Activity Report', status: 'Available', color: 'gray', url: '#' },
+  { year: '2021-2022', title: 'Annual Activity Report', status: 'Available', color: 'gray', url: '#' },
 ];
 
 export default function ReportsPage() {
@@ -34,7 +35,14 @@ export default function ReportsPage() {
                     <p className="text-gray text-sm">Official publication of Samatat Sanskriti</p>
                   </div>
                 </div>
-                <button className="btn btn-secondary text-xs py-2 px-6">Download PDF</button>
+                <a 
+                  href={report.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary text-xs py-2 px-6"
+                >
+                  Download PDF
+                </a>
               </div>
             ))}
           </div>

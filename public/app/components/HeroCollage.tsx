@@ -15,7 +15,7 @@ const INITIAL_STAGGER = 50; // Fast cascade for matrix effect
 // Optimized thumbnail URLs (400x400, ~15-20KB each instead of 5-18MB)
 const productionThumbnails: string[] = [
   // Adharmoni
-  'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FAdharmoni%2FIMG_8382.jpg?alt=media',
+  'https://images.unsplash.com/photo-1507676184212-d0c30a514758?auto=format&fit=crop&w=800&q=80', // TEMPORARY PLACEHOLDER TO PROVE CODE WORKS
   'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FAdharmoni%2FIMG_8384.jpg?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FAdharmoni%2FIMG_8386.jpg?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FAdharmoni%2FIMG_8387.jpg?alt=media',

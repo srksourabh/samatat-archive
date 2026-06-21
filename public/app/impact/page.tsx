@@ -145,6 +145,14 @@ export default function ImpactPage() {
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition">
                 <div>
+                  <h3 className="font-bold text-gray-900">Annual Report 2025-26</h3>
+                  <p className="text-sm text-gray-600">Complete activities and financial summary</p>
+                </div>
+                <a href="https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/documents%2Freports%2Fbarshik_protibedan_2026.pdf?alt=media" target="_blank" rel="noopener noreferrer" className="text-amber-600 font-semibold hover:text-amber-700">Download PDF →</a>
+              </div>
+
+              <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition">
+                <div>
                   <h3 className="font-bold text-gray-900">Annual Report 2023-24</h3>
                   <p className="text-sm text-gray-600">Complete activities and financial summary</p>
                 </div>
