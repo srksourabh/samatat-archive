@@ -38,6 +38,12 @@ service firebase.storage {
       allow read: if true;
       allow write: if isEditor();
     }
+    
+    // Documents and reports
+    match /documents/{allPaths=**} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
 
     // --- Private/Sensitive Media (Admin Only) ---
     // Matches receipts, contracts, minutes
