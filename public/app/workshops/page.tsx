@@ -5,7 +5,8 @@ import { PageHeader } from '../components/PageHeader';
 import { useLanguage } from '../components/LanguageSwitcher';
 import { OptimizedImage } from '../components/OptimizedImage';
 
-const WORKSHOP_BASE = 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fworkshops?alt=media';
+const getWorkshopImageUrl = (filename: string) => 
+  `https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fworkshops%2F${encodeURIComponent(filename)}?alt=media`;
 
 // Workshop types offered
 const workshopTypes = [
@@ -17,7 +18,7 @@ const workshopTypes = [
       { en: 'Scene exploration and ensemble acting', bn: 'দৃশ্য অন্বেষণ ও দলীয় অভিনয়', hi: 'दृश्य अन्वेषण और सामूहिक अभिनय' }
     ],
     icon: '🎭',
-    image: `${WORKSHOP_BASE}/IMG_6706.JPG`
+    image: getWorkshopImageUrl('IMG_6706.JPG')
   },
   {
     category: { en: 'Theatre for Beginners', bn: 'শিক্ষানবিশদের জন্য থিয়েটার', hi: 'शुरुआती लोगों के लिए थिएटर' },
@@ -27,7 +28,7 @@ const workshopTypes = [
       { en: 'Playfulness and imagination', bn: 'খেলাধুলা ও কল্পনা', hi: 'चंचलता और कल्पना' }
     ],
     icon: '✨',
-    image: `${WORKSHOP_BASE}/samatat014.jpg`
+    image: getWorkshopImageUrl('samatat014.jpg')
   },
   {
     category: { en: 'Improvisation and Devised Theatre', bn: 'ইম্প্রোভাইজেশন ও ডিভাইজড থিয়েটার', hi: 'आशु अभिनय और तैयार थिएटर' },
@@ -37,7 +38,7 @@ const workshopTypes = [
       { en: 'Collaboration and listening', bn: 'সহযোগিতা ও শোনা', hi: 'सहयोग और सुनना' }
     ],
     icon: '💡',
-    image: `${WORKSHOP_BASE}/IMG_6840.JPG`
+    image: getWorkshopImageUrl('IMG_6840.JPG')
   },
   {
     category: { en: 'Script Reading and Text Analysis', bn: 'স্ক্রিপ্ট পাঠ ও টেক্সট বিশ্লেষণ', hi: 'स्क्रिप्ट पाठ और पाठ विश्लेषण' },
@@ -47,7 +48,7 @@ const workshopTypes = [
       { en: 'Interpreting classical and contemporary texts', bn: 'ধ্রুপদী ও সমসাময়িক টেক্সট ব্যাখ্যা', hi: 'शास्त्रीय और समकालीन ग्रंथों की व्याख्या' }
     ],
     icon: '📚',
-    image: `${WORKSHOP_BASE}/Picture-03.jpg`
+    image: getWorkshopImageUrl('Picture-03.jpg')
   },
   {
     category: { en: 'School and College Theatre Programs', bn: 'স্কুল ও কলেজ থিয়েটার প্রোগ্রাম', hi: 'स्कूल और कॉलेज थिएटर कार्यक्रम' },
@@ -57,7 +58,7 @@ const workshopTypes = [
       { en: 'Theatre-based learning modules', bn: 'থিয়েটার-ভিত্তিক শিক্ষা মডিউল', hi: 'थिएटर-आधारित सीखने के मॉड्यूल' }
     ],
     icon: '🏫',
-    image: `${WORKSHOP_BASE}/DSC05159.JPG`
+    image: getWorkshopImageUrl('DSC05159.JPG')
   },
   {
     category: { en: 'Community and Social Theatre', bn: 'কমিউনিটি ও সামাজিক থিয়েটার', hi: 'सामुदायिक और सामाजिक थिएटर' },
@@ -67,7 +68,7 @@ const workshopTypes = [
       { en: 'Participatory performance models', bn: 'অংশগ্রহণমূলক পরিবেশনা মডেল', hi: 'भागीदारी प्रदर्शन मॉडल' }
     ],
     icon: '🤝',
-    image: `${WORKSHOP_BASE}/DSC_3540.JPG`
+    image: getWorkshopImageUrl('DSC_3540.JPG')
   }
 ];
 
@@ -245,7 +246,7 @@ export default function WorkshopsPage() {
             </div>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <OptimizedImage
-                src={`${WORKSHOP_BASE}/DSC05159.JPG`}
+                src={getWorkshopImageUrl('DSC05159.JPG')}
                 alt="Workshop in progress"
                 width={800}
                 quality={75}
@@ -304,7 +305,7 @@ export default function WorkshopsPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden order-2 lg:order-1">
               <OptimizedImage
-                src={`${WORKSHOP_BASE}/samatat014.jpg`}
+                src={getWorkshopImageUrl('samatat014.jpg')}
                 alt="Children in theatre workshop"
                 width={800}
                 quality={75}
