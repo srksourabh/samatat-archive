@@ -5,8 +5,10 @@ const STORAGE_BASE = 'images/productions';
 const THUMBNAIL_BASE = 'images/thumbnails';
 
 export function getFirebaseImageUrl(path: string): string {
+  // Decode first to prevent double encoding if path already contains %20
+  const decodedPath = decodeURIComponent(path);
   // Split path by / and encode each segment to handle spaces and special chars
-  const encodedPath = path.split('/').map(encodeURIComponent).join('%2F');
+  const encodedPath = decodedPath.split('/').map(encodeURIComponent).join('%2F');
   return `https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/${encodedPath}?alt=media`;
 }
 
