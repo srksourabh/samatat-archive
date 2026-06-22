@@ -4,7 +4,7 @@ import { useLanguage } from '../components/LanguageSwitcher';
 import { PageHeader } from '../components/PageHeader';
 import { ActivitySlideshow } from '../components/ActivitySlideshow';
 
-const EVENTS_BASE = 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fevents?alt=media';
+const getEventImageUrl = (filename: string) => `https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fevents%2F${encodeURIComponent(filename)}?alt=media`;
 
 const content = {
   eyebrow: { en: 'Beyond Theatre', bn: 'থিয়েটারের বাইরে', hi: 'थिएटर से परे' },
@@ -37,13 +37,13 @@ const activities = [
     color: 'from-pink-500/20 to-orange-500/20',
     borderColor: 'border-pink-500/30',
     images: [
-      `${EVENTS_BASE}/DSC06530.JPG`,
-      `${EVENTS_BASE}/DSC06532.JPG`,
-      `${EVENTS_BASE}/DSC06536.JPG`,
-      `${EVENTS_BASE}/DSC06543.JPG`,
-      `${EVENTS_BASE}/DSC06545.JPG`,
-      `${EVENTS_BASE}/DSC06546.JPG`,
-      `${EVENTS_BASE}/DSC06547.JPG`
+      getEventImageUrl('DSC06530.JPG'),
+      getEventImageUrl('DSC06532.JPG'),
+      getEventImageUrl('DSC06536.JPG'),
+      getEventImageUrl('DSC06543.JPG'),
+      getEventImageUrl('DSC06545.JPG'),
+      getEventImageUrl('DSC06546.JPG'),
+      getEventImageUrl('DSC06547.JPG')
     ]
   },
   {
@@ -66,13 +66,13 @@ const activities = [
     color: 'from-blue-500/20 to-purple-500/20',
     borderColor: 'border-blue-500/30',
     images: [
-      `${EVENTS_BASE}/100_3322.JPG`,
-      `${EVENTS_BASE}/100_3316.JPG`,
-      `${EVENTS_BASE}/100_3317.JPG`,
-      `${EVENTS_BASE}/100_3309.JPG`,
-      `${EVENTS_BASE}/100_3301.JPG`,
-      `${EVENTS_BASE}/100_3299.JPG`,
-      `${EVENTS_BASE}/100_3278.JPG`
+      getEventImageUrl('100_3322.JPG'),
+      getEventImageUrl('100_3316.JPG'),
+      getEventImageUrl('100_3317.JPG'),
+      getEventImageUrl('100_3309.JPG'),
+      getEventImageUrl('100_3301.JPG'),
+      getEventImageUrl('100_3299.JPG'),
+      getEventImageUrl('100_3278.JPG')
     ]
   },
   {
@@ -95,11 +95,11 @@ const activities = [
     color: 'from-amber-500/20 to-yellow-500/20',
     borderColor: 'border-amber-500/30',
     images: [
-      `${EVENTS_BASE}/DSC_3851.JPG`,
-      `${EVENTS_BASE}/DSC_3840.JPG`,
-      `${EVENTS_BASE}/DSC_3861.JPG`,
-      `${EVENTS_BASE}/100_3417.JPG`,
-      `${EVENTS_BASE}/100_3453.JPG`
+      getEventImageUrl('DSC_3851.JPG'),
+      getEventImageUrl('DSC_3840.JPG'),
+      getEventImageUrl('DSC_3861.JPG'),
+      getEventImageUrl('100_3417.JPG'),
+      getEventImageUrl('100_3453.JPG')
     ]
   },
   {
@@ -122,14 +122,14 @@ const activities = [
     color: 'from-red-500/20 to-pink-500/20',
     borderColor: 'border-red-500/30',
     images: [
-      `${EVENTS_BASE}/DSC00064.JPG`,
-      `${EVENTS_BASE}/DSC00076.JPG`,
-      `${EVENTS_BASE}/DSC00077.JPG`,
-      `${EVENTS_BASE}/DSC00078.JPG`,
-      `${EVENTS_BASE}/DSC00032.JPG`,
-      `${EVENTS_BASE}/DSC00033.JPG`,
-      `${EVENTS_BASE}/DSC00044.JPG`,
-      `${EVENTS_BASE}/DSC00015.JPG`
+      getEventImageUrl('DSC00064.JPG'),
+      getEventImageUrl('DSC00076.JPG'),
+      getEventImageUrl('DSC00077.JPG'),
+      getEventImageUrl('DSC00078.JPG'),
+      getEventImageUrl('DSC00032.JPG'),
+      getEventImageUrl('DSC00033.JPG'),
+      getEventImageUrl('DSC00044.JPG'),
+      getEventImageUrl('DSC00015.JPG')
     ]
   }
 ];
