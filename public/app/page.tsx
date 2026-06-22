@@ -66,8 +66,8 @@ export default function Home() {
                 </p>
                 <footer className="quote-author mt-auto">
                   <strong className="text-gold"><T content={randomQuote.author} /></strong>
-                  <span className="mx-2 text-gray-500">—</span>
-                  <span className="text-gray-400"><T content={randomQuote.role} /></span>
+                  <span className="mx-2 text-gray-400">—</span>
+                  <span className="text-gray-300"><T content={randomQuote.role} /></span>
                 </footer>
               </blockquote>
             </div>
@@ -85,9 +85,9 @@ export default function Home() {
                     <p className="text-xs text-gold uppercase tracking-wider mb-0.5">
                       {facebookSectionContent.eyebrow[lang]}
                     </p>
-                    <h3 className="text-lg font-medium text-white">
+                    <h2 className="text-lg font-medium text-white">
                       {facebookSectionContent.title[lang]}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
                 <a
@@ -110,11 +110,12 @@ export default function Home() {
                       <svg className="w-10 h-10 text-blue-500 mb-3" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                       </svg>
-                      <span className="text-gray-400 text-sm">Loading Facebook feed...</span>
+                      <span className="text-gray-300 text-sm">Loading Facebook feed...</span>
                     </div>
                   </div>
                 )}
                 <iframe
+                  title="Facebook Page Timeline"
                   src={embedUrl}
                   width="100%"
                   height={350}

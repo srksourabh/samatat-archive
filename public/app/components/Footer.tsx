@@ -56,7 +56,7 @@ export function Footer() {
 
           {/* About */}
           <div>
-            <h4 className="footer-heading">{t('footer.about')}</h4>
+            <h2 className="footer-heading">{t('footer.about')}</h2>
             <ul className="footer-links">
               <li><Link href="/about/history">{t('footer.history')}</Link></li>
               <li><Link href="/about/team">{t('footer.team')}</Link></li>
@@ -67,7 +67,7 @@ export function Footer() {
 
           {/* Programs */}
           <div>
-            <h4 className="footer-heading">{t('footer.programs')}</h4>
+            <h2 className="footer-heading">{t('footer.programs')}</h2>
             <ul className="footer-links">
               <li><Link href="/workshops">{t('footer.workshops')}</Link></li>
               <li><Link href="/productions">{t('footer.productions')}</Link></li>
@@ -78,7 +78,7 @@ export function Footer() {
 
           {/* Statutory */}
           <div>
-            <h4 className="footer-heading">{t('footer.statutory')}</h4>
+            <h2 className="footer-heading">{t('footer.statutory')}</h2>
             <ul className="footer-links">
               <li><Link href="/statutory/committee">{t('footer.committee')}</Link></li>
               <li><Link href="/statutory/reports">{t('footer.reports')}</Link></li>
@@ -89,7 +89,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="footer-heading">{t('footer.getInvolved')}</h4>
+            <h2 className="footer-heading">{t('footer.getInvolved')}</h2>
             <ul className="footer-links">
               <li><Link href="/contact#join">{t('footer.join')}</Link></li>
               <li><Link href="/contact#workshop">{t('footer.requestWorkshop')}</Link></li>

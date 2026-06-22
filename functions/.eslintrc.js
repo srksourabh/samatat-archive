@@ -18,6 +18,7 @@ module.exports = {
         "indent": ["error", 4],
         "object-curly-spacing": ["error", "always"],
         "padded-blocks": "off",
+        "linebreak-style": "off",
     },
     overrides: [
         {
