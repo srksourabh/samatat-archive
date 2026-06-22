@@ -5,9 +5,9 @@ import { useLanguage } from '../../components/LanguageSwitcher';
 import { BackgroundPhotos } from '../../components/BackgroundPhotos';
 
 const committee = [
-  { name: 'Satyajit Das', role: { en: 'President', bn: 'সভাপতি', hi: 'अध्यक्ष' }, bio: { en: 'Leading Samatat with a vision for cultural excellence.', bn: 'সাংস্কৃতিক উৎকর্ষের লক্ষ্য নিয়ে সমতটকে নেতৃত্ব দিচ্ছেন।', hi: 'सांस्कृतिक उत्कृष्टता के दृष्टिकोण के साथ समतट का नेतृत्व कर रहे हैं।' } },
-  { name: 'Koushik Chatterjee', role: { en: 'General Secretary', bn: 'সাধারণ সম্পাদক', hi: 'महासचिव' }, bio: { en: 'Managing operations and artistic direction.', bn: 'অপারেশন এবং শৈল্পিক নির্দেশনা পরিচালনা করছেন।', hi: 'संचालन और कलात्मक निर्देशन का प्रबंधन।' } },
-  { name: 'Subhasish Ghosh', role: { en: 'Treasurer', bn: 'কোষাধ্যক্ষ', hi: 'कोषाध्यक्ष' }, bio: { en: 'Ensuring financial transparency and growth.', bn: 'আর্থিক স্বচ্ছতা এবং প্রবৃদ্ধি নিশ্চিত করছেন।', hi: 'वित्तीय पारदर्शिता और विकास सुनिश्चित करना।' } },
+  { name: 'Sucharita Hui', role: { en: 'President', bn: 'সভাপতি', hi: 'अध्यक्ष' }, bio: { en: 'Leading Samatat with a vision for cultural excellence.', bn: 'সাংস্কৃতিক উৎকর্ষের লক্ষ্য নিয়ে সমতটকে নেতৃত্ব দিচ্ছেন।', hi: 'सांस्कृतिक उत्कृष्टता के दृष्टिकोण के साथ समतट का नेतृत्व कर रहे हैं।' } },
+  { name: 'Sourabh Bhaumik', role: { en: 'General Secretary', bn: 'সাধারণ সম্পাদক', hi: 'महासचिव' }, bio: { en: 'Managing operations and artistic direction.', bn: 'অপারেশন এবং শৈল্পিক নির্দেশনা পরিচালনা করছেন।', hi: 'संचालन और कलात्मक निर्देशन का प्रबंधन।' } },
+  { name: 'Tarun Dutta', role: { en: 'Treasurer', bn: 'কোষাধ্যক্ষ', hi: 'कोषाध्यक्ष' }, bio: { en: 'Ensuring financial transparency and growth.', bn: 'আর্থিক স্বচ্ছতা এবং প্রবৃদ্ধি নিশ্চিত করছেন।', hi: 'वित्तीय पारदर्शिता और विकास सुनिश्चित करना।' } },
 ];
 
 export default function CommitteePage() {
@@ -45,7 +45,7 @@ export default function CommitteePage() {
             ensuring a democratic and transparent governance process.
           </p>
           <div className="p-6 bg-black/20 rounded-lg border border-white/5">
-            <p className="text-gold font-medium">Next Election: August 2025</p>
+            <p className="text-gold font-medium">Next Election: June 2027</p>
           </div>
         </div>
       </section>
