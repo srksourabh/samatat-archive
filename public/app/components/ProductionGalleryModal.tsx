@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Production } from '../../lib/productionsData';
 import { useLanguage } from './LanguageSwitcher';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ProductionGalleryModalProps {
   production: Production;
@@ -191,9 +192,11 @@ export function ProductionGalleryModal({ production, isOpen, onClose }: Producti
                   {!loadedImages.has(index) && (
                     <div className="absolute inset-0 bg-white/5 animate-pulse" />
                   )}
-                  <img
+                  <OptimizedImage
                     src={photo}
                     alt={`${production.title} - Photo ${index + 1}`}
+                    width={400}
+                    quality={60}
                     className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-110 ${
                       loadedImages.has(index) ? 'opacity-100' : 'opacity-0'
                     }`}
@@ -259,9 +262,11 @@ export function ProductionGalleryModal({ production, isOpen, onClose }: Producti
 
           {/* Main image */}
           <div className="w-full h-full flex items-center justify-center p-4 md:p-16">
-            <img
+            <OptimizedImage
               src={production.photos[selectedPhotoIndex]}
               alt={`${production.title} - Photo ${selectedPhotoIndex + 1}`}
+              width={1600}
+              quality={85}
               className="max-w-full max-h-full object-contain"
             />
           </div>
@@ -284,9 +289,11 @@ export function ProductionGalleryModal({ production, isOpen, onClose }: Producti
                         : 'opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img
+                    <OptimizedImage
                       src={photo}
                       alt={`Thumbnail ${actualIndex + 1}`}
+                      width={150}
+                      quality={50}
                       className="w-full h-full object-cover"
                     />
                   </button>

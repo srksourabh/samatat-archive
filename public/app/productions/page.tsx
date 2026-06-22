@@ -7,6 +7,7 @@ import { BackgroundPhotos } from '../components/BackgroundPhotos';
 import { useLanguage } from '../components/LanguageSwitcher';
 import { ProductionGalleryModal } from '../components/ProductionGalleryModal';
 import { productions, Production } from '../../lib/productionsData';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 // Get unique categories for filtering
 const allCategories = Array.from(new Set(productions.map(p => p.category.en)));
@@ -131,9 +132,10 @@ export default function ProductionsPage() {
                   >
                     {/* Image Container */}
                     <div className="aspect-[16/10] overflow-hidden relative">
-                      <img
+                      <OptimizedImage
                         src={prod.thumbnailUrl}
                         alt={prod.title}
+                        width={600}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />
@@ -268,9 +270,10 @@ export default function ProductionsPage() {
             >
               <div className="flex items-center gap-4">
                 <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
-                  <img
-                    src={productions.find(p => p.id === 'saatmar-palawan')?.thumbnailUrl}
+                  <OptimizedImage
+                    src={productions.find(p => p.id === 'saatmar-palawan')?.thumbnailUrl || ''}
                     alt="Saatmar Palawan"
+                    width={200}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -289,9 +292,10 @@ export default function ProductionsPage() {
             >
               <div className="flex items-center gap-4">
                 <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
-                  <img
-                    src={productions.find(p => p.id === 'bisarjan')?.thumbnailUrl}
+                  <OptimizedImage
+                    src={productions.find(p => p.id === 'bisarjan')?.thumbnailUrl || ''}
                     alt="Bisarjan"
+                    width={200}
                     className="w-full h-full object-cover"
                   />
                 </div>

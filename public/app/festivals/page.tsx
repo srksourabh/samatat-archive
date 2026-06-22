@@ -6,6 +6,7 @@ import { useLanguage, Language } from '../components/LanguageSwitcher';
 import { festivalsData, getFestivalsSorted, Festival, Play } from '../lib/festivalData';
 import { FestivalMosaic } from '../components/FestivalMosaic';
 import { FestivalMarquee } from '../components/FestivalMarquee';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 type TranslatedText = Record<Language, string>;
 
@@ -236,9 +237,11 @@ export default function FestivalsPage() {
             <div className="p-6 overflow-y-auto max-h-[60vh]">
               {showLeaflet && selectedFestival.leafletImage ? (
                 <div className="flex justify-center">
-                  <img
+                  <OptimizedImage
                     src={selectedFestival.leafletImage}
                     alt={`${selectedFestival.title[lang]} Leaflet`}
+                    width={800}
+                    quality={80}
                     className="max-w-full h-auto rounded-lg shadow-lg"
                   />
                 </div>

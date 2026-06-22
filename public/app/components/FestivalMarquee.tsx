@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 // Helper to create storage URL
 const storageUrl = (path: string) =>
@@ -76,9 +77,11 @@ export function FestivalMarquee() {
               key={index}
               className="flex-shrink-0 h-28 md:h-36 w-auto aspect-[4/3] rounded-lg overflow-hidden"
             >
-              <img
+              <OptimizedImage
                 src={src}
                 alt=""
+                width={300}
+                quality={60}
                 className="h-full w-full object-cover filter grayscale-[20%] hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
               />

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { T } from './components/TranslatedContent';
 import { HeroCollage } from './components/HeroCollage';
+import { OptimizedImage } from './components/OptimizedImage';
 import { useLanguage } from './components/LanguageSwitcher';
 import { homeContent } from '../lib/content';
 import { facebookSectionContent, facebookPageUrl } from '../lib/facebook-posts';
@@ -136,9 +137,11 @@ export default function Home() {
       <section className="py-16 relative overflow-hidden" id="heritage">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img
+          <OptimizedImage
             src={homeContent.uttarpara.backgroundImage}
             alt="Uttarpara Heritage"
+            width={1200}
+            quality={60}
             className="w-full h-full object-cover opacity-10"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
@@ -239,9 +242,11 @@ export default function Home() {
             </div>
             <div className="hidden lg:block">
               <div className="aspect-[4/3] rounded overflow-hidden">
-                <img
+                <OptimizedImage
                   src="https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fthumbnails%2FSwapnomoy%2FIMG_1111.jpg?alt=media"
                   alt="Samatat Sanskriti Performance"
+                  width={800}
+                  quality={80}
                   className="w-full h-full object-cover"
                 />
               </div>

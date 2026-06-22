@@ -1,5 +1,6 @@
 import { PageHeader } from '../../components/PageHeader';
 import { BackgroundPhotos } from '../../components/BackgroundPhotos';
+import { OptimizedImage } from '../../components/OptimizedImage';
 
 // Production photos for visual storytelling
 const historyPhotos = [
@@ -103,9 +104,11 @@ export default function HistoryPage() {
             {landmarks.map((landmark) => (
               <div key={landmark.title} className="card overflow-hidden group">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={landmark.image}
                     alt={landmark.title}
+                    width={600}
+                    quality={70}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

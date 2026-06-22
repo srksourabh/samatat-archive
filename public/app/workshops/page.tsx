@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { PageHeader } from '../components/PageHeader';
 import { useLanguage } from '../components/LanguageSwitcher';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 const WORKSHOP_BASE = 'https://firebasestorage.googleapis.com/v0/b/samatat-archive.firebasestorage.app/o/images%2Fworkshops?alt=media';
 
@@ -243,9 +244,11 @@ export default function WorkshopsPage() {
               </p>
             </div>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <img
+              <OptimizedImage
                 src={`${WORKSHOP_BASE}/DSC05159.JPG`}
                 alt="Workshop in progress"
+                width={800}
+                quality={75}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -300,9 +303,11 @@ export default function WorkshopsPage() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden order-2 lg:order-1">
-              <img
+              <OptimizedImage
                 src={`${WORKSHOP_BASE}/samatat014.jpg`}
                 alt="Children in theatre workshop"
+                width={800}
+                quality={75}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -480,9 +485,11 @@ export default function WorkshopsPage() {
             {workshopTypes.map((type, i) => (
               <div key={i} className="group bg-black/40 rounded-xl overflow-hidden border border-white/5 hover:border-gold/30 transition-all duration-300">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={type.image}
-                    alt={type.category[lang]}
+                    alt={type.category[lang] as string}
+                    width={600}
+                    quality={60}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

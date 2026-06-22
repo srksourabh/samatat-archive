@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ActivitySlideshowProps {
   images: string[];
@@ -45,9 +46,11 @@ export function ActivitySlideshow({ images, alt, className = "", interval = 4000
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img
+          <OptimizedImage
             src={image}
             alt={`${alt} - Slide ${index + 1}`}
+            width={800}
+            quality={75}
             className="absolute inset-0 w-full h-full object-cover"
             loading={index === 0 ? "eager" : "lazy"}
           />

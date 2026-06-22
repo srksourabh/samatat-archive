@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 // Helper to create storage URL
 const storageUrl = (path: string) =>
@@ -120,9 +121,11 @@ export function FestivalMosaic() {
               transition: 'opacity 2s ease-in-out',
             }}
           >
-            <img
+            <OptimizedImage
               src={festivalImages[tile.imageIndex]}
               alt=""
+              width={200}
+              quality={50}
               className="absolute inset-0 w-full h-full object-cover filter grayscale-[30%] blur-[1px]"
               loading="lazy"
             />
