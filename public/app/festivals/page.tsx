@@ -259,16 +259,22 @@ export default function FestivalsPage() {
                 </div>
               ) : activeTab === 'photos' && selectedFestival.photos !== undefined ? (
                 selectedFestival.photos.length > 0 ? (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                     {selectedFestival.photos.map((photo, idx) => (
-                      <OptimizedImage
-                        key={idx}
-                        src={photo}
-                        alt={`Festival Photo ${idx + 1}`}
-                        width={400}
-                        quality={80}
-                        className="w-full h-auto rounded-lg shadow-lg object-cover aspect-square"
-                      />
+                      <div key={idx} className="break-inside-avoid relative group overflow-hidden rounded-xl shadow-lg border border-[var(--color-dark-gray)] cursor-pointer">
+                        <OptimizedImage
+                          src={photo}
+                          alt={`Festival Photo ${idx + 1}`}
+                          width={600}
+                          quality={80}
+                          className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-black)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                          <span className="text-[var(--color-gold)] font-bold text-sm">
+                            {lang === 'bn' ? `ছবি ${idx + 1}` : lang === 'hi' ? `तस्वीर ${idx + 1}` : `Photo ${idx + 1}`}
+                          </span>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 ) : (

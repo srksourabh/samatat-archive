@@ -52,7 +52,21 @@ export const festivalsData: Festival[] = [
       hi: 'गणभवन, उत्तरपाड़ा'
     },
     leafletImage: '/images/festivals/2025/2025_leaflet_new.jpg',
-    photos: [],
+    photos: [
+      '/images/festivals/2025/photos/photo_1.jpg',
+      '/images/festivals/2025/photos/photo_2.jpg',
+      '/images/festivals/2025/photos/photo_3.jpg',
+      '/images/festivals/2025/photos/photo_4.jpg',
+      '/images/festivals/2025/photos/photo_5.jpg',
+      '/images/festivals/2025/photos/photo_6.jpg',
+      '/images/festivals/2025/photos/photo_7.jpg',
+      '/images/festivals/2025/photos/photo_8.jpg',
+      '/images/festivals/2025/photos/photo_9.jpg',
+      '/images/festivals/2025/photos/photo_10.jpg',
+      '/images/festivals/2025/photos/photo_11.jpg',
+      '/images/festivals/2025/photos/photo_12.jpg',
+      '/images/festivals/2025/photos/photo_13.jpg'
+    ],
     plays: [
       {
         title: { en: 'Je Janalaigulo Akash Chhilo', bn: 'যে জানালাগুলো আকাশ ছিল', hi: 'जे जानालागुलो आकाश छिलो' },
