@@ -226,6 +226,8 @@
   grid-template-rows: repeat(5, 1fr);
   gap: 6px;
   transform: rotate(-1.5deg) scale(1.1);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 1) 100%);
 }
 
 @media (max-width: 768px) {
@@ -275,14 +277,13 @@
   left: 0;
   bottom: 0;
   width: 65%;
-  /* Darker shadow on left side for text visibility */
+  /* Slightly darker shadow on left side for text visibility */
   background: linear-gradient(
     to right,
-    rgba(5, 5, 5, 0.98) 0%,
-    rgba(8, 8, 8, 0.95) 15%,
-    rgba(10, 10, 10, 0.85) 30%,
-    rgba(10, 10, 10, 0.6) 50%,
-    rgba(10, 10, 10, 0.25) 75%,
+    rgba(10, 10, 10, 0.98) 0%,
+    rgba(10, 10, 10, 0.8) 20%,
+    rgba(10, 10, 10, 0.5) 40%,
+    rgba(10, 10, 10, 0.2) 60%,
     transparent 100%
   );
 }
@@ -291,14 +292,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 40%;
-  /* Subtle brightness boost on right side */
-  background: linear-gradient(
-    to left,
-    rgba(255, 248, 230, 0.08) 0%,
-    rgba(255, 248, 230, 0.04) 30%,
-    transparent 100%
-  );
+  width: 30%;
+  background: transparent;
 }
 
 .hero-collage-overlay-bottom {

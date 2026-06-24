@@ -30,7 +30,6 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <HeroCollage />
-        <div className="hero-overlay" />
         <div className="container hero-content py-32 md:py-40">
           <p className="hero-eyebrow">
             <T content={homeContent.hero.eyebrow} />
