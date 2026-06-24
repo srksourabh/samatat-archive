@@ -24,6 +24,7 @@ export interface Festival {
   description?: TranslatedText;
   leafletImage: string;
   plays: Play[];
+  photos?: string[];
 }
 
 // Helper to create storage URL
@@ -50,7 +51,8 @@ export const festivalsData: Festival[] = [
       bn: 'গণভবন, উত্তরপাড়া',
       hi: 'गणभवन, उत्तरपाड़ा'
     },
-    leafletImage: storageUrl('images/festivals/2025/2025 leaflet.jpg'),
+    leafletImage: '/images/festivals/2025/2025_leaflet_new.jpg',
+    photos: [],
     plays: [
       {
         title: { en: 'Je Janalaigulo Akash Chhilo', bn: 'যে জানালাগুলো আকাশ ছিল', hi: 'जे जानालागुलो आकाश छिलो' },

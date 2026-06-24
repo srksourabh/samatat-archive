@@ -52,7 +52,7 @@ export default function FestivalsPage() {
   const lang = useLanguage();
   const sortedFestivals = getFestivalsSorted();
   const [selectedFestival, setSelectedFestival] = useState<Festival | null>(null);
-  const [showLeaflet, setShowLeaflet] = useState(false);
+  const [activeTab, setActiveTab] = useState<'schedule' | 'leaflet' | 'photos'>('schedule');
 
   // All festivals from data
   const allFestivals = sortedFestivals;
@@ -65,12 +65,12 @@ export default function FestivalsPage() {
 
   const handleYearClick = (festival: Festival) => {
     setSelectedFestival(festival);
-    setShowLeaflet(false);
+    setActiveTab('schedule');
   };
 
   const closeModal = () => {
     setSelectedFestival(null);
-    setShowLeaflet(false);
+    setActiveTab('schedule');
   };
 
   return (
@@ -206,36 +206,48 @@ export default function FestivalsPage() {
                 </div>
               </div>
 
-              {/* Leaflet Toggle */}
-              {selectedFestival.leafletImage && (
-                <div className="mt-4 flex gap-2">
+              {/* Tabs Toggle */}
+              <div className="mt-4 flex gap-2">
+                <button
+                  onClick={() => setActiveTab('schedule')}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+                    activeTab === 'schedule'
+                      ? 'bg-[var(--color-gold)] text-[var(--color-black)]'
+                      : 'bg-[var(--color-black)]/30 text-[var(--color-light-gray)] hover:bg-[var(--color-black)]/50'
+                  }`}
+                >
+                  {content.schedule[lang]}
+                </button>
+                {selectedFestival.leafletImage && (
                   <button
-                    onClick={() => setShowLeaflet(false)}
+                    onClick={() => setActiveTab('leaflet')}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-                      !showLeaflet
-                        ? 'bg-[var(--color-gold)] text-[var(--color-black)]'
-                        : 'bg-[var(--color-black)]/30 text-[var(--color-light-gray)] hover:bg-[var(--color-black)]/50'
-                    }`}
-                  >
-                    {content.schedule[lang]}
-                  </button>
-                  <button
-                    onClick={() => setShowLeaflet(true)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-                      showLeaflet
+                      activeTab === 'leaflet'
                         ? 'bg-[var(--color-gold)] text-[var(--color-black)]'
                         : 'bg-[var(--color-black)]/30 text-[var(--color-light-gray)] hover:bg-[var(--color-black)]/50'
                     }`}
                   >
                     {content.viewLeaflet[lang]}
                   </button>
-                </div>
-              )}
+                )}
+                {selectedFestival.photos !== undefined && (
+                  <button
+                    onClick={() => setActiveTab('photos')}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+                      activeTab === 'photos'
+                        ? 'bg-[var(--color-gold)] text-[var(--color-black)]'
+                        : 'bg-[var(--color-black)]/30 text-[var(--color-light-gray)] hover:bg-[var(--color-black)]/50'
+                    }`}
+                  >
+                    {lang === 'bn' ? 'ছবিসমূহ' : lang === 'hi' ? 'तस्वीरें' : 'Photos'}
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Modal Content */}
             <div className="p-6 overflow-y-auto max-h-[60vh]">
-              {showLeaflet && selectedFestival.leafletImage ? (
+              {activeTab === 'leaflet' && selectedFestival.leafletImage ? (
                 <div className="flex justify-center">
                   <OptimizedImage
                     src={selectedFestival.leafletImage}
@@ -245,6 +257,28 @@ export default function FestivalsPage() {
                     className="max-w-full h-auto rounded-lg shadow-lg"
                   />
                 </div>
+              ) : activeTab === 'photos' && selectedFestival.photos !== undefined ? (
+                selectedFestival.photos.length > 0 ? (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {selectedFestival.photos.map((photo, idx) => (
+                      <OptimizedImage
+                        key={idx}
+                        src={photo}
+                        alt={`Festival Photo ${idx + 1}`}
+                        width={400}
+                        quality={80}
+                        className="w-full h-auto rounded-lg shadow-lg object-cover aspect-square"
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12">
+                    <span className="text-6xl mb-4 block">📸</span>
+                    <p className="text-[var(--color-gray)]">
+                      {lang === 'bn' ? 'শিগগিরই আসছে' : lang === 'hi' ? 'जल्द आ रहा है' : 'Coming soon'}
+                    </p>
+                  </div>
+                )
               ) : selectedFestival.plays.length > 0 ? (
                 <div className="space-y-4">
                   {selectedFestival.plays.map((play, index) => (
