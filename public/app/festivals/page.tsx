@@ -53,6 +53,7 @@ export default function FestivalsPage() {
   const sortedFestivals = getFestivalsSorted();
   const [selectedFestival, setSelectedFestival] = useState<Festival | null>(null);
   const [activeTab, setActiveTab] = useState<'schedule' | 'leaflet' | 'photos'>('schedule');
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // All festivals from data
   const allFestivals = sortedFestivals;
@@ -66,11 +67,13 @@ export default function FestivalsPage() {
   const handleYearClick = (festival: Festival) => {
     setSelectedFestival(festival);
     setActiveTab('schedule');
+    setLightboxIndex(null);
   };
 
   const closeModal = () => {
     setSelectedFestival(null);
     setActiveTab('schedule');
+    setLightboxIndex(null);
   };
 
   return (
@@ -261,7 +264,11 @@ export default function FestivalsPage() {
                 selectedFestival.photos.length > 0 ? (
                   <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                     {selectedFestival.photos.map((photo, idx) => (
-                      <div key={idx} className="break-inside-avoid relative group overflow-hidden rounded-xl shadow-lg border border-[var(--color-dark-gray)] cursor-pointer">
+                      <div 
+                        key={idx} 
+                        className="break-inside-avoid relative group overflow-hidden rounded-xl shadow-lg border border-[var(--color-dark-gray)] cursor-pointer"
+                        onClick={() => setLightboxIndex(idx)}
+                      >
                         <OptimizedImage
                           src={photo}
                           alt={`Festival Photo ${idx + 1}`}
@@ -347,6 +354,67 @@ export default function FestivalsPage() {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Lightbox Modal */}
+      {lightboxIndex !== null && selectedFestival?.photos && (
+        <div 
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 backdrop-blur-md p-4"
+          onClick={() => setLightboxIndex(null)}
+        >
+          {/* Close button */}
+          <button 
+            className="absolute top-4 right-4 text-[var(--color-gray)] hover:text-[var(--color-white)] z-50 p-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex(null);
+            }}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          {/* Prev button */}
+          <button 
+            className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-[var(--color-gray)] hover:text-[var(--color-white)] z-50 p-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex((prev) => (prev! - 1 + selectedFestival.photos!.length) % selectedFestival.photos!.length);
+            }}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Next button */}
+          <button 
+            className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-[var(--color-gray)] hover:text-[var(--color-white)] z-50 p-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex((prev) => (prev! + 1) % selectedFestival.photos!.length);
+            }}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Image Container */}
+          <div className="relative w-full h-[85vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <OptimizedImage
+              src={selectedFestival.photos[lightboxIndex]}
+              alt={`Festival Photo ${lightboxIndex + 1}`}
+              className="max-w-full max-h-full object-contain select-none"
+            />
+          </div>
+          
+          {/* Counter */}
+          <div className="absolute bottom-4 left-0 right-0 text-center text-[var(--color-gray)] font-medium">
+            {lightboxIndex + 1} / {selectedFestival.photos.length}
           </div>
         </div>
       )}
